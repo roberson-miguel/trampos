@@ -1,0 +1,53 @@
+class JobsController < ApplicationController
+
+  before_action :set_find, only: [:show, :edit, :update, :destroy]
+
+
+    def index
+      @jobs = Job.all
+    end
+    
+    def new
+      @job = Job.new
+    end
+    
+    def show
+    end
+
+    def create
+      @job = Job.new(job_params)
+
+      if @job.save
+        redirect_to @job
+      else
+        flash[:notice] = 'Vaga criada com sucesso.'
+        render :new
+      end
+    end
+    
+    def update
+      @job = Job.find(params[:id])
+
+      if @job.update(job_params)
+        redirect_to @job
+      else
+        flash[:alert] = 'Você deve informar todos os dados da receita'
+        render :edit
+      end
+    end
+
+
+
+private
+
+  def job_params
+    params.require(:job).permit(:title, :description)
+  end
+
+  def set_find
+    @job = Job.find(params[:id])
+  end
+
+
+end
+  
