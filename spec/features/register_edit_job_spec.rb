@@ -11,10 +11,10 @@ feature 'create jobs' do
     click_link "Editar"
 
     fill_in 'Titulo', with: 'Dev Ruby Jr'
-    fill_in 'Descrição', with: 'Saber inicar um CRUB e iniciar Testes'
+    fill_in 'Descrição', with: 'Saber inicar um CRUD e iniciar Testes'
     click_button 'Enviar'
 
     expect(page).to have_content('Dev Ruby Jr')
-    expect(page).to have_content('Saber inicar um CRUB e iniciar Testes')
+    expect(page).to have_content('Saber inicar um CRUD e iniciar Testes')
   end
 end

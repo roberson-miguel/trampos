@@ -8,7 +8,7 @@ feature 'create job' do
     click_link "Nova vaga"
 
     fill_in 'Titulo', with: 'Dev Ruby Jr'
-    fill_in 'Descrição', with: 'Saber inicar um CRUB e iniciar TDD'
+    fill_in 'Descrição', with: 'Saber inicar um CRUD e iniciar TDD'
     click_button 'Enviar'
 
     expect(page).to have_content('Vaga criada com sucesso.')
