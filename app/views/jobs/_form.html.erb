@@ -8,6 +8,17 @@
     <%= f.text_field :description %>
   </p>
   <p>
+    <%= f.label :workplace, "Local de trabalho" %><br>
+    <%= f.text_field :workplace %>
+  </p>
+  <p>
+    <%= f.label :end_date, "Encerra" %><br>
+    <%= f.text_field :end_date %>
+  </p>
+  <p>
+    <%= f.label :salary_range, 'Faixa salarial' %>
+    <%= f.select(:salary_range, Job.salary_ranges.keys.map {|salary| [salary.titleize,salary]}) %>
+  <p>
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

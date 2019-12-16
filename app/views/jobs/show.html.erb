@@ -1,6 +1,9 @@
 <h1>Vaga </h1>
 <h3>Titulo: <%= @job.title %></h3>
 <h3>Descrição: <%= @job.description %></h3>
+<h3>Local de trabalho: <%= @job.workplace %></h3>
+<h3>Encerra: <%= @job.end_date %></h3>
+<h3>Faixa salarial: <%= @job.salary_range %></h3>
 
 <%= link_to 'Voltar', jobs_path %>
 <%= link_to 'Editar', edit_job_path(@job) %>
