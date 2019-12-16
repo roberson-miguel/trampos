@@ -18,9 +18,10 @@ class JobsController < ApplicationController
       @job = Job.new(job_params)
 
       if @job.save
+        flash[:notice] = 'Vaga criada com sucesso.'
         redirect_to @job
       else
-        flash[:notice] = 'Vaga criada com sucesso.'
+        flash[:alert] = 'Erro'
         render :new
       end
     end
