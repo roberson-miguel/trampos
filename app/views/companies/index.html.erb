@@ -1,0 +1,15 @@
+<h3>Empresas</h3>
+
+<%= link_to "Nova empresa", new_company_path %> <br><br>
+
+<% if @companies.empty? %>
+    <p> Não existem empresas cadastradas</p>
+<% end %>
+
+<% @companies.each do |company| %>
+    <%= link_to company.name, company_path(company) %>
+    <%= @company.cnpj %>
+    <%= @company.address %>
+    <%= @company.description %>
+<% end %>
+    

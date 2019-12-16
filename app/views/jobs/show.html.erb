@@ -4,4 +4,4 @@
 
 <%= link_to 'Voltar', root_path %>
 <%= link_to 'Editar', edit_job_path(@job) %>
-<%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga? #{@job.title}?" } %>
+<%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>

@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature 'create job' do
-  scenario "I can create a job" do
+feature 'Create a new Job' do
+  scenario "I can create a new job" do
 
     visit root_path
     click_link "Vagas"

@@ -8,6 +8,6 @@
 
 <% @jobs.each do |job| %>
     <%= link_to job.title, job_path(job) %>
-    <%= link_to job.description, job_path(job) %>
+    <%= job.description %>
 <% end %>
     
