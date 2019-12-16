@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature 'create jobs' do
-  scenario "I can jobs" do
+feature 'create job' do
+  scenario "I can create a job" do
 
     visit root_path
     click_link "Vagas"
@@ -9,7 +9,7 @@ feature 'create jobs' do
 
     fill_in 'Titulo', with: 'Dev Ruby Jr'
     fill_in 'Descrição', with: 'Saber inicar um CRUB e iniciar TDD'
-    click_button 'Criar vaga'
+    click_button 'Enviar'
 
     expect(page).to have_content('Vaga criada com sucesso.')
   end
