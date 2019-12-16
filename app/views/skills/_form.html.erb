@@ -1,0 +1,9 @@
+<%= form_for(skill) do |f| %>
+  <p>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+     <%= f.submit "Enviar" %>
+  </p>
+<% end %>

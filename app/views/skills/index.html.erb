@@ -1,0 +1,14 @@
+<h3>Habiliades</h3>
+
+<%= link_to "Nova habilidade", new_skill_path %> <br><br>
+
+<% if @skills.empty? %>
+    <p> Não existem habilidades cadastradas</p>
+<% end %>
+
+<% @skills.each do |skill| %>
+    <%= link_to skill.name, skill_path(skill) %>
+<% end %>
+
+<br><br><br>   
+<%= link_to 'Voltar', root_path %>
