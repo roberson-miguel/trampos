@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_151755) do
+ActiveRecord::Schema.define(version: 2019_12_16_160642) do
+
+  create_table "benefits", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "cnpj"
+    t.string "address"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_levels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
@@ -20,6 +41,21 @@ ActiveRecord::Schema.define(version: 2019_12_16_151755) do
     t.string "workplace"
     t.date "end_date"
     t.boolean "favorite"
+    t.integer "salary_range"
+    t.integer "company_id"
+    t.integer "skill_id"
+    t.integer "job_level_id"
+    t.integer "benefit_id"
+    t.index ["benefit_id"], name: "index_jobs_on_benefit_id"
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["job_level_id"], name: "index_jobs_on_job_level_id"
+    t.index ["skill_id"], name: "index_jobs_on_skill_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
