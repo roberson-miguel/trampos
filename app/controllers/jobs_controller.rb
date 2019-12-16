@@ -37,6 +37,12 @@ class JobsController < ApplicationController
       end
     end
 
+    def destroy
+      
+      @job.destroy
+      redirect_to @job, notice: "Vaga excluida com sucesso"
+    end
+
 
 
 private
