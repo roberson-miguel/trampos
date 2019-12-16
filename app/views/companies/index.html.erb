@@ -8,9 +8,7 @@
 
 <% @companies.each do |company| %>
     <%= link_to company.name, company_path(company) %>
-    <%= @company.cnpj %>
-    <%= @company.address %>
-    <%= @company.description %>
+    <%= link_to company.cnpj, company_path(company)%>
 <% end %>
-    
+<br><br><br>    
 <%= link_to 'Voltar', root_path %>

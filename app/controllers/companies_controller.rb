@@ -1,7 +1,6 @@
 class CompaniesController < ApplicationController
 
-  before_action :set_find, only: [:show, :edit, :update, :destroy]
-
+    before_action :set_find, only: [:show, :edit, :update, :destroy]
 
     def index
       @companies = Company.all
@@ -14,9 +13,13 @@ class CompaniesController < ApplicationController
     def show
     end
 
+    def edit
+      @companies = Company.all
+    end
+
+
     def create
       @company = Company.new(company_params)
-
       if @company.save
         flash[:notice] = 'Empresa criada com sucesso.'
         redirect_to @company
@@ -28,7 +31,6 @@ class CompaniesController < ApplicationController
     
     def update
       @company = Company.find(params[:id])
-
       if @company.update(company_params)
         redirect_to @company
       else
@@ -38,22 +40,20 @@ class CompaniesController < ApplicationController
     end
 
     def destroy
-      
       @company.destroy
       redirect_to @company, notice: "Empresa excluida com sucesso"
     end
 
 
+  private
 
-private
+    def company_params
+      params.require(:company).permit(:name,:cnpj,:address,:description)
+    end
 
-  def company_params
-    params.require(:company).permit(:name, :cnpj, :address, :description)
-  end
-
-  def set_find
-    @company = Company.find(params[:id])
-  end
+    def set_find
+      @company = Company.find(params[:id])
+    end
 
 
 end

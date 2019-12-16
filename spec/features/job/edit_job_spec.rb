@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature 'create jobs' do
-  scenario "I can jobs" do
+feature 'Editing a jobs' do
+  scenario "I can edit a job" do
 
     Job.create(title:"Dev Ruby Jr", description:"Saber iniciar um Crud")
 
