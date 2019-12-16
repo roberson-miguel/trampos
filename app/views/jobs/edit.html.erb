@@ -1,14 +1,5 @@
-<h2>Editar Vaga</h2>
-<%= form_for(@job) do |f| %>
-  <p>
-    <%= f.label :title, "Titulo" %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description, "Descrição" %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-     <%= f.submit "Enviar" %>
-  </p>
-<% end %>
+<h1>Editar Vaga</h1>
+<%= render partial: "form", locals: {job: @job} %>
+
+<br><br><br>   
+<%= link_to 'Voltar', jobs_path %>

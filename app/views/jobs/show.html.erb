@@ -1,7 +1,7 @@
-<h3>Vaga </h3>
-<h1>Titulo: <%= @job.title %></h1>
-<h1>Descrição: <%= @job.description %></h1>
+<h1>Vaga </h1>
+<h3>Titulo: <%= @job.title %></h3>
+<h3>Descrição: <%= @job.description %></h3>
 
-<%= link_to 'Voltar', root_path %>
+<%= link_to 'Voltar', jobs_path %>
 <%= link_to 'Editar', edit_job_path(@job) %>
 <%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>

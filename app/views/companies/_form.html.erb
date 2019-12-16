@@ -1,0 +1,21 @@
+<%= form_for(company) do |f| %>
+  <p>
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name %>
+  </p>
+   <p>
+    <%= f.label :cnpj, "CNPJ" %><br />
+    <%= f.text_field :cnpj %>
+  </p>
+   <p>
+    <%= f.label :address, "Endereço" %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :description, "Descrição" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+     <%= f.submit "Enviar" %>
+  </p>
+<% end %>
