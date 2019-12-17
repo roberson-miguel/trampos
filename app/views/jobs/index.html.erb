@@ -1,5 +1,12 @@
 <h3>Vagas</h3>
 
+<%= form_with url: search_jobs_path, local: true, method: :get do %>
+  <%= label_tag(:q, 'Pesquisar Vaga') %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag 'Buscar' %>
+<% end %>
+<br>
+<br>
 <%= link_to "Nova vaga", new_job_path %> <br><br>
 
 <% if @jobs.empty? %>
@@ -7,7 +14,7 @@
 <% end %>
 
 <% @jobs.each do |job| %>
-    <%= link_to job.title, job_path(job) %>
+    <%= link_to job.title, job_path(job) %><br><br>
 <% end %>
 
 <br><br><br>   

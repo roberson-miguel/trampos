@@ -1,0 +1,12 @@
+<h1>Pesquisando Vagas</h1>
+
+<% if @jobs.empty? %>
+    <p> Não existem vagas cadastrados</p>
+<% end %>
+
+<% @jobs.each do |job| %>
+    <%= link_to job.title, job_path(job) %><br>
+<% end %>
+<br>
+<br>
+<%= link_to 'Voltar', jobs_path %>

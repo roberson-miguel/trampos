@@ -64,6 +64,20 @@ class JobsController < ApplicationController
       redirect_to @job, notice: "Vaga excluida com sucesso"
     end
 
+    def search
+        
+      #busca parcial
+      @jobs = Job.where('title like ?', "%#{params[:q]}%")
+
+      #Busca exata do termo pesquisado
+      #@jobs = Job.where(title: params[:q])
+      
+      #busca um unico registro encontrado
+      #@job = Job.find_by(title: params[:q])
+      
+      # exibe as pesquisa na index
+      #render :index 
+  end
 
 
 private
