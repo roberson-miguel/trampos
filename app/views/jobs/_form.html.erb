@@ -23,6 +23,18 @@
     <%= f.label :skill_id, 'Habilidades' %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %>
   <p>
+   <p>
+    <%= f.label :company_id, 'Empresa' %>
+    <%= f.collection_select(:company_id, @companies, :id, :name) %>
+  <p>
+  <p>
+    <%= f.label :joblevel_id, 'Nivel Vaga' %>
+    <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
+  <p>
+  <p>
+    <%= f.label :benefit_id, 'Beneficio' %>
+    <%= f.collection_select(:benefit_id, @benefits, :id, :name) %>
+  <p>
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

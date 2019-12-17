@@ -19,6 +19,9 @@ feature 'Create a new Job' do
     fill_in 'Local de trabalho', with: 'Remoto'
     select '1000 Até 3000', from: 'Faixa salarial'
     select "#{skill.name}", from: 'Habilidades'
+    select "#{company.name}", from: 'Empresa'
+    select "#{joblevel.name}", from: 'Nivel Vaga'
+    select "#{benefit.name}", from: 'Beneficio'
     click_button 'Enviar'
 
     expect(page).to have_content('Vaga criada com sucesso.')
@@ -28,5 +31,8 @@ feature 'Create a new Job' do
     expect(page).to have_content('Remoto')
     expect(page).to have_content('1000_até_3000')
     expect(page).to have_content('Ruby on Rails')
+    expect(page).to have_content('Campus Code')
+    expect(page).to have_content('Junior')
+    expect(page).to have_content('Vale transporte')
   end
 end
