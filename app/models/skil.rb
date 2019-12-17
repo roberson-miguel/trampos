@@ -1,2 +1,0 @@
-class Skil < ApplicationRecord
-end

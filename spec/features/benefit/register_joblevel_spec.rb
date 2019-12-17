@@ -25,10 +25,11 @@ feature 'Create new Benefit' do
     click_button 'Enviar'
 
     expect(page).to have_content('...deve ser informado')
+    expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
    
   end
 
-  scenario "I can not create a new benefit empty" do
+  scenario "I can not create a new benefit already in use" do
 
     Benefit.create(name:'Vale transporte')
 
