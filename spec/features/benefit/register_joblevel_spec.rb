@@ -42,4 +42,19 @@ feature 'Create new Benefit' do
     expect(page).to have_content('...já está em uso')
    
   end
+
+  scenario "I can not create a new benefit without mininum caracter" do
+
+    Benefit.create(name:'Vale transporte')
+
+    visit root_path
+    click_link "Beneficios"
+    click_link "Novo beneficio"
+
+    fill_in 'Nome', with: 'V'
+    click_button 'Enviar'
+
+    expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
+   
+  end
 end
