@@ -24,7 +24,7 @@ class SkillsController < ApplicationController
         flash[:notice] = 'Habilidade criada com sucesso'
         redirect_to @skill
       else
-        flash[:alert] = 'Erro'
+        flash[:alert] = 'Erro skill'
         render :new
       end
     end

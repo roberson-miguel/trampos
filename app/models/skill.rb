@@ -1,5 +1,5 @@
 class Skill < ApplicationRecord
-    has_many :job
+    has_many :jobs
     
     validates :name, presence: {message: '...deve ser informado'}
     validates :name, uniqueness: {message: '...já está em uso'}

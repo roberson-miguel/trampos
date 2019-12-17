@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_234856) do
+ActiveRecord::Schema.define(version: 2019_12_17_152550) do
 
   create_table "benefits", force: :cascade do |t|
     t.string "name"
@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 2019_12_16_234856) do
     t.integer "salary_range"
     t.integer "company_id"
     t.integer "skill_id"
-    t.integer "job_level_id"
     t.integer "benefit_id"
+    t.integer "joblevel_id"
     t.index ["benefit_id"], name: "index_jobs_on_benefit_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
-    t.index ["job_level_id"], name: "index_jobs_on_job_level_id"
+    t.index ["joblevel_id"], name: "index_jobs_on_joblevel_id"
     t.index ["skill_id"], name: "index_jobs_on_skill_id"
   end
 
