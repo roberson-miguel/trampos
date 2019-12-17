@@ -1,0 +1,14 @@
+<h3>Beneficios</h3>
+
+<%= link_to "Novo beneficio", new_benefit_path %> <br><br>
+
+<% if @benefits.empty? %>
+    <p> Não existem beneficios cadastradas</p>
+<% end %>
+
+<% @benefits.each do |benefit| %>
+    <%= link_to benefit.name, benefit_path(benefit) %>
+<% end %>
+
+<br><br><br>   
+<%= link_to 'Voltar', root_path %>
