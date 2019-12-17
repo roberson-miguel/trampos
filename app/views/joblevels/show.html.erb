@@ -1,0 +1,7 @@
+<h1>Nivel de Vaga</h1>
+<h3>Nivel: <%= @joblevel.name %></h3>
+
+
+<%= link_to 'Voltar', joblevels_path %>
+<%= link_to 'Editar', edit_joblevel_path(@joblevel) %>
+<%= link_to 'Deletar', joblevel_path(@joblevel), method: :delete, data: { confirm: "Confirma exclusão do nivel de vaga: #{@joblevel.name}?" } %>

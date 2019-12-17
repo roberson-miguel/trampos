@@ -1,2 +1,0 @@
-class JobLevel < ApplicationRecord
-end

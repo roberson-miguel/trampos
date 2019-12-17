@@ -1,0 +1,14 @@
+<h3>Nivel da vaga</h3>
+
+<%= link_to "Novo nivel vaga", new_joblevel_path %> <br><br>
+
+<% if @joblevels.empty? %>
+    <p> Não existem niveis de vagas cadastradas</p>
+<% end %>
+
+<% @joblevels.each do |joblevel| %>
+    <%= link_to joblevel.name, joblevel_path(joblevel) %>
+<% end %>
+
+<br><br><br>   
+<%= link_to 'Voltar', root_path %>
