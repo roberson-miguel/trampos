@@ -1,3 +1,10 @@
+<% if @joblevel.errors.any? %>
+  <% @joblevel.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+
 <%= form_for(joblevel) do |f| %>
   <p>
     <%= f.label :name, "Nome" %><br>
