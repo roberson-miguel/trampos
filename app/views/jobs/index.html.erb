@@ -14,8 +14,8 @@
 <% end %>
 
 <% @jobs.each do |job| %>
-    <%= link_to job.title, job_path(job) %><br><br>
+    <%= link_to job.title, job_path(job) %><br>
 <% end %>
 
-<br><br><br>   
+<br><br>   
 <%= link_to 'Voltar', root_path %>
