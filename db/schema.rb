@@ -27,12 +27,6 @@ ActiveRecord::Schema.define(version: 2019_12_16_234856) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "job_levels", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "joblevels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

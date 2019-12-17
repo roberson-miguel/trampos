@@ -19,6 +19,10 @@
     <%= f.label :salary_range, 'Faixa salarial' %>
     <%= f.select(:salary_range, Job.salary_ranges.keys.map {|salary| [salary.titleize,salary]}) %>
   <p>
+  <p>
+    <%= f.label :skill_id, 'Habilidades' %>
+    <%= f.collection_select(:skill_id, @skills, :id, :name) %>
+  <p>
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

@@ -5,17 +5,30 @@ class JobsController < ApplicationController
 
     def index
       @jobs = Job.all
+     
     end
     
     def new
       @job = Job.new
+      @skills  = Skill.all
+      @joblevels = Joblevel.all
+      @companies = Company.all
+      @benefits = Benefit.all
     end
     
     def show
+      @skills  = Skill.all
+      @joblevels = Joblevel.all
+      @companies = Company.all
+      @benefits = Benefit.all
     end
 
     def edit
       @jobs = Job.all
+      @skills  = Skill.all
+      @joblevels = Joblevel.all
+      @companies = Company.all
+      @benefits = Benefit.all
     end
     
     def create
@@ -25,6 +38,10 @@ class JobsController < ApplicationController
         flash[:notice] = 'Vaga criada com sucesso.'
         redirect_to @job
       else
+        @skills  = Skill.all
+        @joblevels = Joblevel.all
+        @companies = Company.all
+        @benefits = Benefit.all
         flash[:alert] = 'Erro'
         render :new
       end
@@ -52,7 +69,7 @@ class JobsController < ApplicationController
 private
 
   def job_params
-    params.require(:job).permit(:title, :description, :end_date, :workplace, :salary_range)
+    params.require(:job).permit(:title, :description, :end_date, :workplace, :salary_range, :company, :benefit, :joblevel, :skill)
   end
 
   def set_find

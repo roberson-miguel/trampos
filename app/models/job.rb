@@ -1,4 +1,8 @@
 class Job < ApplicationRecord
+    belongs_to :company
+    belongs_to :joblevel
+    belongs_to :benefit
+    has_many :skill
 
     enum salary_range: { "1000_até_3000": 0, "3001_até_5000": 15, "5001_até_8000": 30}
 
