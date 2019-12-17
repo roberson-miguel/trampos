@@ -34,7 +34,7 @@ class SkillsController < ApplicationController
       if @skill.update(skill_params)
         redirect_to @skill
       else
-        flash[:alert] = 'Você deve informar todos os dados da receita'
+        #flash[:alert] = 'Você deve informar todos os dados da receita'
         render :edit
       end
     end

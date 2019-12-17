@@ -34,7 +34,7 @@ class JoblevelsController < ApplicationController
       if @joblevel.update(joblevel_params)
         redirect_to @joblevel
       else
-        flash[:alert] = 'Você deve informar todos os dados da receita'
+        #flash[:alert] = 'Você deve informar todos os dados da receita'
         render :edit
       end
     end
