@@ -48,7 +48,7 @@ class SkillsController < ApplicationController
   private
 
     def skill_params
-      params.require(:skill).permit(:name,:cnpj,:address,:description)
+      params.require(:skill).permit(:name)
     end
 
     def set_find

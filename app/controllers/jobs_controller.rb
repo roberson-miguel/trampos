@@ -38,7 +38,7 @@ class JobsController < ApplicationController
         flash[:notice] = 'Vaga criada com sucesso.'
         redirect_to @job
       else
-        @skills  = Skill.all
+        @skills = Skill.all
         @joblevels = Joblevel.all
         @companies = Company.all
         @benefits = Benefit.all
