@@ -1,0 +1,33 @@
+require "rails_helper"
+
+feature 'View a Profile' do
+  scenario "I can see a profile" do
+
+    skill = Skill.create!(name:'Ruby on Rails')
+    joblevel = Joblevel.create!(name:'Junior')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
+
+
+    Profile.create!(skill: skill, joblevel: joblevel, user: user,
+                    name:'Roberson Miguel', social_name: 'Roberson Miguel', 
+                    address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
+                    date_birth: '1979-09-20',  languages: "inglês(basico)", 
+                    education_level: 'graduado', education_status: 'concluido', 
+                    education_institution: 'Senac', education_course: 'Ciências da computação', 
+                    education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 
+                    experience_reponsibility: 'Gerenciava informatica e financeiro' , 
+                    experience_role: 'Supervisor de tesouraria', 
+                    experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
+                    experience_current_position: false )
+
+    visit root_path
+    click_link "Perfil Candidato"
+    click_link "Roberson Miguel"
+      
+    expect(page).to have_content('Roberson Miguel')
+    expect(page).to have_link('Voltar')
+    expect(page).to have_link('Editar')
+    expect(page).to have_link('Deletar')
+  
+  end
+end
