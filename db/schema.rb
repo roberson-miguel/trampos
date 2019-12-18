@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_200042) do
+ActiveRecord::Schema.define(version: 2019_12_18_120801) do
 
   create_table "benefits", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,34 @@ ActiveRecord::Schema.define(version: 2019_12_17_200042) do
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["joblevel_id"], name: "index_jobs_on_joblevel_id"
     t.index ["skill_id"], name: "index_jobs_on_skill_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "social_name"
+    t.string "address"
+    t.string "cellphone"
+    t.date "date_birth"
+    t.integer "languages"
+    t.integer "education_level"
+    t.integer "education_status"
+    t.string "education_institution"
+    t.string "education_course"
+    t.date "education_end_date"
+    t.string "experience_company"
+    t.text "experience_reponsibility"
+    t.string "experience_role"
+    t.integer "joblevel_id"
+    t.integer "skill_id"
+    t.date "experience_start_date"
+    t.date "experience_end_date"
+    t.boolean "experience_current_position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["joblevel_id"], name: "index_profiles_on_joblevel_id"
+    t.index ["skill_id"], name: "index_profiles_on_skill_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|
