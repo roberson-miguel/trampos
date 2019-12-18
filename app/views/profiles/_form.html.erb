@@ -23,6 +23,18 @@
     <%= f.collection_select(:user_id, @users, :id, :role) %>
   <p>
   <p>
+    <%= f.label :languages, 'Idiomas' %>
+    <%= f.select(:languages, Profile.languages.keys.map {|language| [language.titleize,language]}) %>
+  <p>
+  <p>
+    <%= f.label :education_level, 'Nivel Educacional' %>
+    <%= f.select(:education_level, Profile.education_levels.keys.map {|education_level| [education_level.titleize,education_level]}) %>
+  <p>
+  <p>
+    <%= f.label :education_status, 'Status do Curso' %>
+    <%= f.select(:education_status, Profile.education_statuses.keys.map {|education_status| [education_status.titleize,education_status]}) %>
+  <p>
+  <p>
      <%= f.submit "Enviar" %>
   </p>
 <% end %>
