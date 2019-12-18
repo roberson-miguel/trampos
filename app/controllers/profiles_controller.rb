@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
     end
     
     def update
-      @profile = profile.find(params[:id])
+      @profile = Profile.find(params[:id])
       if @profile.update(profile_params)
         redirect_to @profile
       else
@@ -59,7 +59,14 @@ class ProfilesController < ApplicationController
   private
 
     def profile_params
-      params.require(:profile).permit(:name, :joblevel_id, :skill_id, :user_id, :languages, :education_level, :education_status)
+      params.require(:profile).permit(:name, :social_name, :joblevel_id, :skill_id, 
+                                      :user_id, :languages, :address, :cellphone,
+                                      :date_birth, :languages, :education_level,
+                                      :education_status, :education_institution,
+                                      :education_course, :education_end_date,
+                                      :experience_company, :experience_reponsibility,
+                                      :experience_role, :experience_start_date,
+                                      :experience_end_date,:experience_current_position)
     end
 
     def set_find
@@ -68,4 +75,4 @@ class ProfilesController < ApplicationController
 
 
 end
-  
+

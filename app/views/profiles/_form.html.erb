@@ -7,9 +7,17 @@
 
 <%= form_for(profile) do |f| %>
   <p>
-    <%= f.label :name, "Nome" %><br>
+    <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
-  </p>
+    <%= f.label :social_name, "Nome Social" %>
+    <%= f.text_field :social_name %>
+    <%= f.label :date_birth, 'Data Nascimento' %>
+    <%= f.text_field :date_birth %>
+    <%= f.label :cellphone, 'Celular' %>
+    <%= f.text_field :cellphone %>
+    <%= f.label :address, 'Endereço' %>
+    <%= f.text_field :address %>
+  <p>
   <p>
     <%= f.label :user_id, 'Tipo de Perfil' %>
     <%= f.collection_select(:user_id, @users, :id, :role) %>
