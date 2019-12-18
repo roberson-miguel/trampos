@@ -1,9 +1,9 @@
 class Profile < ApplicationRecord
-  belongs_to :user
-  belongs_to :joblevel
-  belongs_to :skill
+    belongs_to :user
+    belongs_to :joblevel
+    belongs_to :skill
 
-  #validates :name, presence: {message: '...deve ser informado'}
+    validates :email, uniqueness: {message: '...já está em uso'}
 
     enum languages: { "inglês(basico)": 0, "inglês(intermediario)": 15, "inglês(avançado)": 30}
     def set_default_languages
@@ -19,4 +19,5 @@ class Profile < ApplicationRecord
     def set_default_education_status
         self.education_status ||= :"concluido"
     end
+
 end

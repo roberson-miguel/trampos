@@ -9,9 +9,17 @@
     <br>
     <br>
 
-    <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
-    <%= link_to "Editar conta", edit_user_registration_path %><br>
-    <%= link_to "Registrar conta", new_user_registration_path %><br>
+    <% if user_signed_in? %> 
+        <p>Olá <%= current_user.email %></p><br>
 
+       
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
+        <%= link_to "Editar conta", edit_user_registration_path %><br>
+       
+  
+    <% else %>
+        <%= link_to 'Entrar', new_user_session_path %><br>
+         <%= link_to "Registrar conta", new_user_registration_path %><br>
+    <% end %>
 
 </ul>

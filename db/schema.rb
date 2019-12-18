@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_120801) do
+ActiveRecord::Schema.define(version: 2019_12_18_203916) do
 
   create_table "benefits", force: :cascade do |t|
     t.string "name"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_120801) do
     t.boolean "experience_current_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
     t.index ["joblevel_id"], name: "index_profiles_on_joblevel_id"
     t.index ["skill_id"], name: "index_profiles_on_skill_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"

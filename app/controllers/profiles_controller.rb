@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     end
     
     def new
+      
       @profile = Profile.new
       @skills = Skill.all
       @joblevels = Joblevel.all
@@ -14,6 +15,7 @@ class ProfilesController < ApplicationController
     end
     
     def show
+      
       @skills  = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
@@ -29,6 +31,7 @@ class ProfilesController < ApplicationController
 
     def create
       @profile = Profile.new(profile_params)
+      @profile.email = current_user.email
       if @profile.save
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
@@ -59,7 +62,7 @@ class ProfilesController < ApplicationController
   private
 
     def profile_params
-      params.require(:profile).permit(:name, :social_name, :joblevel_id, :skill_id, 
+      params.require(:profile).permit(:name, :email, :social_name, :joblevel_id, :skill_id, 
                                       :user_id, :languages, :address, :cellphone,
                                       :date_birth, :languages, :education_level,
                                       :education_status, :education_institution,
