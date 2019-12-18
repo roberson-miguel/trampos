@@ -59,7 +59,7 @@ class ProfilesController < ApplicationController
   private
 
     def profile_params
-      params.require(:profile).permit(:name, :joblevel_id, :skill_id, :user_id)
+      params.require(:profile).permit(:name, :joblevel_id, :skill_id, :user_id, :languages, :education_level, :education_status)
     end
 
     def set_find

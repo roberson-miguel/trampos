@@ -15,6 +15,9 @@ feature 'Create new Profile' do
     select "#{skill.name}", from: 'Habilidades'
     select "#{joblevel.name}", from: 'Nivel Vaga'
     select "#{user.role}", from: 'Função'
+    select "Inglês(Basico)", from: 'Idiomas'
+    select 'Graduado', from: 'Nivel Educacional'
+    select 'Concluido', from: 'Status do Curso'
     click_button 'Enviar'
 
     expect(page).to have_content('Roberson')
