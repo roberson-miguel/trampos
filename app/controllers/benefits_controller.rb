@@ -34,7 +34,7 @@ class BenefitsController < ApplicationController
       if @benefit.update(benefit_params)
         redirect_to @benefit
       else
-        #flash[:alert] = 'Você deve informar todos os dados'
+        
         render :edit
       end
     end

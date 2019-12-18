@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
       if @company.update(company_params)
         redirect_to @company
       else
-        #flash[:alert] = 'Você deve informar todos os dados da receita'
+        
         render :edit
       end
     end

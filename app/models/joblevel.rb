@@ -1,5 +1,6 @@
 class Joblevel < ApplicationRecord
     has_many :jobs
+    has_many :profiles
         
     validates :name, presence: {message: '...deve ser informado'}
     validates :name, uniqueness: {message: '...já está em uso'}

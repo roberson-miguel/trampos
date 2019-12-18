@@ -5,12 +5,13 @@
     <li><%= link_to "Habilidades", skills_path %></li>
     <li><%= link_to "Nivel Vaga", joblevels_path %></li>
     <li><%= link_to "Beneficios", benefits_path %></li>
+    <li><%= link_to "Perfil Candidato", profiles_path %></li>
     <br>
     <br>
 
     <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
-    <%= link_to "Editar Perfil", edit_user_registration_path %><br>
-    <%= link_to "Registrar", new_user_registration_path %><br>
+    <%= link_to "Editar conta", edit_user_registration_path %><br>
+    <%= link_to "Registrar conta", new_user_registration_path %><br>
 
 
 </ul>

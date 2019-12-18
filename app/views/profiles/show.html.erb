@@ -1,0 +1,7 @@
+<h1>Perfil</h1>
+<h3>Nome: <%= @profile.name %></h3>
+
+
+<%= link_to 'Voltar', profiles_path %>
+<%= link_to 'Editar', edit_profile_path(@profile) %>
+<%= link_to 'Deletar', profile_path(@profile), method: :delete, data: { confirm: "Confirma exclusão do perfil: #{@profile.name}?" } %>

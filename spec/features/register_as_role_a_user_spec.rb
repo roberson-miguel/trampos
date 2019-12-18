@@ -5,7 +5,7 @@ feature 'Register as role a user' do
     
     visit root_path
     click_link "Sair"
-    click_link "Registrar"
+    click_link "Registrar conta"
 
     fill_in 'Email', with: 'elaine@gmail'
     select 'Headhunter', from: 'Função'

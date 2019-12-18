@@ -7,7 +7,7 @@ feature 'Edit Role in user/edit' do
 
     visit root_path
     click_link "Sair"
-    click_link "Editar Perfil"
+    click_link "Editar conta"
 
     fill_in 'Email', with: 'elaine@gmail.com'
     fill_in 'Password', with:123123

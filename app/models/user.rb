@@ -12,4 +12,6 @@ class User < ApplicationRecord
   #  self.role ||= :candidate
   #end
 
+  has_one :profile
+
 end

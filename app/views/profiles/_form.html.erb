@@ -1,0 +1,28 @@
+<% if @profile.errors.any? %>
+  <% @profile.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+
+<%= form_for(profile) do |f| %>
+  <p>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :joblevel_id, 'Nivel Vaga' %>
+    <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
+  <p>
+  <p>
+    <%= f.label :skill_id, 'Habilidades' %>
+    <%= f.collection_select(:skill_id, @skills, :id, :name) %>
+  <p>
+  <p>
+    <%= f.label :user_id, 'Função' %>
+    <%= f.collection_select(:user_id, @users, :id, :role) %>
+  <p>
+  <p>
+     <%= f.submit "Enviar" %>
+  </p>
+<% end %>

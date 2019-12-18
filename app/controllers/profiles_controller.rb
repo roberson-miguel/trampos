@@ -7,52 +7,63 @@ class ProfilesController < ApplicationController
     end
     
     def new
-      @profiles = Profile.new
+      @profile = Profile.new
+      @skills = Skill.all
+      @joblevels = Joblevel.all
+      @users = User.all
     end
     
     def show
+      @skills  = Skill.all
+      @joblevels = Joblevel.all
+      @users = User.all
     end
 
     def edit
       @profiles = Profile.all
+      @skills  = Skill.all
+      @joblevels = Joblevel.all
+      @users = User.all
     end
 
 
     def create
-      @profiles = Profile.new(profiles_params)
-      if @profiles.save
-        flash[:notice] = 'Habilidade criada com sucesso'
-        redirect_to @profiles
+      @profile = Profile.new(profile_params)
+      if @profile.save
+        flash[:notice] = 'Perfil concluido com sucesso'
+        redirect_to @profile
       else
+        @skills = Skill.all
+        @joblevels = Joblevel.all
+        @users = User.all
         flash[:alert] = 'Erro profiles'
         render :new
       end
     end
     
     def update
-      @profiles = profiles.find(params[:id])
-      if @profiles.update(profiles_params)
-        redirect_to @profiles
+      @profile = profile.find(params[:id])
+      if @profile.update(profile_params)
+        redirect_to @profile
       else
-        #flash[:alert] = 'Você deve informar todos os dados da receita'
         render :edit
       end
     end
 
     def destroy
-      @profiles.destroy
-      redirect_to @profiles, notice: "Habilidade excluida com sucesso"
+      @profile.destroy
+      redirect_to @profile, notice: 'Perfil excluido com sucesso'
     end
 
 
   private
 
-    def profiles_params
-      params.require(:profiles).permit(:name)
+    def profile_params
+      params.require(:profile).permit(:name, :joblevel_id, :skill_id, :user_id)
     end
 
     def set_find
-      @profiles = Profile.find(params[:id])
+      @profile = Profile.find(params[:id])
     end
 
 

@@ -1,0 +1,14 @@
+<h3>Perfil</h3>
+
+<%= link_to "Novo Perfil", new_profile_path %> <br><br>
+
+<% if @profiles.empty? %>
+    <p> Não existem perfis cadastrados</p>
+<% end %>
+
+<% @profiles.each do |profile| %>
+    <%= link_to profile.name, profile_path(profile) %><br>
+<% end %>
+
+<br><br><br>   
+<%= link_to 'Voltar', root_path %>
