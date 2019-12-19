@@ -1,5 +1,12 @@
 <h1>Pesquisando Vagas</h1>
 
+<p>Olá <%= current_user.email %></p><br>
+    <%= form_with url: search_jobs_path, local: true, method: :get do %>
+      <%= label_tag(:q, 'Pesquisar Vaga') %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag 'Buscar' %>
+<% end %>
+
 <% if @jobs.empty? %>
     <p> Não existem vagas cadastrados</p>
 <% end %>
