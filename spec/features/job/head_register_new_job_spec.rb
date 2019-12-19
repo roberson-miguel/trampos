@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature 'Create a new Job' do
+feature 'Headhunter Create a new Job' do
   scenario "I can create a new job" do
 
     skill = Skill.create!(name:'Ruby on Rails')
@@ -44,7 +44,7 @@ feature 'Create a new Job' do
     expect(page).to have_content('Vale transporte')
   end
 
-  scenario "I can not create a new job empty" do
+  scenario "Headhunter I can not create a new job empty" do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
