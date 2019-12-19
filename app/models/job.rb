@@ -3,6 +3,8 @@ class Job < ApplicationRecord
     belongs_to :benefit
     belongs_to :skill
     belongs_to :joblevel
+    belongs_to :user
+    
 
     validates :title, :description, :workplace, :end_date, :salary_range, presence: {message: '...deve ser informado'}
     

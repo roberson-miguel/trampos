@@ -16,6 +16,7 @@ class JobsController < ApplicationController
       @joblevels = Joblevel.all
       @companies = Company.all
       @benefits = Benefit.all
+      @users = User.all
     end
     
     def show
@@ -23,6 +24,7 @@ class JobsController < ApplicationController
       @joblevels = Joblevel.all
       @companies = Company.all
       @benefits = Benefit.all
+      @users = User.all
     end
 
     def edit
@@ -31,6 +33,7 @@ class JobsController < ApplicationController
       @joblevels = Joblevel.all
       @companies = Company.all
       @benefits = Benefit.all
+      @users = User.all
     end
     
     def create
@@ -43,6 +46,7 @@ class JobsController < ApplicationController
           @joblevels = Joblevel.all
           @companies = Company.all
           @benefits = Benefit.all
+          @users = User.all
           flash[:alert] = 'Erro jobs'
           render :new
         end
@@ -84,7 +88,9 @@ class JobsController < ApplicationController
 private
 
   def job_params
-    params.require(:job).permit(:title, :description, :end_date, :workplace, :salary_range, :company_id, :benefit_id, :joblevel_id, :skill_id)
+    params.require(:job).permit(:title, :description, :end_date, 
+                                :workplace, :salary_range, :company_id, 
+                                :benefit_id, :joblevel_id, :skill_id, :user_id)
   end
 
   def set_find

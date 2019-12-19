@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_203916) do
+ActiveRecord::Schema.define(version: 2019_12_19_204804) do
 
   create_table "benefits", force: :cascade do |t|
     t.string "name"
@@ -46,10 +46,12 @@ ActiveRecord::Schema.define(version: 2019_12_18_203916) do
     t.integer "skill_id"
     t.integer "benefit_id"
     t.integer "joblevel_id"
+    t.integer "user_id"
     t.index ["benefit_id"], name: "index_jobs_on_benefit_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["joblevel_id"], name: "index_jobs_on_joblevel_id"
     t.index ["skill_id"], name: "index_jobs_on_skill_id"
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|

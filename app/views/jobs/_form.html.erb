@@ -12,6 +12,10 @@
     <%= f.text_field :title %>
   </p>
   <p>
+    <%= f.label :user_id, 'Criado por' %>
+    <%= f.collection_select(:user_id, @users, :id, :email) %>
+  </p>
+  <p>
     <%= f.label :description, "Descrição" %><br>
     <%= f.text_field :description %>
   </p>

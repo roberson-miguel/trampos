@@ -13,5 +13,6 @@ class User < ApplicationRecord
   #end
 
   has_one :profile
+  has_many :jobs
 
 end
