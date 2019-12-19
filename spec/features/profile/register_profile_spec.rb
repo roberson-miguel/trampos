@@ -7,10 +7,10 @@ feature 'Create new Profile' do
     joblevel = Joblevel.create!(name:'Junior')
     user = User.create(email:'elaine@gmail.com', password:123123, role:'candidate')
     
-    login_as(user)
+    login_as(user, scope: :candidate)
 
     visit root_path
-    click_link "Sair"
+    #click_link "Sair"
     click_link "Perfil Candidato"
     click_link "Novo Perfil"
 
