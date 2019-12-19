@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature 'Headhunter View a job' do
+feature 'Candidate View a job' do
   scenario "I must see a job" do
 
     skill = Skill.create!(name:'Ruby on Rails')
@@ -11,9 +11,7 @@ feature 'Headhunter View a job' do
                end_date: '2020-01-31', workplace:' Remoto', 
                salary_range: '1000_até_3000', skill: skill, 
                joblevel: joblevel, company: company, benefit: benefit)
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
-
-    #login_as(user, scope: :headhunter)
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
 
     visit root_path
     click_link "Entrar"
