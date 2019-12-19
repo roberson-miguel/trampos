@@ -4,7 +4,7 @@ feature 'Register as role a user' do
   scenario "I can create a user as headhunter" do
     
     visit root_path
-    click_link "Sair"
+    
     click_link "Registrar conta"
 
     fill_in 'Email', with: 'elaine@gmail'

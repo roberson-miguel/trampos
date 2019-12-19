@@ -3,7 +3,9 @@ class Profile < ApplicationRecord
     belongs_to :joblevel
     belongs_to :skill
 
-    validates :email, uniqueness: {message: '...já está em uso'}
+    validates :email, :user_id,  uniqueness: {message: '...já está em uso'}
+    validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}
+    validates :name, length: { minimum: 5, message: '....deve ter tamanho minimo de 5 caracter'}
 
     enum languages: { "inglês(basico)": 0, "inglês(intermediario)": 15, "inglês(avançado)": 30}
     def set_default_languages
