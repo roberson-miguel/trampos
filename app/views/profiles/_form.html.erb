@@ -9,6 +9,10 @@
   
 
   <p>
+    <%= f.label :email, 'Criado por' %>
+    <%= f.collection_select(:email, @users, :id, :email) %>
+    <br>
+    <br>
     <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
     <%= f.label :social_name, "Nome Social" %>

@@ -12,7 +12,7 @@ class User < ApplicationRecord
   #  self.role ||= :candidate
   #end
 
-  has_one :profile
-  has_many :jobs
+  has_one :profile, dependent: :destroy
+  has_many :jobs, dependent: :destroy
 
 end

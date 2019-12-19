@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_204804) do
+ActiveRecord::Schema.define(version: 2019_12_19_231848) do
 
   create_table "benefits", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_204804) do
     t.integer "benefit_id"
     t.integer "joblevel_id"
     t.integer "user_id"
+    t.string "email"
     t.index ["benefit_id"], name: "index_jobs_on_benefit_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["joblevel_id"], name: "index_jobs_on_joblevel_id"

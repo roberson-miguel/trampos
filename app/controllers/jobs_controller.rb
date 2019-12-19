@@ -38,6 +38,7 @@ class JobsController < ApplicationController
     
     def create
       @job = Job.new(job_params)
+      @job.email = current_user
         if @job.save
           flash[:notice] = 'Vaga criada com sucesso.'
           redirect_to @job
