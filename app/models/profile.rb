@@ -3,7 +3,7 @@ class Profile < ApplicationRecord
     belongs_to :joblevel
     belongs_to :skill
 
-    validates :email, :user_id,  uniqueness: {message: '...já está em uso'}
+    validates :email,  uniqueness: {message: '...já está em uso'}
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}
     validates :name, length: { minimum: 5, message: '....deve ter tamanho minimo de 5 caracter'}
 

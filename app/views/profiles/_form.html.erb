@@ -6,7 +6,11 @@
 
 
 <%= form_for(profile) do |f| %>
+  
   <p>
+    <%= f.label :email, "Email #{current_user.email}" %>
+    <br>
+    <br>
     <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
     <%= f.label :social_name, "Nome Social" %>
@@ -22,11 +26,14 @@
     <%= f.label :user_id, 'Tipo de Perfil' %>
     <%= f.collection_select(:user_id, @users, :id, :role) %>
   <p>
+  <br>
+  <br>
   <p>
     <%= f.label :languages, 'Idiomas ' %>
     <%= f.select(:languages, Profile.languages.keys.map {|language| [language.titleize,language]}) %>
   <p>
- 
+  <br>
+  <br>
   <p>
     <%= f.label :education_institution, "Instituição" %>
     <%= f.text_field :education_institution %>
@@ -39,6 +46,8 @@
     <%= f.label :education_end_date, "Data conclusão" %>
     <%= f.text_field :education_end_date %>
   </p>
+  <br>
+  <br>
   <p>
     <%= f.label :experience_company, "Experiencia Profissional" %>
     <%= f.text_field :experience_company %>
@@ -50,7 +59,8 @@
     <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
     <%= f.label :skill_id, 'Habilidades' %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %>
-  <p>
+    <br>
+  </p>
   <p>
     <%= f.label :experience_start_date, "Data Entrada" %>
     <%= f.text_field :experience_start_date %>
@@ -60,6 +70,8 @@
     <%= f.check_box :experience_current_position %>
   <p>
   <p>
+  <br>
+  <br>
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

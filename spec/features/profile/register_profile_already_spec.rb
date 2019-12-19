@@ -1,18 +1,32 @@
 require "rails_helper"
 
 feature 'Register new Profile' do
-  scenario "I can register a new profile" do
+    
+  scenario "I can not register a new profile with email already in use" do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create(email:'elaine@gmail.com', password:123123, role:'candidate')
-    
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
     login_as(user, scope: :candidate)
 
+    Profile.create!(skill: skill, joblevel: joblevel, user: user, 
+      name:'Roberson', social_name: 'Roberson Miguel', 
+      address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
+      date_birth: '1979-09-20',  languages: "inglês(basico)", 
+      education_level: 'graduado', education_status: 'concluido', 
+      education_institution: 'Senac', education_course: 'Ciências da computação', 
+      education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 
+      experience_reponsibility: 'Gerenciava informatica e financeiro' , 
+      experience_role: 'Supervisor de tesouraria', 
+      experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
+      experience_current_position: false, email: user.email )
+
     visit root_path
-    
+  
     click_link "Perfil Candidato"
     click_link "Novo Perfil"
+
+    expect(page).to have_content(current_user.email)
 
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
@@ -41,9 +55,6 @@ feature 'Register new Profile' do
     click_button 'Enviar'
 
     expect(page).to have_content('Roberson')
-  
-
-  end
-    
+  end    
   
 end

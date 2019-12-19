@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
     end
     
     def new
-      
       @profile = Profile.new
       @skills = Skill.all
       @joblevels = Joblevel.all
@@ -15,7 +14,6 @@ class ProfilesController < ApplicationController
     end
     
     def show
-      
       @skills  = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
