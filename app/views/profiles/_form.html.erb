@@ -7,10 +7,8 @@
 
 <%= form_for(profile) do |f| %>
   
+
   <p>
-    <%= f.label :email, "Email #{current_user.email}" %>
-    <br>
-    <br>
     <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
     <%= f.label :social_name, "Nome Social" %>
@@ -60,15 +58,13 @@
     <%= f.label :skill_id, 'Habilidades' %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %>
     <br>
-  </p>
-  <p>
+    <br>
     <%= f.label :experience_start_date, "Data Entrada" %>
     <%= f.text_field :experience_start_date %>
     <%= f.label :experience_end_date, "Data Saida" %>
     <%= f.text_field :experience_end_date %>
     <%= f.label :experience_current_position, 'Atual?' %>
     <%= f.check_box :experience_current_position %>
-  <p>
   <p>
   <br>
   <br>

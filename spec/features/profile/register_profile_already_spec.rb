@@ -26,8 +26,6 @@ feature 'Register new Profile' do
     click_link "Perfil Candidato"
     click_link "Novo Perfil"
 
-    expect(page).to have_content(current_user.email)
-
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
     fill_in 'Data Nascimento', with: '1979-09-20'

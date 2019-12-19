@@ -9,7 +9,7 @@ feature 'Editing a Profile' do
 
     login_as(user, scope: :candidate)
 
-    Profile.create!(skill: skill, joblevel: joblevel, user: user, email: user, 
+    Profile.create!(skill: skill, joblevel: joblevel, user: user, 
                     name:'Roberson', social_name: 'Roberson Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
                     date_birth: '1979-09-20',  languages: "inglês(basico)", 
@@ -27,8 +27,6 @@ feature 'Editing a Profile' do
     click_link "Perfil Candidato"
     click_link "Roberson"
     click_link "Editar"
-
-    expect(page).to have_content(current_user.email)
 
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
