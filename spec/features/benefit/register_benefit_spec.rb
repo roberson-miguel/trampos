@@ -3,7 +3,14 @@ require "rails_helper"
 feature 'Create new Benefit' do
   scenario "I can create a new benefit" do
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
     click_link "Beneficios"
     click_link "Novo beneficio"
 
@@ -17,7 +24,14 @@ feature 'Create new Benefit' do
 
   scenario "I can not create a new benefit empty" do
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
     click_link "Beneficios"
     click_link "Novo beneficio"
 
@@ -33,7 +47,14 @@ feature 'Create new Benefit' do
 
     Benefit.create(name:'Vale transporte')
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
     click_link "Beneficios"
     click_link "Novo beneficio"
 
@@ -48,7 +69,14 @@ feature 'Create new Benefit' do
 
     Benefit.create(name:'Vale transporte')
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
     click_link "Beneficios"
     click_link "Novo beneficio"
 

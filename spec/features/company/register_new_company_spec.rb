@@ -3,7 +3,15 @@ require "rails_helper"
 feature 'Create new Company' do
   scenario "I can create a new company" do
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+
     click_link "Empresas"
     click_link "Nova empresa"
 
@@ -24,7 +32,15 @@ feature 'Create new Company' do
 
   scenario "I can not create a new company empty" do
 
+     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+
     click_link "Empresas"
     click_link "Nova empresa"
 
@@ -40,7 +56,15 @@ feature 'Create new Company' do
 
     Company.create(name: 'Campus Code', cnpj: '05.372.840/0001-07', address: 'Alameda Santos, 011', description: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails')
 
+     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+
     click_link "Empresas"
     click_link "Nova empresa"
 
@@ -58,7 +82,15 @@ feature 'Create new Company' do
 
     Company.create(name: 'Campus Code', cnpj: '05.372.840/0001-07', address: 'Alameda Santos, 011', description: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails')
 
+     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+    
     click_link "Empresas"
     click_link "Nova empresa"
 

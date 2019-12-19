@@ -3,7 +3,15 @@ require "rails_helper"
 feature 'Create new Jobleevel' do
   scenario "I can create a new joblevel" do
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+    
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
 
@@ -17,7 +25,15 @@ feature 'Create new Jobleevel' do
 
   scenario "I can not create a new Joblevel empty" do
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
 
@@ -33,7 +49,15 @@ feature 'Create new Jobleevel' do
 
     Joblevel.create(name:'Junior')
 
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
 
@@ -48,7 +72,15 @@ feature 'Create new Jobleevel' do
 
     Joblevel.create(name:'Junior')
 
+     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+    
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
 

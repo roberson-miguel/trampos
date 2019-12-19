@@ -20,7 +20,15 @@ feature 'View a Profile' do
                     experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
                     experience_current_position: false )
 
+                   
+
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+    
     click_link "Perfil Candidato"
     click_link "Roberson Miguel"
       

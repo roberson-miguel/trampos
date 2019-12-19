@@ -1,25 +1,32 @@
 <h1>Trampos....</h1>
 <ul>
-    <li><%= link_to "Vagas", jobs_path %></li>
-    <li><%= link_to "Empresas", companies_path %></li>
-    <li><%= link_to "Habilidades", skills_path %></li>
-    <li><%= link_to "Nivel Vaga", joblevels_path %></li>
-    <li><%= link_to "Beneficios", benefits_path %></li>
-    <li><%= link_to "Perfil Candidato", profiles_path %></li>
-    <br>
-    <br>
 
-    <% if user_signed_in? %> 
-        <p>Olá <%= current_user.email %></p><br>
+ <% if user_signed_in? %> 
+    <p>Olá <%= current_user.email %></p><br>
 
-       
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
-        <%= link_to "Editar conta", edit_user_registration_path %><br>
-       
-  
-    <% else %>
-        <%= link_to 'Entrar', new_user_session_path %><br>
-         <%= link_to "Registrar conta", new_user_registration_path %><br>
+    
+    <% if current_user.headhunter? %>
+        <li><%= link_to "Vagas", jobs_path %></li>
+        <li><%= link_to "Empresas", companies_path %></li>
+        <li><%= link_to "Habilidades", skills_path %></li>
+        <li><%= link_to "Nivel Vaga", joblevels_path %></li>
+        <li><%= link_to "Beneficios", benefits_path %></li>
+        <br>
+        <br>
+    <% else  current_user.candidate? %>
+        <li><%= link_to "Vagas", jobs_path %></li>
+        <li><%= link_to "Perfil Candidato", profiles_path %></li>
+        <br>
     <% end %>
 
+ <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
+ <%= link_to "Editar conta", edit_user_registration_path %><br>
+    
+
+<% end %>
+
+<% if not user_signed_in? %>
+    <%= link_to 'Entrar', new_user_session_path %><br>
+    <%= link_to "Registrar conta", new_user_registration_path %><br>  
+<% end %>
 </ul>

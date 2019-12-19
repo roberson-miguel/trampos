@@ -1,21 +1,28 @@
 <h3>Vagas</h3>
 
-<%= form_with url: search_jobs_path, local: true, method: :get do %>
-  <%= label_tag(:q, 'Pesquisar Vaga') %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag 'Buscar' %>
+<% if user_signed_in? %> 
+  
+    <p>Olá <%= current_user.email %></p><br>
+    <%= form_with url: search_jobs_path, local: true, method: :get do %>
+      <%= label_tag(:q, 'Pesquisar Vaga') %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag 'Buscar' %>
+    <% end %>
+    <br>
+    <br>
+    <% if current_user.headhunter? %>
+        <%= link_to "Nova vaga", new_job_path %> <br><br>
+    <% end %>
+
+    <% if @jobs.empty? %>
+        <p> Não existem vagas cadastradas</p>
+    <% end %>
+
+    <% @jobs.each do |job| %>
+        <%= link_to job.title, job_path(job) %><br>
+    <% end %>
+
 <% end %>
 <br>
-<br>
-<%= link_to "Nova vaga", new_job_path %> <br><br>
-
-<% if @jobs.empty? %>
-    <p> Não existem vagas cadastradas</p>
-<% end %>
-
-<% @jobs.each do |job| %>
-    <%= link_to job.title, job_path(job) %><br>
-<% end %>
-
-<br><br>   
+<br>   
 <%= link_to 'Voltar', root_path %>

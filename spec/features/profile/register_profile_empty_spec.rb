@@ -6,8 +6,14 @@ feature 'Register new Profile' do
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
-    login_as(user, scope: :candidate)
+
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
+    
     click_link "Perfil Candidato"
     click_link "Novo Perfil"
 
@@ -26,7 +32,7 @@ feature 'Register new Profile' do
     select 'Concluido', from: 'Status do Curso'
     fill_in 'Data conclusão', with: ' '
 
-    fill_in 'Experiencia Profissional', with: ' '
+    fill_in 'Empresa', with: ' '
     fill_in 'Responsabilidades', with: ' '
     fill_in 'Cargo', with: ' '
     select "#{joblevel.name}", from: 'Nivel Cargo'

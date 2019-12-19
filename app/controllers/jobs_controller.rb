@@ -1,7 +1,9 @@
 class JobsController < ApplicationController
 
   before_action :set_find, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :search]
+  #before_action :authorize_admin
+  #before_action :configure_permitted_parameters, if: :devise_controller?
 
     def index
       @jobs = Job.all

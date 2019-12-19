@@ -21,7 +21,14 @@ feature 'Register new Profile' do
       experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
       experience_current_position: false, email: user.email )
 
+      
+
     visit root_path
+    click_link "Entrar"
+
+    fill_in 'Email', with: 'elaine@gmail.com'
+    fill_in 'Password', with:123123
+    click_button 'Log in'
   
     click_link "Perfil Candidato"
     click_link "Novo Perfil"
@@ -41,7 +48,7 @@ feature 'Register new Profile' do
     select 'Concluido', from: 'Status do Curso'
     fill_in 'Data conclusão', with: '2018-12-05'
 
-    fill_in 'Experiencia Profissional', with: 'Cia Mineradora Geral'
+    fill_in 'Empresa', with: 'Cia Mineradora Geral'
     fill_in 'Responsabilidades', with: 'Gerenciava informatica e financeiro'
     fill_in 'Cargo', with: 'Supervisor de tesouraria'
     select "#{joblevel.name}", from: 'Nivel Cargo'
