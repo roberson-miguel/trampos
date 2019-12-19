@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   before_action :set_find, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :search]
+  before_action :authenticate_user!
   #before_action :authorize_admin
   #before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -35,18 +35,17 @@ class JobsController < ApplicationController
     
     def create
       @job = Job.new(job_params)
-
-      if @job.save
-        flash[:notice] = 'Vaga criada com sucesso.'
-        redirect_to @job
-      else
-        @skills = Skill.all
-        @joblevels = Joblevel.all
-        @companies = Company.all
-        @benefits = Benefit.all
-        flash[:alert] = 'Erro jobs'
-        render :new
-      end
+        if @job.save
+          flash[:notice] = 'Vaga criada com sucesso.'
+          redirect_to @job
+        else
+          @skills = Skill.all
+          @joblevels = Joblevel.all
+          @companies = Company.all
+          @benefits = Benefit.all
+          flash[:alert] = 'Erro jobs'
+          render :new
+        end
     end
     
     def update
