@@ -1,10 +1,28 @@
-<h1>Perfil</h1>
+<h1>Perfil Candidato</h1>
 <br>
 
 <h3>Nome: <%= @profile.name %></h3>
-<h3>Email:<%= @profile.email %></h3>
-
-
+<h3>Nome Social:<%= @profile.social_name %></h3>
+<h3>Endereço: <%= @profile.address %></h3>
+<h3>Celular:<%= @profile.cellphone %></h3>
+<h3>Data Nascimento <%= @profile.date_birth %></h3>
+<h3>Idiomas:<%= @profile.languages %></h3>
+<h3>Instituição de Ensino: <%= @profile.education_institution%></h3>
+<h3>Nivel Educacional:<%= @profile.education_level %></h3>
+<h3>Status do Curso: <%= @profile.education_status %></h3>
+<h3>Curso: <%= @profile.education_course %></h3>
+<h3>Data Conclusão: <%= @profile.education_end_date %></h3>
+<h3>Experiencia Profissional: <%= @profile.experience_company %></h3>
+<h3>Responsabilidades: <%= @profile.experience_reponsibility %></h3>
+<h3>Cargo: <%= @profile.experience_role%></h3>
+<h3>Nivel do Cargo: <%= @profile.joblevel.name %></h3>
+<h3>Habilidades: <%= @profile.skill.name %></h3>
+<h3>Data inicio: <%= @profile.experience_start_date %></h3>
+<% if @profile.experience_current_position? %>
+    <h3>Atual Emprego </h3>
+<% else %>
+    <h3>Data inicio: <%= @profile.experience_end_date %></h3>
+<% end %>
 <%= link_to 'Voltar', profiles_path %>
 
 <% if current_user.candidate?%>
