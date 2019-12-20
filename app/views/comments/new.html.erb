@@ -1,0 +1,20 @@
+<h1> Comentando um Perfil</h1>
+
+<%= form_for ([@profile, @comment]) do |f| %>
+    <p>
+        <%= f.label :name, "Nome" %><br>
+        <%= f.text_field :name %>
+    </p>
+        <%= f.label :rating, "Estrelas" %><br>
+        <%= f.select :rating, Comment::RATING , prompt: "Quantas estrelas"%>
+    </p>
+    </p>
+        <%=f.label :comment, "Comentário" %><br>
+        <%= f.text_area :comment, placeholder:"Escreva seu comentário" %>
+    </p>
+    <p>
+        <%= f.submit "Comentar" %>
+    </p>
+<% end %>
+
+

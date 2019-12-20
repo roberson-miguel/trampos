@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature 'Deleting a Profile' do
-  scenario "I can delete a profile" do
+  xscenario "I can delete a profile" do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')

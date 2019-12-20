@@ -18,14 +18,16 @@
 <h3>Nivel do Cargo: <%= @profile.joblevel.name %></h3>
 <h3>Habilidades: <%= @profile.skill.name %></h3>
 <h3>Data inicio: <%= @profile.experience_start_date %></h3>
+
 <% if @profile.experience_current_position? %>
     <h3>Atual Emprego </h3>
 <% else %>
     <h3>Data inicio: <%= @profile.experience_end_date %></h3>
 <% end %>
 <%= link_to 'Voltar', profiles_path %>
-<%= link_to 'Novo Comentario', edit_profile_path(@profile) %>
+<%= link_to 'Novo Comentario', new_profile_comment_path(@profile) %>
 <%= link_to pluralize(@profile.comments.size, 'Comentário', 'Comentários'), profile_comments_path(@profile) %>
+
 
 <% if current_user.candidate?%>
     <%= link_to 'Editar', edit_profile_path(@profile) %>

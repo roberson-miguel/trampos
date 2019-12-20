@@ -24,6 +24,7 @@
 
  <%= link_to 'Sair', destroy_user_session_path, method: :delete %><br>
  <%= link_to "Editar conta", edit_user_registration_path %><br>
+ <%= link_to "Novo Perfil", new_profile_path %> <br><br>
     
 
 <% end %>
@@ -31,5 +32,6 @@
 <% if not user_signed_in? %>
     <%= link_to 'Entrar', new_user_session_path %><br>
     <%= link_to "Registrar conta", new_user_registration_path %><br>  
+    
 <% end %>
 </ul>

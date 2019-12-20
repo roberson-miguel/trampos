@@ -15,7 +15,7 @@ feature 'Register new Profile' do
     click_button 'Log in'
     
     click_link "Perfil Candidato"
-    click_link "Novo Perfil"
+    click_link "Editar Perfil"
 
     fill_in 'Nome', with: ' '
     fill_in 'Nome Social', with: ' '
