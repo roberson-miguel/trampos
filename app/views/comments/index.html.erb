@@ -1,0 +1,13 @@
+<h1> Exibindo comentarios</h1>
+<ul>
+    <% @comments.each do |comment| %>
+        <p>
+            <%= comment.name %> 
+            <%= pluralize(comment.rating, 'estrela', 'estrelas')%>
+            <%= time_ago_in_words(comment.created_at) %> atrás
+        </p>
+        <p>
+            <%= comment.comment %>
+        </p>
+    <% end %>
+</ul>

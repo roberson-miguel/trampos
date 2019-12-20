@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
     end
     
     def show
+      @comments = Comment.all
       @skills  = Skill.all
       @joblevels = Joblevel.all
       @users = User.all

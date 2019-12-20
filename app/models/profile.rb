@@ -2,6 +2,7 @@ class Profile < ApplicationRecord
     belongs_to :user
     belongs_to :joblevel
     belongs_to :skill
+    has_many :comments, dependent: :destroy
 
     validates :email,  uniqueness: {message: '...já está em uso'}
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}

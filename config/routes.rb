@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :profiles do
     get 'search', on: :collection
+    resources :comments
   end
   resources :companies
   resources :skills

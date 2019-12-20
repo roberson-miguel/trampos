@@ -24,6 +24,7 @@
     <h3>Data inicio: <%= @profile.experience_end_date %></h3>
 <% end %>
 <%= link_to 'Voltar', profiles_path %>
+<%= link_to 'Novo Comentario', edit_profile_path(@profile) %>
 
 <% if current_user.candidate?%>
     <%= link_to 'Editar', edit_profile_path(@profile) %>
