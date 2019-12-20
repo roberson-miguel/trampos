@@ -76,7 +76,7 @@ class JobsController < ApplicationController
       #@jobs = Job.where('title like ?', "%#{params[:q]}%")
 
       #busca parcial em dois atributos(teste)
-      @jobs = Job.where('title OR description like ?', "%#{params[:q]}%")
+      @jobs = Job.where('title like ? OR description like ?', "%#{params[:q]}%", "%#{params[:q]}%")
 
       #Busca exata do termo pesquisado
       #@jobs = Job.where(title: params[:q])

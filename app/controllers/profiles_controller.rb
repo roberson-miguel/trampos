@@ -61,7 +61,8 @@ class ProfilesController < ApplicationController
     def search
         
       #busca parcial em dois atributos
-      @profiles = Profile.where("education_course OR experience_reponsibility like ?", "%#{params[:q]}%")
+      @profiles = Profile.where("education_course LIKE ? OR experience_reponsibility LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+
 
       #Busca exata do termo pesquisado
       #@jobs = Job.where(title: params[:q])
