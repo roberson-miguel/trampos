@@ -1,13 +1,20 @@
 <h1> Exibindo comentarios</h1>
 <ul>
-    <% @comments.each do |comment| %>
-        <p>
-            <%= comment.name %> 
-            <%= pluralize(comment.rating, 'estrela', 'estrelas')%>
-            <%= time_ago_in_words(comment.created_at) %> atrás
-        </p>
-        <p>
-            <%= comment.comment %>
-        </p>
+    <% if @profile.comments.size > 0 %>
+        <% @comments.each do |comment| %>
+            <p>
+                <%= comment.name %> 
+                <%= pluralize(comment.rating, 'estrela', 'estrelas')%>
+                <%= time_ago_in_words(comment.created_at) %> atrás
+            </p>
+            <p>
+                <%= comment.comment %>
+            </p>
+        <% end %>
+    <% else %>
+        <h3> Não existe comentários</h3>
     <% end %>
+    
 </ul>
+
+<%= link_to 'Voltar', profiles_path %>

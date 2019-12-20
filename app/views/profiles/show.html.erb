@@ -25,6 +25,7 @@
 <% end %>
 <%= link_to 'Voltar', profiles_path %>
 <%= link_to 'Novo Comentario', edit_profile_path(@profile) %>
+<%= link_to pluralize(@profile.comments.size, 'Comentário', 'Comentários'), profile_comments_path(@profile) %>
 
 <% if current_user.candidate?%>
     <%= link_to 'Editar', edit_profile_path(@profile) %>
