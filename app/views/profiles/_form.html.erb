@@ -68,7 +68,7 @@
     <%= f.label :experience_end_date, "Data Saida" %>
     <%= f.text_field :experience_end_date %>
     <%= f.label :experience_current_position, 'Atual?' %>
-    <%= f.check_box :experience_current_position, checked: @profile.new_record? || f.object.subscribe?%>
+    <%= f.check_box :experience_current_position, checked: @profile.new_record? %>
 
   <p>
   <br>
