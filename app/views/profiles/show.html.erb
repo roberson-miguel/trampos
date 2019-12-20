@@ -2,9 +2,12 @@
 <br>
 
 <h3>Nome: <%= @profile.name %></h3>
-<h3>Email: <%= @profile.email %></h3>
+<h3>Email:<%= @profile.email %></h3>
 
 
 <%= link_to 'Voltar', profiles_path %>
-<%= link_to 'Editar', edit_profile_path(@profile) %>
-<%= link_to 'Deletar', profile_path(@profile), method: :delete, data: { confirm: "Confirma exclusão do perfil: #{@profile.name}?" } %>
+
+<% if current_user.candidate?%>
+    <%= link_to 'Editar', edit_profile_path(@profile) %>
+    <%= link_to 'Deletar', profile_path(@profile), method: :delete, data: { confirm: "Confirma exclusão do perfil: #{@profile.name}?" } %>
+<% end %>

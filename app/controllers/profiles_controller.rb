@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     end
     
     def new
-      @profile = Profile.new
+      @profile = current_user.build_profile
       @skills = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
@@ -22,7 +22,6 @@ class ProfilesController < ApplicationController
     end
 
     def edit
-      @profiles = Profile.all
       @skills  = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
@@ -30,8 +29,7 @@ class ProfilesController < ApplicationController
 
 
     def create
-      @profile = Profile.new(profile_params)
-      @profile.email = current_user
+      @profile = current_user.build_profile(profile_params)
       if @profile.save
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
@@ -49,6 +47,9 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         redirect_to @profile
       else
+        @skills = Skill.all
+        @joblevels = Joblevel.all
+        @users = User.all
         render :edit
       end
     end
@@ -59,19 +60,7 @@ class ProfilesController < ApplicationController
     end
 
     def search
-        
-      #busca parcial em dois atributos
-      @profiles = Profile.where("education_course LIKE ? OR experience_reponsibility LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
-
-
-      #Busca exata do termo pesquisado
-      #@jobs = Job.where(title: params[:q])
-      
-      #busca um unico registro encontrado
-      #@job = Job.find_by(title: params[:q])
-      
-      # exibe as pesquisa na index
-      #render :index 
+       @profiles = Profile.where("education_course LIKE ? OR experience_reponsibility LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
     end
 
   private
