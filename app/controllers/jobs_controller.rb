@@ -72,8 +72,11 @@ class JobsController < ApplicationController
 
     def search
         
-      #busca parcial
-      @jobs = Job.where('title like ?', "%#{params[:q]}%")
+      #busca parcial em unico atributo
+      #@jobs = Job.where('title like ?', "%#{params[:q]}%")
+
+      #busca parcial em dois atributos(teste)
+      @jobs = Job.where('title OR description like ?', "%#{params[:q]}%")
 
       #Busca exata do termo pesquisado
       #@jobs = Job.where(title: params[:q])
@@ -83,7 +86,7 @@ class JobsController < ApplicationController
       
       # exibe as pesquisa na index
       #render :index 
-  end
+    end
 
 
 private

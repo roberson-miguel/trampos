@@ -1,0 +1,19 @@
+<h1>Pesquisando Candidatos</h1>
+
+<p>Olá <%= current_user.email %></p><br>
+    <%= form_with url: search_profiles_path, local: true, method: :get do %>
+      <%= label_tag(:q, 'Pesquisar Canditato') %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag 'Buscar' %>
+<% end %>
+
+<% if @profiles.empty? %>
+    <p> Não existem candidados cadastrados</p>
+<% end %>
+
+<% @profiles.each do |profile| %>
+    <%= link_to profile.name, profile_path(profile) %><br>
+<% end %>
+<br>
+<br>
+<%= link_to 'Voltar', profiles_path %>

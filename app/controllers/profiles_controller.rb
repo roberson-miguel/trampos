@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
 
     before_action :set_find, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
+    
 
     def index
       @profiles = Profile.all
@@ -56,6 +58,20 @@ class ProfilesController < ApplicationController
       redirect_to @profile, notice: 'Perfil excluido com sucesso'
     end
 
+    def search
+        
+      #busca parcial em dois atributos
+      @profiles = Profile.where("education_course OR experience_reponsibility like ?", "%#{params[:q]}%")
+
+      #Busca exata do termo pesquisado
+      #@jobs = Job.where(title: params[:q])
+      
+      #busca um unico registro encontrado
+      #@job = Job.find_by(title: params[:q])
+      
+      # exibe as pesquisa na index
+      #render :index 
+    end
 
   private
 

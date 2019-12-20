@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :users
 
-  resources :profiles
+  resources :profiles do
+    get 'search', on: :collection
+  end
   resources :companies
   resources :skills
   resources :joblevels

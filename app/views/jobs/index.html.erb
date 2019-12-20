@@ -3,10 +3,11 @@
 <% if user_signed_in? %> 
   
     <p>Olá <%= current_user.email %></p><br>
+    
     <%= form_with url: search_jobs_path, local: true, method: :get do %>
-      <%= label_tag(:q, 'Pesquisar Vaga') %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag 'Buscar' %>
+        <%= label_tag(:q, 'Pesquisar Vaga') %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag 'Buscar' %>
     <% end %>
     <br>
     <br>

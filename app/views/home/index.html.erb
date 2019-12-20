@@ -13,6 +13,9 @@
         <li><%= link_to "Beneficios", benefits_path %></li>
         <br>
         <br>
+        <li><%= link_to "Pesquisar Candidato", profiles_path %></li>
+        <br>
+        <br>
     <% else  current_user.candidate? %>
         <li><%= link_to "Vagas", search_jobs_path %></li>
         <li><%= link_to "Perfil Candidato", profiles_path %></li>
