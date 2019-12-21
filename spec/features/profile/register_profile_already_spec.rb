@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature 'Register new Profile' do
     
-  xscenario "I can not register a new profile with email already in use" do
+  scenario "I can not register a new profile with email already in use" do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
