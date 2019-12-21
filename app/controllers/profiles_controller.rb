@@ -81,6 +81,17 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
     end
 
+    protect_from_forgery with: :exception
+
+    def after_sign_in_path_for(resource)
+      if current_user.completed_profile?
+        redirect_to root_path
+      else
+        redirect_to edit_profile_path
+      end
+    end
+
+
 
 end
 
