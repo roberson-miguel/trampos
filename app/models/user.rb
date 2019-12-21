@@ -15,4 +15,5 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :jobs, dependent: :destroy
 
+
 end

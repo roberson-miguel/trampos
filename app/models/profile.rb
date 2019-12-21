@@ -5,6 +5,7 @@ class Profile < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_one_attached :avatar
 
+
     #validates :email,  uniqueness: {message: '...já está em uso'}
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}
     validates :name, length: { minimum: 5, message: '....deve ter tamanho minimo de 5 caracter'}
