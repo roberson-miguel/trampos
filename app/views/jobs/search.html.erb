@@ -1,20 +1,43 @@
 <h1>Pesquisando Vagas</h1>
 
-<p>Olá <%= current_user.email %></p><br>
+<% if user_signed_in? %> 
+  
+    <p>Olá <%= current_user.email %></p><br>
+    
     <%= form_with url: search_jobs_path, local: true, method: :get do %>
-      <%= label_tag(:q, 'Pesquisar Vaga') %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag 'Buscar' %>
-<% end %>
+        <%= label_tag(:q, 'Pesquisar Vaga') %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag 'Buscar' %>
+    <% end %>
+    <br>
+    <br>
+    <% if current_user.headhunter? %>
+        <%= link_to "Nova vaga", new_job_path %> <br><br>
+    
+        <% if @jobs.empty? %>
+            <p> Não existem vagas cadastradas</p>
+        <% end %>
 
-<% if @jobs.empty? %>
-    <p> Não existem vagas para essa pesquisa</p>
-<% end %>
+        <% @jobs.each do |job| %>
+            <%= link_to job.title, job_path(job) %> Status Vaga: <%= job.status %>
+        <% end %>
+   
+    <% end %>
 
-<% @jobs.each do |job| %>
-    <% if job.status == 'ativa' %>
-        <%= link_to job.title, job_path(job) %><br>
-    <%end %>
+    <% if current_user.candidate? %>
+
+         <% if @jobs.empty? %>
+            <p> Não existem vagas cadastradas </p>
+        <% end %>
+        
+        <% @jobs.each do |job| %>
+            <% if job.status == 'ativa' %>
+                <%= link_to job.title, job_path(job) %><br>
+            <%end %>
+        <% end %>
+
+    <% end %>
+
 <% end %>
 
 <br>

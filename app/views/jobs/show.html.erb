@@ -1,17 +1,25 @@
-<h1>Vaga </h1>
-<h3>Titulo: <%= @job.title %></h3>
-<h3>Descrição: <%= @job.description %></h3>
-<h3>Local de trabalho: <%= @job.workplace %></h3>
-<h3>Encerra: <%= @job.end_date %></h3>
-<h3>Faixa salarial: <%= @job.salary_range %></h3>
-<h3>Habilidades: <%= @job.skill.name %></h3>
-<h3>Empresa: <%= @job.company.name %></h3>
-<h3>Nivel Vaga: <%= @job.joblevel.name %></h3>
-<h3>Beneficio: <%= @job.benefit.name %></h3>
-<h3>Criado por: <%= current_user.email %>
-<h3>Status Vaga: <%= @job.status %></h3>
+<% if user_signed_in? %> 
+    <h1>Vaga </h1>
+    <h3>Titulo: <%= @job.title %>  <%= link_to 'Aplicar Vaga', jobs_path %></h3>
+    <h3>Descrição: <%= @job.description %></h3>
+    <h3>Local de trabalho: <%= @job.workplace %></h3>
+    <h3>Encerra: <%= @job.end_date %></h3>
+    <h3>Faixa salarial: <%= @job.salary_range %></h3>
+    <h3>Habilidades: <%= @job.skill.name %></h3>
+    <h3>Empresa: <%= @job.company.name %></h3>
+    <h3>Nivel Vaga: <%= @job.joblevel.name %></h3>
+    <h3>Beneficio: <%= @job.benefit.name %></h3>
+    <h3>Criado por: <%= current_user.email %>
+    <h3>Status Vaga: <%= @job.status %></h3>
+
+
+
+    <% if current_user.headhunter? %>
+        <%= link_to 'Editar', edit_job_path(@job) %>
+        <%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>
+    <% end %>
+
+<% end %>
 
 
 <%= link_to 'Voltar', jobs_path %>
-<%= link_to 'Editar', edit_job_path(@job) %>
-<%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>
