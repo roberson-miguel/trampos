@@ -35,6 +35,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Autenticação de usuarios https://github.com/plataformatec/devise
 gem 'devise'
 
+gem 'image_processing'
+
 #adicionando twitter bootstrap e javascript
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

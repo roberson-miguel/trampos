@@ -8,12 +8,12 @@ class CommentsController < ApplicationController
     end
       
     def new
-        #@profile = Profile.find(params[:profile_id])
+        
         @comment = @profile.comments.new
     end
       
     def create
-        #@profile = Profile.find(params[:profile_id])
+        @comment.name = current_user
         @comment = @profile.comments.new(comment_params)
         if @comment.save
             flash[:notice] = 'Comentario concluido com sucesso'
