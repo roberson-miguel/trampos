@@ -20,9 +20,9 @@
     <% end %>
 
     <% @jobs.each do |job| %>
-        <% if job.status == 'ativa' %>
-            <%= link_to job.title, job_path(job) %><br>
-        <%end %>
+        
+        <%= link_to job.title, job_path(job) %> Status Vaga: <%= job.status %>
+      
     <% end %>
 
 <% end %>
