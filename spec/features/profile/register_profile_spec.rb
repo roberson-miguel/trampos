@@ -14,15 +14,14 @@ feature 'Register new Profile' do
     fill_in 'Password', with:123123
     click_button 'Log in'
     
-    click_link "Perfil Candidato"
-    click_link "Editar Perfil"
+    click_link "Novo Perfil"
 
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
     fill_in 'Data Nascimento', with: '1979-09-20'
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
-    select "#{user.role}", from: 'Tipo de Perfil'
+    #select "#{user.role}", from: 'Tipo de Perfil'
 
     select "Inglês(Basico)", from: 'Idiomas'
 

@@ -24,12 +24,13 @@
 <% else %>
     <h3>Data inicio: <%= @profile.experience_end_date %></h3>
 <% end %>
+
 <%= link_to 'Voltar', profiles_path %>
 <%= link_to 'Novo Comentario', new_profile_comment_path(@profile) %>
 <%= link_to pluralize(@profile.comments.size, 'Comentário', 'Comentários'), profile_comments_path(@profile) %>
 
 
 <% if current_user.candidate?%>
-    <%= link_to 'Editar', edit_profile_path(@profile) %>
+    <%= link_to 'Editar Perfil', edit_profile_path(@profile) %>
     <%= link_to 'Deletar', profile_path(@profile), method: :delete, data: { confirm: "Confirma exclusão do perfil: #{@profile.name}?" } %>
 <% end %>

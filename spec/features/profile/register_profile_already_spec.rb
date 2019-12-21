@@ -30,8 +30,8 @@ feature 'Register new Profile' do
     fill_in 'Password', with:123123
     click_button 'Log in'
   
-    click_link "Perfil Candidato"
- 
+    click_link "Novo Perfil"
+    
 
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'

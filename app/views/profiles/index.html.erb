@@ -4,40 +4,22 @@
 
     <p>Olá <%= current_user.email %></p><br>
 
-    <% if current_user.headhunter? %>
-        <%= form_with url: search_profiles_path, local: true, method: :get do %>
-            <%= label_tag(:q, 'Pesquisar Canditato') %>
-            <%= text_field_tag(:q) %>
-            <%= submit_tag 'Buscar' %>
-        <% end %>
-
-        <% if @profiles.empty? %>
-            <p> Não existem perfis cadastrados</p>
-        <% end %>
-
-        <% @profiles.each do |profile| %>
-            <%= link_to profile.name, profile_path(profile) %><br>
-        <% end %>
-
-        <%= link_to 'Voltar', root_path %>
-
+    
+    <%= form_with url: search_profiles_path, local: true, method: :get do %>
+        <%= label_tag(:q, 'Pesquisar Canditato') %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag 'Buscar' %>
     <% end %>
 
-    <br><br>
-
-    <% if current_user.candidate? %>
-        <%= link_to "Editar Perfil", edit_profile_path(current_user) %> <br><br>
-
-        <%= link_to 'Voltar', root_path %>
+    <% if @profiles.empty? %>
+        <p> Não existem perfis cadastrados</p>
     <% end %>
 
-
-<% else %>
-
-    <br><br><br>   
-
-    <%= link_to "Novo Perfil", new_profile_path %> <br><br>
-
-    <%= link_to 'Voltar', root_path %>
+    <% @profiles.each do |profile| %>
+        <%= link_to profile.name, profile_path(profile) %><br>
+    <% end %>
 
 <% end %>
+<br>
+<br>
+<%= link_to 'Voltar', root_path %>

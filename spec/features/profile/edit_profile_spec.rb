@@ -10,7 +10,7 @@ feature 'Editing a Profile' do
     login_as(user, scope: :candidate)
 
     Profile.create!(skill: skill, joblevel: joblevel, user: user, 
-                    name:'Roberson', social_name: 'Miguel', 
+                    name:'Roberson Miguel', social_name: 'Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
                     date_birth: '1979-09-20',  languages: "inglês(basico)", 
                     education_level: 'graduado', education_status: 'concluido', 
@@ -33,14 +33,16 @@ feature 'Editing a Profile' do
     click_button 'Log in'
 
     click_link "Perfil Candidato"
+    click_link "Roberson Miguel"
     click_link "Editar Perfil"
+    
 
-    fill_in 'Nome', with: 'Roberson Miguel'
+    fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Bios'
     fill_in 'Data Nascimento', with: '1979-09-20'
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: 'Rua Rodolfo Mayer, 127 - São Paulo'
-    select "#{user.role}", from: 'Tipo de Perfil'
+    #select "#{user.role}", from: 'Tipo de Perfil'
 
     select "Inglês(Basico)", from: 'Idiomas'
 
@@ -62,7 +64,7 @@ feature 'Editing a Profile' do
     click_button 'Enviar'
 
       
-    expect(page).to have_content('Roberson Miguel')
+    expect(page).to have_content('Roberson')
 
   end
 end

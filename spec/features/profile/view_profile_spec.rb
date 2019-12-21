@@ -30,7 +30,7 @@ feature 'View a Profile' do
     click_button 'Log in'
     
     click_link "Perfil Candidato"
-    click_link "Editar Perfil"
+    click_link "Roberson Miguel"
     
       
     expect(page).to have_content('Roberson Miguel')

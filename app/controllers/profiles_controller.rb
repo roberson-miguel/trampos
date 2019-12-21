@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     end
     
     def new
-      @profile = current_user.build_profile
+      @profile = Profile.new
       @skills = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
 
 
     def create
-      @profile = current_user.build_profile(profile_params)
+      @profile = Profile.new(profile_params)
       if @profile.save
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
@@ -74,24 +74,12 @@ class ProfilesController < ApplicationController
                                       :education_course, :education_end_date,
                                       :experience_company, :experience_reponsibility,
                                       :experience_role, :experience_start_date,
-                                      :experience_end_date,:experience_current_position)
+                                      :experience_end_date,:experience_current_position, :profile_id)
     end
 
     def set_find
-      @profile = Profile.find(params[:id])
+         @profile = Profile.find(params[:id])
     end
-
-    protect_from_forgery with: :exception
-
-    def after_sign_in_path_for(resource)
-      if current_user.completed_profile?
-        redirect_to root_path
-      else
-        redirect_to edit_profile_path
-      end
-    end
-
-
 
 end
 

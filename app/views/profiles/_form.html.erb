@@ -20,6 +20,10 @@
     <%= f.label :address, 'Endereço' %>
     <%= f.text_field :address %>
   <p>
+  <p>
+    <%= f.label :user_id, 'Tipo de Perfil' %>	
+    <%= f.collection_select(:user_id, @users, :id, :role) %>	
+  <p>
   <br>
   <br>
   <p>
