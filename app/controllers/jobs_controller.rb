@@ -95,7 +95,7 @@ private
   def job_params
     params.require(:job).permit(:title, :description, :end_date, 
                                 :workplace, :salary_range, :company_id, 
-                                :benefit_id, :joblevel_id, :skill_id, :user_id)
+                                :benefit_id, :joblevel_id, :skill_id, :user_id, :status)
   end
 
   def set_find

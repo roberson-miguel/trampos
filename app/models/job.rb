@@ -6,7 +6,7 @@ class Job < ApplicationRecord
     belongs_to :user
     
 
-    validates :title, :description, :workplace, :end_date, :salary_range, presence: {message: '...deve ser informado'}
+    validates :title, :description, :workplace, :end_date, :salary_range, :status_job, presence: {message: '...deve ser informado'}
     
     enum salary_range: { "1000_até_3000": 0, "3001_até_5000": 15, "5001_até_8000": 30}
 
@@ -14,5 +14,10 @@ class Job < ApplicationRecord
         self.salary_range ||= :"1000_até_3000"
     end
 
+    enum status: { "ativa": 0, "desativada": 15}
+
+    def set_default_status
+        self.status ||= :"ativa"
+    end
     
 end

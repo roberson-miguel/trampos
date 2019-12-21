@@ -47,6 +47,11 @@
     <%= f.label :benefit_id, 'Beneficio' %>
     <%= f.collection_select(:benefit_id, @benefits, :id, :name) %>
   <p>
+  <p>
+    <%= f.label :status, 'Status Vaga' %>
+    <%= f.select(:status, Job.statuses.keys.map {|status| [status.titleize,status]}) %>
+  <p>
+
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

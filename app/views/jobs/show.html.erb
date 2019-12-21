@@ -9,6 +9,7 @@
 <h3>Nivel Vaga: <%= @job.joblevel.name %></h3>
 <h3>Beneficio: <%= @job.benefit.name %></h3>
 <h3>Criado por: <%= current_user.email %>
+<h3>Status Vaga: <%= @job.status_job %></h3>
 
 
 <%= link_to 'Voltar', jobs_path %>
