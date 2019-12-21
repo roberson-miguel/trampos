@@ -10,7 +10,7 @@ feature 'Headhunter Editing a jobs' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
                end_date: '2020-01-31', workplace:' Remoto', 
-               salary_range: '1000_até_3000', skill: skill, 
+               salary_range: '1000_até_3000', skill: skill, status: "ativa",
                joblevel: joblevel, company: company, benefit: benefit, user: user)
     
     

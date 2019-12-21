@@ -6,7 +6,7 @@ class Job < ApplicationRecord
     belongs_to :user
     
 
-    validates :title, :description, :workplace, :end_date, :salary_range, :status_job, presence: {message: '...deve ser informado'}
+    validates :title, :description, :workplace, :end_date, :salary_range, :status, presence: {message: '...deve ser informado'}
     
     enum salary_range: { "1000_até_3000": 0, "3001_até_5000": 15, "5001_até_8000": 30}
 

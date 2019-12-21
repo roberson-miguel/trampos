@@ -74,7 +74,7 @@ class ProfilesController < ApplicationController
                                       :education_course, :education_end_date,
                                       :experience_company, :experience_reponsibility,
                                       :experience_role, :experience_start_date,
-                                      :experience_end_date,:experience_current_position, :profile_id)
+                                      :experience_end_date,:experience_current_position)
     end
 
     def set_find

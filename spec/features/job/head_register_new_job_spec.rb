@@ -26,6 +26,7 @@ feature 'Headhunter Create a new Job' do
     fill_in 'Encerra', with: '2020-01-15'
     fill_in 'Local de trabalho', with: 'Remoto'
     select '1000 Até 3000', from: 'Faixa salarial'
+    select 'Ativa', from: 'Status Vaga'
     select "#{skill.name}", from: 'Habilidades'
     select "#{company.name}", from: 'Empresa'
     select "#{joblevel.name}", from: 'Nivel Vaga'
@@ -42,6 +43,7 @@ feature 'Headhunter Create a new Job' do
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('Junior')
     expect(page).to have_content('Vale transporte')
+    expect(page).to have_content('ativa')
   end
 
   scenario "Headhunter I can not create a new job empty" do

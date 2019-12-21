@@ -11,7 +11,7 @@ feature 'Candidate View a job' do
 
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
       end_date: '2020-01-31', workplace:' Remoto', 
-      salary_range: '1000_até_3000', skill: skill, 
+      salary_range: '1000_até_3000', skill: skill, status: 'ativa', 
       joblevel: joblevel, company: company, benefit: benefit, user: user)
       
     visit root_path
@@ -29,6 +29,7 @@ feature 'Candidate View a job' do
     expect(page).to have_content('2020-01-31')
     expect(page).to have_content('Remoto')
     expect(page).to have_content('1000_até_3000')
+    expect(page).to have_content('ativa')
     expect(page).to have_link('Voltar')
     expect(page).to have_link('Editar')
     expect(page).to have_link('Deletar')
