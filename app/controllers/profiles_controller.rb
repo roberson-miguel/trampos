@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
 
     def index
       @profiles = Profile.all
+      @jobs = Job.all
     end
     
     def new
@@ -13,6 +14,7 @@ class ProfilesController < ApplicationController
       @skills = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
+      @jobs = Job.all
     end
     
     def show
@@ -33,9 +35,9 @@ class ProfilesController < ApplicationController
     def create
       @profile = Profile.new(profile_params)
       @profile.email = current_user.email
-      current_user.status.andamento
+      @jobs = Job.all
       if @profile.save
-        
+        current_user.andamento!
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
         
@@ -79,7 +81,7 @@ class ProfilesController < ApplicationController
                                       :education_course, :education_end_date,
                                       :experience_company, :experience_reponsibility,
                                       :experience_role, :experience_start_date,
-                                      :experience_end_date,:experience_current_position, :avatar)
+                                      :experience_end_date,:experience_current_position, :avatar, :job_id)
     end
 
     def set_find

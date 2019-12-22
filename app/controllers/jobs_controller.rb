@@ -7,7 +7,7 @@ class JobsController < ApplicationController
 
     def index
       @jobs = Job.all
-     
+      @profiles = Profile.all
     end
     
     def new
@@ -41,6 +41,7 @@ class JobsController < ApplicationController
       @job = Job.new(job_params)
       @job.email = current_user.email
       @job.user_id = current_user.id
+      @profiles = Profile.all
         if @job.save
           flash[:notice] = 'Vaga criada com sucesso.'
           redirect_to @job

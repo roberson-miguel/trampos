@@ -18,14 +18,19 @@
                                 <br>
                             <% else  current_user.candidate? %>
                                 <li><%= link_to "Vagas", search_jobs_path %></li>
-                                <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
-                                <br>
+                                <% if current_user.andamento? %>
+                                    <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
+                                    <li><%= link_to 'Completar Perfil', edit_profile_path(current_user) %></li>
+                                    <br>
+                                <% end %>
                             <% end %>
                  
-       
+            
             <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to "Novo Perfil", new_profile_path %></li> 
-            <br>
+            <% if current_user.novoperfil?%>
+                <li><%= link_to "Novo Perfil", new_profile_path %></li> 
+                <br>
+            <% end %>
         <% else %>
             <li><%= link_to 'Entrar', new_user_session_path %><li>
             <br>

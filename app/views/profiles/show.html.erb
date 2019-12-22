@@ -26,7 +26,7 @@
     <h3>Data inicio: <%= @profile.experience_end_date %></h3>
 <% end %>
 
-<%= link_to 'Voltar', profiles_path %>
+<%= link_to 'Voltar', root_path %>
 <%= link_to 'Novo Comentario', new_profile_comment_path(@profile) %>
 <%= link_to pluralize(@profile.comments.size, 'Comentário', 'Comentários'), profile_comments_path(@profile) %>
 

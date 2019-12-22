@@ -1,6 +1,6 @@
 <% if user_signed_in? %> 
     <h1>Vaga </h1>
-    <h3>Titulo: <%= @job.title %>  <%= link_to 'Aplicar Vaga', jobs_path %></h3>
+    <h3>Titulo: <%= @job.title %>  <%= link_to 'Aplicar Vaga', job_path %></h3>
     <h3>Descrição: <%= @job.description %></h3>
     <h3>Local de trabalho: <%= @job.workplace %></h3>
     <h3>Encerra: <%= @job.end_date %></h3>
