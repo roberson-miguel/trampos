@@ -20,6 +20,13 @@
     <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
  
   </div>
+
+  <div class="field">
+    
+    <%= f.label :status, 'Status' %><br />
+    <%= f.select(:status, User.statuses.keys.map {|status| [status.titleize,status]}) %>
+ 
+  </div>
   <br>
 
   <div class="field">

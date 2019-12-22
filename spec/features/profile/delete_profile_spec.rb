@@ -5,7 +5,7 @@ feature 'Deleting a Profile' do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
   
 
     Profile.create!(skill: skill, joblevel: joblevel, user: user,
@@ -18,7 +18,7 @@ feature 'Deleting a Profile' do
                     experience_reponsibility: 'Gerenciava informatica e financeiro' , 
                     experience_role: 'Supervisor de tesouraria', 
                     experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
-                    experience_current_position: false)
+                    experience_current_position: false, avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
 
     
     visit root_path

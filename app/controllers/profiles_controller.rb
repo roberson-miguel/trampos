@@ -26,15 +26,19 @@ class ProfilesController < ApplicationController
       @skills  = Skill.all
       @joblevels = Joblevel.all
       @users = User.all
+      
     end
 
 
     def create
       @profile = Profile.new(profile_params)
       @profile.email = current_user.email
+     
       if @profile.save
+        
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
+        
       else
         @skills = Skill.all
         @joblevels = Joblevel.all

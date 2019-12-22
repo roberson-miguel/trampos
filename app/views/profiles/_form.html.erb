@@ -12,6 +12,7 @@
   <p>
     <%= f.label :avatar, "Foto" %><br>
     Email: <%= f.label :email, current_user.email %><br>
+  
     <%= f.file_field :avatar %>
     <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
@@ -27,7 +28,10 @@
   <p>
     <%= f.label :user_id, 'Tipo de Perfil' %>	
     <%= f.collection_select(:user_id, @users, :id, :role) %>	
-  <p>
+
+    <%= f.label :user_id, 'Status' %><br />
+    <%= f.collection_select(:user_id, @users, :id, :status) %>
+ 
   <br>
   <br>
   <p>
@@ -73,6 +77,7 @@
   <p>
   <br>
   <br>
+
      <%= f.submit "Enviar" %>
   </p>
 <% end %>

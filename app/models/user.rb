@@ -6,10 +6,12 @@ class User < ApplicationRecord
 
   enum role: [:candidate, :headhunter]
 
-  #after_initialize :set_default_role, :if => :new_record?
+  enum status: [:novoperfil, :andamento]
 
-  #def set_default_role
-  #  self.role ||= :candidate
+  #after_initialize :set_default_status, :if => :new_record?
+
+  #def set_default_status
+  #  self.status ||= :"novo"
   #end
 
   has_one :profile, dependent: :destroy
