@@ -38,8 +38,8 @@ class JobsController < ApplicationController
     
     def create
       @job = Job.new(job_params)
-      @job.email = current_user
-      #@job.user_id = current_user
+      @job.email = current_user.email
+      @job.user_id = current_user.id
         if @job.save
           flash[:notice] = 'Vaga criada com sucesso.'
           redirect_to @job
@@ -95,7 +95,7 @@ private
   def job_params
     params.require(:job).permit(:title, :description, :end_date, 
                                 :workplace, :salary_range, :company_id, 
-                                :benefit_id, :joblevel_id, :skill_id, :user_id, :status)
+                                :benefit_id, :joblevel_id, :skill_id, :user_id, :email, :status)
   end
 
   def set_find
