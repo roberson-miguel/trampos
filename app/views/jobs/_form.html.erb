@@ -8,53 +8,54 @@
 
 
 <%= form_for(job) do |f| %>
-  <p>
-       Criado por: <%= f.label :email, current_user.email %>
+
+    Criado por: <%= f.label :email, current_user.email %>
     <% f.label :user_id, current_user.id %>
-  </p>
-  <p>
-  <p>
-    <%= f.label :title, "Titulo" %><br>
+    <br>
+
+
+
+    <%= f.label :title, "Titulo" %>
     <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description, "Descrição" %><br>
+
+
+    <%= f.label :description, "Descrição" %>
     <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :workplace, "Local de trabalho" %><br>
+
+
+    <%= f.label :workplace, "Local de trabalho" %>
     <%= f.text_field :workplace %>
-  </p>
-  <p>
-    <%= f.label :end_date, "Encerra" %><br>
+
+
+    <%= f.label :end_date, "Encerra" %>
     <%= f.text_field :end_date %>
-  </p>
-  <p>
+    <br>
+
     <%= f.label :salary_range, 'Faixa salarial' %>
     <%= f.select(:salary_range, Job.salary_ranges.keys.map {|salary| [salary.titleize,salary]}) %>
-  <p>
-  <p>
+
+
     <%= f.label :skill_id, 'Habilidades' %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %>
-  <p>
-   <p>
+
+ 
     <%= f.label :company_id, 'Empresa' %>
     <%= f.collection_select(:company_id, @companies, :id, :name) %>
-  <p>
-  <p>
+
+    <br>
     <%= f.label :joblevel_id, 'Nivel Vaga' %>
     <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
-  <p>
-  <p>
+
+
     <%= f.label :benefit_id, 'Beneficio' %>
     <%= f.collection_select(:benefit_id, @benefits, :id, :name) %>
-  <p>
-  <p>
+
+
     <%= f.label :status, 'Status Vaga' %>
     <%= f.select(:status, Job.statuses.keys.map {|status| [status.titleize,status]}) %>
-  <p>
 
-     <%= f.submit "Enviar" %>
-  </p>
+    <br>
+    <%= f.submit "Enviar" %>
+
 
 <% end %>

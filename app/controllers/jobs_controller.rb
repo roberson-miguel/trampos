@@ -17,6 +17,7 @@ class JobsController < ApplicationController
       @companies = Company.all
       @benefits = Benefit.all
       @users = User.all
+      @profiles = Profile.all
     end
     
     def show

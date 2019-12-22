@@ -5,6 +5,9 @@ class Profile < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_one_attached :avatar
 
+    has_many :profile_jobs, :dependent => :destroy
+    has_many :jobs, :through => :profile_jobs
+
 
     #validates :email,  uniqueness: {message: '...já está em uso'}
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}

@@ -4,6 +4,9 @@ class Job < ApplicationRecord
     belongs_to :skill
     belongs_to :joblevel
     belongs_to :user
+
+    has_many :profile_jobs, :dependent => :destroy
+    has_many :profiles, :through => :profile_jobs
     
 
     validates :title, :description, :workplace, :end_date, :salary_range, :status, presence: {message: '...deve ser informado'}
