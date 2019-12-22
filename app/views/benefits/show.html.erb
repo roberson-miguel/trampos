@@ -1,7 +1,8 @@
 <h1>Beneficio</h1>
 <h3>Nome: <%= @benefit.name %></h3>
 
-
+<h3>
 <%= link_to 'Voltar', benefits_path %>
 <%= link_to 'Editar', edit_benefit_path(@benefit) %>
 <%= link_to 'Deletar', benefit_path(@benefit), method: :delete, data: { confirm: "Confirma exclusão do beneficio: #{@benefit.name}?" } %>
+</h3>

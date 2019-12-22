@@ -1,5 +1,5 @@
 <h1>Pesquisando Candidatos</h1>
-
+<h3>
 <p>Olá <%= current_user.email %></p><br>
     <%= form_with url: search_profiles_path, local: true, method: :get do %>
       <%= label_tag(:q, 'Pesquisar Canditato') %>
@@ -17,3 +17,4 @@
 <br>
 <br>
 <%= link_to 'Voltar', profiles_path %>
+</h3>

@@ -1,5 +1,5 @@
 <h1>Pesquisando Vagas</h1>
-
+<h3>
 <% if user_signed_in? %> 
   
     <p>Olá <%= current_user.email %></p><br>
@@ -43,3 +43,4 @@
 <br>
 <br>
 <%= link_to 'Voltar', jobs_path %>
+</h3>

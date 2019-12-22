@@ -1,3 +1,4 @@
+<h3>
 <% if @profile.errors.any? %>
   <% @profile.errors.full_messages.each do |message| %>
     <%= message %>
@@ -75,3 +76,4 @@
      <%= f.submit "Enviar" %>
   </p>
 <% end %>
+</h3>

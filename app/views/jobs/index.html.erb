@@ -1,5 +1,6 @@
-<h3>Vagas</h3>
+<h1>Vagas</h1>
 
+<h3>
 <% if user_signed_in? %> 
   
     <p>Olá <%= current_user.email %></p><br>
@@ -42,3 +43,4 @@
 <br>
 <br>   
 <%= link_to 'Voltar', root_path %>
+</h3>
