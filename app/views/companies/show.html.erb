@@ -4,8 +4,7 @@
 <h3>CNPJ: <%= @company.cnpj %></h3>
 <h3>Endereço: <%= @company.address %></h3>
 <h3>Descrição: <%= @company.description %></h3>
-<h3>
+
 <%= link_to 'Voltar', companies_path %>
 <%= link_to 'Editar', edit_company_path(@company) %>
 <%= link_to 'Deletar', company_path(@company), method: :delete, data: { confirm: "Confirma exclusão da empresa: #{@company.name}?" } %>
-</h3>

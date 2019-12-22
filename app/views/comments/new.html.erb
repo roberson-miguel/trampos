@@ -1,5 +1,4 @@
 <h1> Comentando um Perfil</h1>
-<h3>
 <%= form_for ([@profile, @comment]) do |f| %>
     <p>
         Nome: <%= f.label current_user.email %><br>
@@ -16,5 +15,5 @@
         <%= f.submit "Comentar" %>
     </p>
 <% end %>
-</h3>
+
 

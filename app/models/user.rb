@@ -8,11 +8,11 @@ class User < ApplicationRecord
 
   enum status: [:novoperfil, :andamento]
 
-  #after_initialize :set_default_status, :if => :new_record?
+  after_initialize :set_default_status, :if => :new_record?
 
-  #def set_default_status
-  #  self.status ||= :"novo"
-  #end
+  def set_default_status
+    self.status ||= :novoperfil
+  end
 
   has_one :profile, dependent: :destroy
   has_many :jobs, dependent: :destroy

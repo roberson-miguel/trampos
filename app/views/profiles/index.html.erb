@@ -1,20 +1,24 @@
-<h1>Perfil</h1>
-<h3>
+<h2>Perfil Candidato</h2>
+<br>
+<br>
 <% if user_signed_in? %> 
 
-    <p>Olá <%= current_user.email %></p><br>
-
-    
+    Olá <%= current_user.email %>
+    <br>
+    <br>
+    <br>
     <%= form_with url: search_profiles_path, local: true, method: :get do %>
         <%= label_tag(:q, 'Pesquisar Canditato') %>
         <%= text_field_tag(:q) %>
         <%= submit_tag 'Buscar' %>
     <% end %>
-
+    <br>
+    <br>
     <% if @profiles.empty? %>
-        <p> Não existem perfis cadastrados</p>
+        Não existem perfis cadastrados
     <% end %>
-
+    <br>
+    <br>
     <% @profiles.each do |profile| %>
         <%= link_to profile.name, profile_path(profile) %><br>
     <% end %>
@@ -23,4 +27,3 @@
 <br>
 <br>
 <%= link_to 'Voltar', root_path %>
-</h3>

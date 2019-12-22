@@ -13,7 +13,7 @@
     <h3>Status Vaga: <%= @job.status %></h3>
 
 
-<h3>
+
     <% if current_user.headhunter? %>
         <%= link_to 'Editar', edit_job_path(@job) %>
         <%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>
@@ -23,4 +23,3 @@
 
 
 <%= link_to 'Voltar', jobs_path %>
-</h3>

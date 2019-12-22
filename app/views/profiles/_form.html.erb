@@ -1,4 +1,3 @@
-<h3>
 <% if @profile.errors.any? %>
   <% @profile.errors.full_messages.each do |message| %>
     <%= message %>
@@ -8,12 +7,11 @@
 
 <%= form_for(profile) do |f| %>
   
-
-  <p>
     <%= f.label :avatar, "Foto" %><br>
-    Email: <%= f.label :email, current_user.email %><br>
-  
     <%= f.file_field :avatar %>
+  <br>
+  <br>
+    Email: <%= f.label :email, current_user.email %><br>
     <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
     <%= f.label :social_name, "Nome Social" %>
@@ -24,23 +22,12 @@
     <%= f.text_field :cellphone %>
     <%= f.label :address, 'Endereço' %>
     <%= f.text_field :address %>
-  <p>
-  <p>
-    <%= f.label :user_id, 'Tipo de Perfil' %>	
-    <%= f.collection_select(:user_id, @users, :id, :role) %>	
-
-    <%= f.label :user_id, 'Status' %><br />
-    <%= f.collection_select(:user_id, @users, :id, :status) %>
- 
   <br>
   <br>
-  <p>
     <%= f.label :languages, 'Idiomas ' %>
     <%= f.select(:languages, Profile.languages.keys.map {|language| [language.titleize,language]}) %>
-  <p>
   <br>
   <br>
-  <p>
     <%= f.label :education_institution, "Instituição" %>
     <%= f.text_field :education_institution %>
     <%= f.label :education_course, "Curso" %>
@@ -51,10 +38,8 @@
     <%= f.select(:education_status, Profile.education_statuses.keys.map {|education_status| [education_status.titleize,education_status]}) %>
     <%= f.label :education_end_date, "Data conclusão" %>
     <%= f.text_field :education_end_date %>
-  </p>
   <br>
   <br>
-  <p>
     <%= f.label :experience_company, "Empresa" %>
     <%= f.text_field :experience_company %>
     <%= f.label :experience_reponsibility, "Responsabilidades" %>
@@ -65,20 +50,15 @@
     <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
     <%= f.label :skill_id, 'Habilidades' %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %>
-    <br>
-    <br>
+  <br>
+  <br>
     <%= f.label :experience_start_date, "Data Entrada" %>
     <%= f.text_field :experience_start_date %>
     <%= f.label :experience_end_date, "Data Saida" %>
     <%= f.text_field :experience_end_date %>
     <%= f.label :experience_current_position, 'Atual?' %>
     <%= f.check_box :experience_current_position, checked: @profile.new_record? %>
-
-  <p>
   <br>
   <br>
-
-     <%= f.submit "Enviar" %>
-  </p>
+    <%= f.submit "Enviar" %>
 <% end %>
-</h3>

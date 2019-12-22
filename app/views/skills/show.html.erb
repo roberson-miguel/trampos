@@ -1,8 +1,7 @@
 <h1>Habilidade</h1>
 <h3>Nome: <%= @skill.name %></h3>
 
-<h3>
+
 <%= link_to 'Voltar', skills_path %>
 <%= link_to 'Editar', edit_skill_path(@skill) %>
 <%= link_to 'Deletar', skill_path(@skill), method: :delete, data: { confirm: "Confirma exclusão da habilidade: #{@skill.name}?" } %>
-</h3>

@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
     def create
       @profile = Profile.new(profile_params)
       @profile.email = current_user.email
-     
+      current_user.status.andamento
       if @profile.save
         
         flash[:notice] = 'Perfil concluido com sucesso'
