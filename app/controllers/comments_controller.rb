@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
     end
       
     def create
-        @comment.name = current_user
         @comment = @profile.comments.new(comment_params)
+        @comment.name = current_user.email
         if @comment.save
             flash[:notice] = 'Comentario concluido com sucesso'
             redirect_to profile_comments_path(@profile)

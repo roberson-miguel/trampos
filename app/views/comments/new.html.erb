@@ -2,8 +2,8 @@
 
 <%= form_for ([@profile, @comment]) do |f| %>
     <p>
-        <%= f.label :name, "Nome" %><br>
-        <%= f.text_field :name %>
+        Nome: <%= f.label current_user.email %><br>
+        
     </p>
         <%= f.label :rating, "Estrelas" %><br>
         <%= f.select :rating, Comment::RATING , prompt: "Quantas estrelas"%>
