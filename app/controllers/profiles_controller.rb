@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
 
     def create
       @profile = Profile.new(profile_params)
-      @profile.email = current_user
+      @profile.email = current_user.email
       if @profile.save
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
