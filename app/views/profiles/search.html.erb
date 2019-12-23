@@ -1,19 +1,21 @@
-<h1>Pesquisando Candidatos</h1>
+<div class="jumbotron">
+    <h1>Pesquisando Candidatos</h1>
 
-Olá <%= current_user.email %><br>
-    <%= form_with url: search_profiles_path, local: true, method: :get do %>
-      <%= label_tag(:q, 'Pesquisar Canditato') %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag 'Buscar' %>
+    Olá <%= current_user.email %><br>
+        <%= form_with url: search_profiles_path, local: true, method: :get do %>
+        <%= label_tag(:q, 'Pesquisar Canditato') %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag 'Buscar' %>
+        <% end %>
+
+    <% if @profiles.empty? %>
+        Não existem candidados para pesquisa solicitada
     <% end %>
 
-<% if @profiles.empty? %>
-    Não existem candidados para pesquisa solicitada
-<% end %>
-
-<% @profiles.each do |profile| %>
-    <%= link_to profile.name, profile_path(profile) %><br>
-<% end %>
-<br>
-<br>
-<%= link_to 'Voltar', profiles_path %>
+    <% @profiles.each do |profile| %>
+        <%= link_to profile.name, profile_path(profile) %><br>
+    <% end %>
+    <br>
+    <br>
+    <%= link_to 'Voltar', profiles_path %>
+</div>

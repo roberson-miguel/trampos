@@ -1,6 +1,6 @@
 
 <% if @skill.errors.any? %>
- <div class="alert alert-primary" role="alert">
+ <div class="alert alert-danger" role="alert">
     <% @skill.errors.full_messages.each do |message| %>
       <%= message %>
     <% end %>

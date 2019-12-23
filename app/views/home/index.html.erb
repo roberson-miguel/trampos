@@ -1,7 +1,7 @@
-<div class="jumbotron">
-   
-        <h1>Trampos....</h1>
-        <ul>
+
+    <ul class="nav flex-column">
+        <h1>Trampos....</h1><br>
+       
             <% if user_signed_in? %> 
             
                         <h3>Olá <%= current_user.email %></h3><br>
@@ -32,10 +32,12 @@
                 <br>
             <% end %>
         <% else %>
-            <li><%= link_to 'Entrar', new_user_session_path %></li>
+        
+           <li class="nav-item"><%= link_to 'Entrar', new_user_session_path %></li>
             <br>
             <li><%= link_to "Registrar conta", new_user_registration_path %><br></li>  
+      
         <% end %>
     </ul>
-</div>
+
 

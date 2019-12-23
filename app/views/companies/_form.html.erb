@@ -1,5 +1,5 @@
 <% if @company.errors.any? %>
- <div class="alert alert-primary" role="alert">
+ <div class="alert alert-danger" role="alert">
   <% @company.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
