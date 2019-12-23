@@ -12,13 +12,11 @@
         <%= text_field_tag(:q) %>
         <%= submit_tag 'Buscar' %>
     <% end %>
-    <br>
-    <br>
+    
     <% if @profiles.empty? %>
         Não existem perfis cadastrados
     <% end %>
-    <br>
-    <br>
+   <br>
     <% @profiles.each do |profile| %>
         <%= link_to profile.name, profile_path(profile) %><br>
     <% end %>

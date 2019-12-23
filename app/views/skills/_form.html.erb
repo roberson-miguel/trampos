@@ -9,11 +9,10 @@
 
 
 <%= form_for(skill) do |f| %>
-  <p>
-    <%= f.label :name, "Nome" %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
+
+    <%= f.label :name, "Nome" %>
+    <%= f.text_field :name %><br>
+  
      <%= f.submit 'Enviar', class:'btn btn-primary' %>
-  </p>
+  
 <% end %>

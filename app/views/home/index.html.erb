@@ -1,11 +1,8 @@
 
     <ul class="nav flex-column">
-        <h1>Trampos....</h1><br>
        
             <% if user_signed_in? %> 
-            
-                        <h3>Olá <%= current_user.email %></h3><br>
-                            <% if current_user.headhunter? %>
+                             <% if current_user.headhunter? %>
                                 <li><%= link_to "Vagas", jobs_path %></li>
                                 <li><%= link_to "Empresas", companies_path %></li>
                                 <li><%= link_to "Habilidades", skills_path %></li>
