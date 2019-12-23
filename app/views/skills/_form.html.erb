@@ -1,8 +1,10 @@
 
 <% if @skill.errors.any? %>
-  <% @skill.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+ <div class="alert alert-primary" role="alert">
+    <% @skill.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
 <% end %>
 
 
@@ -12,6 +14,6 @@
     <%= f.text_field :name %>
   </p>
   <p>
-     <%= f.submit "Enviar" %>
+     <%= f.submit 'Enviar', class:'btn btn-primary' %>
   </p>
 <% end %>

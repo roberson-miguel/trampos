@@ -1,30 +1,31 @@
 <h1>Perfil Candidato</h1>
 <br>
-<h3>Foto: <%= image_tag @profile.avatar %></h3>
-<h3>Email: <%= current_user.email %></h3>
-<h3>Nome: <%= @profile.name %></h3>
-<h3>Nome Social:<%= @profile.social_name %></h3>
-<h3>Endereço: <%= @profile.address %></h3>
-<h3>Celular:<%= @profile.cellphone %></h3>
-<h3>Data Nascimento <%= @profile.date_birth %></h3>
-<h3>Idiomas:<%= @profile.languages %></h3>
-<h3>Instituição de Ensino: <%= @profile.education_institution%></h3>
-<h3>Nivel Educacional:<%= @profile.education_level %></h3>
-<h3>Status do Curso: <%= @profile.education_status %></h3>
-<h3>Curso: <%= @profile.education_course %></h3>
-<h3>Data Conclusão: <%= @profile.education_end_date %></h3>
-<h3>Experiencia Profissional: <%= @profile.experience_company %></h3>
-<h3>Responsabilidades: <%= @profile.experience_reponsibility %></h3>
-<h3>Cargo: <%= @profile.experience_role%></h3>
-<h3>Nivel do Cargo: <%= @profile.joblevel.name %></h3>
-<h3>Habilidades: <%= @profile.skill.name %></h3>
-<h3>Data inicio: <%= @profile.experience_start_date %></h3>
+<p>Email: <%= current_user.email %></p>
+<p>Nome: <%= @profile.name %></p>
+<p>Nome Social:<%= @profile.social_name %></p>
+<p>Endereço: <%= @profile.address %></p>
+<p>Celular:<%= @profile.cellphone %></p>
+<p>Data Nascimento <%= @profile.date_birth %></p>
+<p>Idiomas:<%= @profile.languages %></p>
+<p>Instituição de Ensino: <%= @profile.education_institution%></p>
+<p>Nivel Educacional:<%= @profile.education_level %></p>
+<p>Status do Curso: <%= @profile.education_status %></p>
+<p>Curso: <%= @profile.education_course %></p>
+<p>Data Conclusão: <%= @profile.education_end_date %></p>
+<p>Experiencia Profissional: <%= @profile.experience_company %></p>
+<p>Responsabilidades: <%= @profile.experience_reponsibility %></p>
+<p>Cargo: <%= @profile.experience_role%></p>
+<p>Nivel do Cargo: <%= @profile.joblevel.name %></p>
+<p>Habilidades: <%= @profile.skill.name %></p>
+<p>Data inicio: <%= @profile.experience_start_date %></p>
 
 <% if @profile.experience_current_position? %>
-    <h3>Atual Emprego </h3>
+    <p>Atual Emprego </p>
 <% else %>
-    <h3>Data inicio: <%= @profile.experience_end_date %></h3>
+    <p>Data inicio: <%= @profile.experience_end_date %></p>
 <% end %>
+
+<p><%= image_tag @profile.avatar %></p>
 
 <%= link_to 'Voltar', root_path %>
 <%= link_to 'Novo Comentario', new_profile_comment_path(@profile) %>

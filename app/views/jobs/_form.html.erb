@@ -1,8 +1,10 @@
 
 <% if @job.errors.any? %>
-  <% @job.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+  <div class="alert alert-primary" role="alert">
+    <% @job.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
 <% end %>
 
 
@@ -54,7 +56,7 @@
     <%= f.select(:status, Job.statuses.keys.map {|status| [status.titleize,status]}) %>
   <p>
 
-     <%= f.submit "Enviar" %>
+     <%= f.submit 'Enviar', class:'btn btn-primary' %>
   </p>
 
 

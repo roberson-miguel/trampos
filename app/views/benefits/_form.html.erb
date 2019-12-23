@@ -1,8 +1,12 @@
-<% if @benefit.errors.any? %>
-  <% @benefit.errors.full_messages.each do |message| %>
-    <%= message %>
+
+  <% if @benefit.errors.any? %>
+  <div class="alert alert-primary" role="alert">
+    <% @benefit.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
   <% end %>
-<% end %>
+
 
 
 <%= form_for(benefit) do |f| %>
@@ -11,6 +15,6 @@
     <%= f.text_field :name %>
   </p>
   <p>
-     <%= f.submit "Enviar" %>
+      <%= f.submit 'Enviar', class:'btn btn-primary' %>
   </p>
 <% end %>

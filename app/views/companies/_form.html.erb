@@ -1,7 +1,9 @@
 <% if @company.errors.any? %>
+ <div class="alert alert-primary" role="alert">
   <% @company.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
+</div>
 <% end %>
 
 
@@ -24,6 +26,6 @@
     <%= f.text_field :description %>
   </p>
   <p>
-     <%= f.submit "Enviar" %>
+     <%= f.submit 'Enviar', class:'btn btn-primary' %>
   </p>
 <% end %>

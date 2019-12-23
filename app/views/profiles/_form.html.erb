@@ -1,7 +1,9 @@
 <% if @profile.errors.any? %>
-  <% @profile.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+  <div class="alert alert-primary" role="alert">
+    <% @profile.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
 <% end %>
 
 
@@ -64,5 +66,5 @@
     <%= f.check_box :experience_current_position, checked: @profile.new_record? %>
   <br>
   <br>
-    <%= f.submit "Enviar" %>
+    <%= f.submit 'Enviar', class:'btn btn-primary' %>
 <% end %>

@@ -1,6 +1,7 @@
-<h1> Exibindo Suas Vagas</h1>
+
+<h1> Vagas aplicadas</h1>
 <ul>
-    <% if @job.comments.size > 0 %>
+   
         <% @profilejobs.each do |profilejob| %>
             <p>
                 <%= profilejob.job.title %> 
@@ -10,10 +11,8 @@
                 <%= profilejob.comment %>
             </p>
         <% end %>
-    <% else %>
-        <h3> Não existe vagas aplicadas</h3>
-    <% end %>
+    
     
 </ul>
 
-<%= link_to 'Voltar', profilejobs_path %>
+<%= link_to 'Voltar', root_path %>
