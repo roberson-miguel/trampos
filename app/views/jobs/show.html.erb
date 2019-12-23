@@ -1,6 +1,6 @@
 <% if user_signed_in? %> 
     <h1>Vaga </h1>
-    <h3>Titulo: <%= @job.title %>  <%= link_to 'Aplicar Vaga', job_path %></h3>
+    <h3>Titulo: <%= @job.title %> </h3>
     <h3>Descrição: <%= @job.description %></h3>
     <h3>Local de trabalho: <%= @job.workplace %></h3>
     <h3>Encerra: <%= @job.end_date %></h3>
@@ -17,9 +17,10 @@
     <% if current_user.headhunter? %>
         <%= link_to 'Editar', edit_job_path(@job) %>
         <%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>
+        
     <% end %>
 
 <% end %>
 
-
+<%= link_to 'Aplicar Vaga' , new_job_profilejob_path(@job) %>
 <%= link_to 'Voltar', jobs_path %>

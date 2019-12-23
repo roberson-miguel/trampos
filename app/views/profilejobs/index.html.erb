@@ -1,0 +1,19 @@
+<h1> Exibindo Suas Vagas</h1>
+<ul>
+    <% if @job.comments.size > 0 %>
+        <% @profilejobs.each do |profilejob| %>
+            <p>
+                <%= profilejob.job.title %> 
+                <%= time_ago_in_words(profilejob.created_at) %> atrás
+            </p>
+            <p>
+                <%= profilejob.comment %>
+            </p>
+        <% end %>
+    <% else %>
+        <h3> Não existe vagas aplicadas</h3>
+    <% end %>
+    
+</ul>
+
+<%= link_to 'Voltar', profilejobs_path %>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :benefits
   resources :jobs do
     get 'search', on: :collection
+    resources :profilejobs
   end
  
   
