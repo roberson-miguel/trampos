@@ -12,8 +12,11 @@ class ProfilejobsController < ApplicationController
     end
       
     def create
+        @profiles = Profile.all
+        @jobs = Job.all
         @profilejob = Profilejob.new(profilejob_params)
         @profilejob.profile_id = current_user
+        @profilejob.job_id = @job.id
         if @profilejob.save
             flash[:notice] = 'Aplicado para vaga com sucesso'
             redirect_to job_profilejobs_path(@job)

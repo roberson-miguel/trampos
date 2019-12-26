@@ -19,7 +19,8 @@ feature 'Register new Profile' do
       experience_reponsibility: 'Gerenciava informatica e financeiro' , 
       experience_role: 'Supervisor de tesouraria', 
       experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
-      experience_current_position: false, email: user.email )
+      experience_current_position: false, email: user.email, 
+      avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
 
       
 

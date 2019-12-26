@@ -1,17 +1,17 @@
 <div class="jumbotron">
     <% if user_signed_in? %> 
-        <p>Vaga </p>
-        <p>Titulo: <%= @job.title %> </p>
-        <p>Descrição: <%= @job.description %></p>
-        <p>Local de trabalho: <%= @job.workplace %></p>
-        <p>Encerra: <%= @job.end_date %></p>
-        <p>Faixa salarial: <%= @job.salary_range %></p>
-        <p>Habilidades: <%= @job.skill.name %></p>
-        <p>Empresa: <%= @job.company.name %></p>
-        <p>Nivel Vaga: <%= @job.joblevel.name %></p>
-        <p>Beneficio: <%= @job.benefit.name %></p>
-        <p>Criado por: <%= current_user.email %>
-        <p>Status Vaga: <%= @job.status %></p>
+        <p>Vaga</p> 
+        Titulo: <%= @job.title %> <br>
+        Descrição: <%= @job.description %><br>
+        Local de trabalho: <%= @job.workplace %><br>
+        Encerra: <%= @job.end_date %><br>
+        Faixa salarial: <%= @job.salary_range %><br>
+        Habilidades: <%= @job.skill.name %><br>
+        Empresa: <%= @job.company.name %><br>
+        Nivel Vaga: <%= @job.joblevel.name %><br>
+        Beneficio: <%= @job.benefit.name %><br>
+        Criado por: <%= current_user.email %><br>
+        Status Vaga: <%= @job.status %><br>
 
 
 
