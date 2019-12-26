@@ -5,7 +5,7 @@ feature 'Deleting a Profile' do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'novoperfil')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'andamento')
   
 
     Profile.create!(skill: skill, joblevel: joblevel, user: user,
@@ -28,7 +28,7 @@ feature 'Deleting a Profile' do
     fill_in 'Password', with:123123
     click_button 'Log in'
 
-    click_link "Editar Perfil"
+    click_link "Completar Perfil"
     #click_link "Roberson Miguel"
     click_link "Deletar"
 

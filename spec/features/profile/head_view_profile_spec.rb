@@ -1,11 +1,11 @@
 require "rails_helper"
 
 feature 'View a Profile' do
-  scenario "I can see a profile" do
+  scenario "Headhunter can see a profile" do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:'andamento')
 
 
     Profile.create!(skill: skill, joblevel: joblevel, user: user,
@@ -29,14 +29,11 @@ feature 'View a Profile' do
     fill_in 'Password', with:123123
     click_button 'Log in'
     
-    click_link "Perfil Candidato"
+    click_link "Pesquisar Candidato"
     click_link "Roberson Miguel"
-    
+       
       
     expect(page).to have_content('Roberson Miguel')
-    expect(page).to have_link('Voltar')
-    expect(page).to have_link('Editar')
-    expect(page).to have_link('Deletar')
   
   end
 end

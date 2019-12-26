@@ -2,4 +2,9 @@
 <%= render partial: "form", locals: {profile: @profile} %>
 
 <br><br><br>   
+
+<% if current_user.candidate?%>
+      <%= link_to 'Deletar', profile_path(@profile), method: :delete, data: { confirm: "Confirma exclusão do perfil: #{@profile.name}?" } %>
+<% end %>
+
 <%= link_to 'Voltar', profiles_path %>

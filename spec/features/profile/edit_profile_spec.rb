@@ -5,7 +5,7 @@ feature 'Editing a Profile' do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'andamento')
 
     login_as(user, scope: :candidate)
 
@@ -32,10 +32,8 @@ feature 'Editing a Profile' do
     fill_in 'Password', with:123123
     click_button 'Log in'
 
-    click_link "Perfil Candidato"
-    click_link "Roberson Miguel"
-    click_link "Editar Perfil"
-    
+    click_link "Completar Perfil"
+      
 
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Bios'

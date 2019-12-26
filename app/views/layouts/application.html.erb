@@ -39,14 +39,14 @@
           <li class="nav-item">
 
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown">  
 
              
         </ul>
             <%= form_with url: search_jobs_path, local: true, method: :get do %>
-                <%= label_tag(:q, 'Pesquisar Vaga') %>
-                <%= text_field_tag(:q) %>
-                <%= submit_tag 'Buscar' %>
+                <%= label_tag(:q1, 'Pesquisar') %>
+                <%= text_field_tag(:q1) %>
+                <%= submit_tag 'Buscar Vagas' %>
                 </p>
             <% end %>
         </div>
