@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
     before_action :set_find, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
-    
+       
 
     def index
       @profiles = Profile.all

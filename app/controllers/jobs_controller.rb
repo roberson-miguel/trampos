@@ -2,8 +2,8 @@ class JobsController < ApplicationController
 
   before_action :set_find, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :authorize_headhunter, only: [:create, :new, :update, :destroy, :edit]
-  
+  #before_action :authorize_headhunter#, only: [:create, :new, :update, :destroy, :edit]
+  #before_action :authorize_candidate
 
     def index
       @jobs = Job.all
@@ -68,7 +68,6 @@ class JobsController < ApplicationController
     end
 
     def destroy
-      
       @job.destroy
       redirect_to @job, notice: "Vaga excluida com sucesso"
     end

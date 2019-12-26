@@ -1,6 +1,8 @@
 class BenefitsController < ApplicationController
 
     before_action :set_find, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
+    before_action :authorize_headhunter#, only: [:create, :new, :update, :destroy, :edit]
 
     def index
       @benefits = Benefit.all

@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
     before_action :set_find, only: [:index, :new, :create]
+    before_action :authenticate_user!
+    before_action :authorize_headhunter#, only: [:create, :new, :update, :destroy, :edit]
   
     def index
         #@profile = Profile.find(params[:profile_id])

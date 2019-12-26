@@ -7,7 +7,7 @@ feature 'Headhunter delete a jobs' do
     joblevel = Joblevel.create!(name:'Junior')
     company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', address: 'Alameda Santos, 011', description: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails')
     benefit = Benefit.create!(name:'Vale transporte')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:'andamento')
 
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
       end_date: '2020-01-31', workplace:' Remoto', 
@@ -22,7 +22,7 @@ feature 'Headhunter delete a jobs' do
     click_button 'Log in'
 
     click_link "Vagas"
-    click_link "Dev Ruby"
+    click_link "Dev Ruby Jr"
     click_link "Deletar"
 
     expect(page).to have_content('Vaga excluida com sucesso')

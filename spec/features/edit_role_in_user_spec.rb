@@ -3,7 +3,7 @@ require "rails_helper"
 feature 'Edit Role in user/edit' do
   scenario "I can edit the role in user" do
     
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'novoperfil')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'andamento')
     
   
     visit root_path

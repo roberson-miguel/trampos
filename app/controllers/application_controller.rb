@@ -15,5 +15,12 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def authorize_candidate
+        unless current_user.candidate?
+        flash[:alert] = "Voce não tem autorização"
+        redirect_to root_path
+        end
+    end
+
 
 end

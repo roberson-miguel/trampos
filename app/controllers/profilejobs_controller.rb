@@ -1,7 +1,8 @@
 class ProfilejobsController < ApplicationController
 
     before_action :set_find, only: [:index, :new, :create, :show]
-  
+    before_action :authenticate_user!
+    
     def index
         @profilejobs = Profilejob.all
     end
