@@ -1,6 +1,6 @@
 class ProfilejobsController < ApplicationController
 
-    before_action :set_find, only: [:index, :new, :create, :show]
+    before_action :set_find, only: [:index, :new, :create]
     before_action :authenticate_user!
     
     def index
@@ -13,6 +13,16 @@ class ProfilejobsController < ApplicationController
         @profilejob = @job.profilejobs.new
     end
       
+    def show
+    end
+
+    def search 
+        @profilejobs = Profilejob.all
+        #@profilejobs = Profilejob.where('job_id like ?', "%#{params[:q]}%")
+        #@profilejobs = Profilejob.where("job_id like '#{current_user.id}'")
+        Profilejob.joins(:profile_id).where(profile_id: { profile_id: current_user.id})
+    end
+
     def create
       
         @profiles = Profile.all

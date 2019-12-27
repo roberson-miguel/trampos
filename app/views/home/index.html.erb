@@ -16,7 +16,7 @@
                             <% else  current_user.candidate? %>
                                 <li><%= link_to "Vagas", search_jobs_path %></li>
                                 <% if current_user.andamento? %>
-                                    <li><%= link_to "Minhas Vagas", edit_user_registration_path %></li>
+                                    <li><%= link_to "Minhas Vagas",  search_job_profilejobs_path(:job_id) %></li>
                                     <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
                                     <li><%= link_to 'Completar Perfil', edit_profile_path(current_user) %></li>
                                     <br>
