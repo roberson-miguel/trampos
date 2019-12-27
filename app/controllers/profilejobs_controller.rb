@@ -33,6 +33,7 @@ class ProfilejobsController < ApplicationController
         @profilejob = Profilejob.new(profilejob_params)
         @profilejob.profile_id = current_user.id
         @profilejob.job_id = @job.id
+        
         if @profilejob.save
             
             flash[:notice] = 'Aplicado para vaga com sucesso'

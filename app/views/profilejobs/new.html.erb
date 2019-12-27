@@ -1,17 +1,17 @@
 
 <p> Aplicando em vagas</p>
-<%= form_for ([@job, @profilejob]) do |f| %>
-    <p>
-        Vaga <%= f.label @job.title %><br>
-        
-    </p>
-        <%=f.label :comment, "Motição" %><br>
-        <%= f.text_area :comment, placeholder:"Escreva sua motição" %>
-    </p>
-    <p>
-        <%= f.submit 'Aplicar', class:'btn btn-primary' %>
-    </p>
-<% end %>
+        <%= form_for ([@job, @profilejob]) do |f| %>
+                <p>
+                    Vaga <%= f.label @job.title %><br>
+                    
+                </p>
+                    <%=f.label :comment, "Motição" %><br>
+                    <%= f.text_area :comment, placeholder:"Escreva sua motição" %>
+                </p>
+                <p>
+                    <%= f.submit 'Aplicar', class:'btn btn-primary' %>
+                </p>
+        <% end %>
 
 <%= link_to 'Voltar', root_path %>
 

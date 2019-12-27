@@ -33,7 +33,7 @@ feature 'Register new Profile' do
   
     click_link "Novo Perfil"
     
-
+    attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
     fill_in 'Data Nascimento', with: '1979-09-20'

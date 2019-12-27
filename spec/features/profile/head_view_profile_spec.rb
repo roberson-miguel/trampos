@@ -9,7 +9,7 @@ feature 'View a Profile' do
 
 
     Profile.create!(skill: skill, joblevel: joblevel, user: user,
-                    name:'Roberson Miguel', social_name: 'Roberson Miguel', 
+                    name:'Roberson', social_name: 'Roberson Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
                     date_birth: '1979-09-20',  languages: "inglês(basico)", 
                     education_level: 'graduado', education_status: 'concluido', 
@@ -31,10 +31,10 @@ feature 'View a Profile' do
     click_button 'Log in'
     
     click_link "Pesquisar Candidato"
-    click_link "Roberson Miguel"
+    click_link "Roberson"
        
       
-    expect(page).to have_content('Roberson Miguel')
+    expect(page).to have_content('Roberson')
   
   end
 end

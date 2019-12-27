@@ -35,13 +35,13 @@ feature 'Editing a Profile' do
 
     click_link "Completar Perfil"
       
-
+    attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Bios'
     fill_in 'Data Nascimento', with: '1979-09-20'
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: 'Rua Rodolfo Mayer, 127 - São Paulo'
-    #select "#{user.role}", from: 'Tipo de Perfil'
+    select "candidate", from: 'Tipo de Perfil'
 
     select "Inglês(Basico)", from: 'Idiomas'
 
@@ -58,7 +58,7 @@ feature 'Editing a Profile' do
     select "#{skill.name}", from: 'Habilidades'
     fill_in 'Data Entrada', with: '1997-12-01'
     fill_in 'Data Saida', with: '2003-03-29'
-    #select 'Atual?', from: false
+    uncheck 'Atual?' #, from: false
 
     click_button 'Enviar'
 

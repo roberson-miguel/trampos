@@ -16,12 +16,13 @@ feature 'Register new Profile' do
     
     click_link "Novo Perfil"
 
+    attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
     fill_in 'Data Nascimento', with: '1979-09-20'
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
-    #select "#{user.role}", from: 'Tipo de Perfil'
+    select "#{user.role}", from: 'Tipo de Perfil'
 
     select "Inglês(Basico)", from: 'Idiomas'
 
