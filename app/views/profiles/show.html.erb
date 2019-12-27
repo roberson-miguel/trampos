@@ -25,7 +25,8 @@
     <p>Data inicio: <%= @profile.experience_end_date %></p>
 <% end %>
 
-<p><%= image_tag @profile.avatar %></p>
+
+<p><%= image_tag(@profile.avatar) if @profile.avatar.attached? %></p>
 
 <%= link_to 'Voltar', root_path %>
 <%= link_to 'Novo Comentario', new_profile_comment_path(@profile) %>
