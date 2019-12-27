@@ -11,9 +11,9 @@
         <% if current_user.headhunter? %> 
         <!--Melhorar isso, tá ruim pacas e não funciona -->
         
-            <% if profilejob.job_id == current_user.id %>
+            <% if profilejob.job.user_id == current_user.id %>
+                <%= profilejob.job.title  %>
                 <%= profilejob.profile.name  %> 
-                <%= profilejob.job.end_date  %>
             <% end %>
         <% end %>
 
