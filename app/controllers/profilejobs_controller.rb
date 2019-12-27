@@ -4,14 +4,17 @@ class ProfilejobsController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @profilejobs = Profilejob.all
+        
+        @profilejobs = @job.profilejobs
     end
       
     def new
-        @profilejob = Profilejob.new
+    
+        @profilejob = @job.profilejobs.new
     end
       
     def create
+      
         @profiles = Profile.all
         @jobs = Job.all
         @profilejob = Profilejob.new(profilejob_params)
@@ -34,5 +37,6 @@ private
  
     def set_find
         @job = Job.find(params[:job_id])
+      
     end
 end
