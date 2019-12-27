@@ -1,7 +1,23 @@
 <% @profilejobs.each do |profilejob| %>
     <p>
-        <%= profilejob.job.title %> 
-       
+        <% if current_user.candidate? %>
+            <% if profilejob.profile_id == current_user.id %>
+                <%= profilejob.job.title  %> 
+                <%= profilejob.job.company.name  %> 
+                <%= profilejob.job.end_date  %>
+            <% end %>
+        <% end %>
+
+        <% if current_user.headhunter? %> 
+        <!--Melhorar isso, tá ruim pacas e não funciona -->
+        
+            <% if profilejob.job_id == current_user.id %>
+                <%= profilejob.profile.name  %> 
+                <%= profilejob.job.end_date  %>
+            <% end %>
+        <% end %>
+
+              
     </p>
 <% end %>
     

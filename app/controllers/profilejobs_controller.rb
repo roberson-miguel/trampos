@@ -18,6 +18,9 @@ class ProfilejobsController < ApplicationController
 
     def search 
         @profilejobs = Profilejob.all
+        @jobs = Job.all
+        @profiles = Profile.all
+        @users = User.all
         #@profilejobs = Profilejob.where('job_id like ?', "%#{params[:q]}%")
         #@profilejobs = Profilejob.where("job_id like '#{current_user.id}'")
         Profilejob.joins(:profile_id).where(profile_id: { profile_id: current_user.id})
