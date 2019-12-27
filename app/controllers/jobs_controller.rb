@@ -7,6 +7,7 @@ class JobsController < ApplicationController
 
     def index
       @jobs = Job.all
+      @users = User.all
       @profiles = Profile.all
     end
     

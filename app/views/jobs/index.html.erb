@@ -17,13 +17,15 @@
     <% if current_user.headhunter? %>
         <%= link_to "Nova vaga", new_job_path %> <br><br>
     
-        <% if @jobs.empty? %>
-            <p> Não existem vagas cadastradas</p>
-        <% end %>
-
-        <% @jobs.each do |job| %>
-            <%= link_to job.title, job_path(job) %> Status Vaga: <%= job.status %>
-        <% end %>
+            <% if @jobs.empty? %>
+                <p> Não existem vagas cadastradas</p>
+            <% end %>
+            
+            <% @jobs.each do |job| %>
+                <% if job.user_id == current_user.id %>
+                    <%= link_to job.title, job_path(job) %> Status Vaga: <%= job.status %>
+                <% end %>
+            <% end %>
    
     <% end %>
 
