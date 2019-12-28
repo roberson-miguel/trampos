@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :profiles do
     get 'search', on: :collection
+    put :favorite, on: :member
     resources :comments
   end
   resources :companies

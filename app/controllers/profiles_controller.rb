@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 
-    before_action :set_find, only: [:show, :edit, :update, :destroy]
+    before_action :set_find, only: [:show, :edit, :update, :destroy, :favorite]
     before_action :authenticate_user!
        
 
@@ -69,6 +69,22 @@ class ProfilesController < ApplicationController
 
     def search
        @profiles = Profile.where("education_course LIKE ? OR experience_reponsibility LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+    end
+
+    def favorite
+      type = params[:type]
+        if type == "favorite"
+          current_user.favorites << @profile
+          redirect_back fallback_location: root_path, notice: "Voce favoritou #{@profile.name}"
+          #redirect_to :back, notice: "Voce favoritou #{@profile.name}"
+        elsif type == "unfavorite"
+          current_user.favorites.delete(@profile)
+          redirect_back fallback_location: root_path, notice: "Desfavoritado #{@profile.name}"
+          #redirect_to :back, notice: "Desfavoritado #{@profile.name}"
+        else
+          redirect_back fallback_location: root_path, notice: "Nada modificado"
+          #redirect_to :back, notice: "Nada modificado"
+        end
     end
 
   private

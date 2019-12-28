@@ -25,6 +25,11 @@
     <p>Data inicio: <%= @profile.experience_end_date %></p>
 <% end %>
 
+<% if current_user %>
+    <%= link_to "favorite", favorite_profile_path(@profile, type: "favorite"), method: :put %>
+    <%= link_to "unfavorite", favorite_profile_path(@profile, type: "unfavorite"), method: :put %>
+<% end %>
+
 
 <p><%= image_tag(@profile.avatar) if @profile.avatar.attached? %></p>
 
