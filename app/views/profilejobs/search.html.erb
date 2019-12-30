@@ -1,25 +1,23 @@
-<% @profilejobs.each do |profilejob| %>
-    <p>
-        <% if current_user.candidate? %>
-            <% if profilejob.profile_id == current_user.id %>
-                <%= profilejob.job.title  %> 
-                <%= profilejob.job.company.name  %> 
-                <%= profilejob.job.end_date  %>
-            <% end %>
-        <% end %>
+<p>Vagas Aplicadas<br>
 
-        <% if current_user.headhunter? %> 
-        <!--Melhorar isso, tá ruim pacas e não funciona -->
-        
-            <% if profilejob.job.user_id == current_user.id %>
-                <%= profilejob.job.title  %>
-                <%= profilejob.profile.name  %> 
+    <% @profilejobs.each do |profilejob| %>
+            <% if current_user.candidate? %>
+                <% if profilejob.profile_id == current_user.id %>
+                   
+                    <%= profilejob.job.title  %> -
+                    <%= profilejob.job.company.name  %> - Encerra em:
+                    <%= profilejob.job.end_date  %> 
+                <% end %>
             <% end %>
-        <% end %>
 
-              
-    </p>
-<% end %>
+            <% if current_user.headhunter? %> 
+                <% if profilejob.job.user_id == current_user.id %>
+                    <%= profilejob.job.title%>
+                    <%= profilejob.profile.name %> 
+                <% end %>
+            <% end %>
+    <% end %>
     
 <br>
-<p><%= link_to 'Voltar', jobs_path %><p>
+    <%= link_to 'Voltar', jobs_path %>
+</p>

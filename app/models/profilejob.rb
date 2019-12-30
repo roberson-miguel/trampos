@@ -3,5 +3,5 @@ class Profilejob < ApplicationRecord
     validates :comment, length: { maximum: 200 }
 
     belongs_to :job
-    belongs_to :profile
+    belongs_to :profile, optional: true
 end

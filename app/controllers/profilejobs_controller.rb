@@ -2,6 +2,7 @@ class ProfilejobsController < ApplicationController
 
     before_action :set_find, only: [:index, :new, :create]
     before_action :authenticate_user!
+    #before_action :authorize_candidate
     
     def index
         
@@ -27,14 +28,13 @@ class ProfilejobsController < ApplicationController
     end
 
     def create
-      
-        @profiles = Profile.all
         @jobs = Job.all
         @profilejob = Profilejob.new(profilejob_params)
         @profilejob.profile_id = current_user.id
         @profilejob.job_id = @job.id
+        @profiles = Profile.all
         
-        if @profilejob.save
+        if @profilejob.save!
             
             flash[:notice] = 'Aplicado para vaga com sucesso'
             redirect_to job_profilejobs_path(@job)
@@ -52,6 +52,5 @@ private
  
     def set_find
         @job = Job.find(params[:job_id])
-      
     end
 end

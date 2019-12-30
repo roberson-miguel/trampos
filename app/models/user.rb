@@ -14,7 +14,7 @@ class User < ApplicationRecord
     self.status ||= :novoperfil
   end
 
-  has_many :profile, dependent: :destroy #Alterado para has_many qdo adicionei favoritos Rspec ok
+  has_one :profile, dependent: :destroy #Alterado para has_many qdo adicionei favoritos Rspec ok
   has_many :jobs, dependent: :destroy
   
   #Adicionando favoritos
