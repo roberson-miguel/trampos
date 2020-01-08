@@ -8,6 +8,7 @@ require "rails_helper"
       visit root_path
       click_link "Entrar"
 
+
       fill_in 'Email', with: 'elaine@gmail.com'
       fill_in 'Password', with:123123
       click_button 'Log in'
