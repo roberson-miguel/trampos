@@ -8,17 +8,16 @@
                     <%= profilejob.job.company.name  %> - Encerra em:
                     <%= profilejob.job.end_date  %> 
                 <% end %>
+       
             <% end %>
 
             <% if current_user.headhunter? %> 
-               
                     <%= profilejob.job.title %><br>
                     <%= profilejob.profile_id %><br>
-                   
-              
             <% end %>
+              
     <% end %>
     
 <br>
-    <%= link_to 'Voltar', jobs_path %>
+ <%= link_to 'Voltar', root_path %>
 </p>
