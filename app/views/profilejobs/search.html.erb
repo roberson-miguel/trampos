@@ -11,10 +11,11 @@
             <% end %>
 
             <% if current_user.headhunter? %> 
-                <% if profilejob.job.user_id == current_user.id %>
-                    <%= profilejob.job.title%>
-                    <%= profilejob.profile.name %> 
-                <% end %>
+               
+                    <%= profilejob.job.title %><br>
+                    <%= profilejob.profile_id %><br>
+                   
+              
             <% end %>
     <% end %>
     
