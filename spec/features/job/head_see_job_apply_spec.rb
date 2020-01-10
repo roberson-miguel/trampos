@@ -7,7 +7,8 @@ feature 'Head must see a Job and who apply' do
     joblevel = Joblevel.create!(name:'Junior')
     company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', address: 'Alameda Santos, 011', description: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails')
     benefit = Benefit.create!(name:'Vale transporte')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:'andamento')
+    user = User.create!(email:'candidate@gmail.com', password:123123, role:'candidate', status:'andamento')
+    head = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:"andamento")
 
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
       end_date: '2020-01-31', workplace:' Remoto', 
@@ -42,7 +43,7 @@ feature 'Head must see a Job and who apply' do
     
         
     expect(page).to have_content('Dev Ruby Jr')
-    expect(page).to have_content('Roberson Miguel')
+    expect(page).to have_content('elaine@gmail.com')
        
   
   end
