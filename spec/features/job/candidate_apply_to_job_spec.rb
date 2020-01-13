@@ -78,6 +78,19 @@ feature 'Candidate must see a Job and apply' do
       salary_range: '1000_até_3000', skill: skill, status: "ativa", 
       joblevel: joblevel, company: company, benefit: benefit, user: user)
 
+    Profile.create!(skill: skill, joblevel: joblevel, user: user, 
+      name:'Roberson Miguel', social_name: 'Miguel', 
+      address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
+      date_birth: '1979-09-20',  languages: "inglês(basico)", 
+      education_level: 'graduado', education_status: 'concluido', 
+      education_institution: 'Senac', education_course: 'Ciências da computação', 
+      education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 
+      experience_reponsibility: 'Gerenciava informatica e financeiro' , 
+      experience_role: 'Supervisor de tesouraria', 
+      experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
+      experience_current_position: false, 
+      avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
+
     Profilejob.create!(profile_id:1, job_id:1, comment:"Gostei e apliquei")
 
     

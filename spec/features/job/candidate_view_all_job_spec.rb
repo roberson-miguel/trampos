@@ -31,7 +31,6 @@ feature 'Candidate View a job' do
     expect(page).to have_content('1000_até_3000')
     expect(page).to have_content('ativa')
     expect(page).to have_link('Voltar')
-    #expect(page).to have_link('Editar')
-    #expect(page).to have_link('Deletar')
+    
   end
 end

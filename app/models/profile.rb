@@ -8,12 +8,10 @@ class Profile < ApplicationRecord
     has_many :profilejobs, :dependent => :destroy
     has_many :jobs, :through => :profilejobs
 
-    #Adicionando favoritos
     has_many :favorite_profiles
     has_many :favorited_by, through: :favorite_profiles, source: :user
 
 
-    #validates :email,  uniqueness: {message: '...já está em uso'}
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}
     validates :name, length: { minimum: 5, message: '....deve ter tamanho minimo de 5 caracter'}
 

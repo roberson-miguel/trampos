@@ -2,8 +2,8 @@ class JoblevelsController < ApplicationController
 
     before_action :set_find, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
-    before_action :authorize_headhunter#, only: [:create, :new, :update, :destroy, :edit]
-
+    before_action :authorize_headhunter
+    
     def index
       @joblevels = Joblevel.all
     end

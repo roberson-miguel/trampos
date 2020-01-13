@@ -56,7 +56,7 @@ feature 'Register new Profile' do
     select "#{skill.name}", from: 'Habilidades'
     fill_in 'Data Entrada', with: '1997-12-01'
     fill_in 'Data Saida', with: '2003-03-29'
-    #select 'Atual?', from: false
+   
 
     click_button 'Enviar'
 

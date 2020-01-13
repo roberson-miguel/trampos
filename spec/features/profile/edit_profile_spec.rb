@@ -58,7 +58,7 @@ feature 'Editing a Profile' do
     select "#{skill.name}", from: 'Habilidades'
     fill_in 'Data Entrada', with: '1997-12-01'
     fill_in 'Data Saida', with: '2003-03-29'
-    uncheck 'Atual?' #, from: false
+    uncheck 'Atual?' 
 
     click_button 'Enviar'
 

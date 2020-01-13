@@ -10,7 +10,6 @@ feature 'Headhunter Create a new Job' do
    
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
-    #login_as(user, scope: :headhunter)
     visit root_path
     click_link "Entrar"
 
@@ -54,8 +53,7 @@ feature 'Headhunter Create a new Job' do
     benefit = Benefit.create!(name:'Vale transporte')
     
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
-    
-    #login_as(user, scope: :headhunter)
+
 
     visit root_path
     click_link "Entrar"
@@ -71,11 +69,7 @@ feature 'Headhunter Create a new Job' do
     fill_in 'Descrição', with: ' '
     fill_in 'Encerra', with: ' '
     fill_in 'Local de trabalho', with: ' '
-    #select ' ', from: 'Faixa salarial'
-    #select "#{skill.name}", from: 'Habilidades'
-    #select "#{company.name}", from: 'Empresa'
-    #select "#{joblevel.name}", from: 'Nivel Vaga'
-    #select "#{benefit.name}", from: 'Beneficio'
+  
     click_button 'Enviar'
 
     expect(page).to have_content('...deve ser informado')

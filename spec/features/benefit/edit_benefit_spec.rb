@@ -19,7 +19,6 @@ feature 'Editing a Benefit' do
     fill_in 'Nome', with: 'VT'
     
     click_button 'Enviar'
-
     
     expect(page).to have_content('VT')
 

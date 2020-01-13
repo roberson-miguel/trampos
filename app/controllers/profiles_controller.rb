@@ -76,14 +76,11 @@ class ProfilesController < ApplicationController
         if type == "favorite"
           current_user.favorites << @profile
           redirect_back fallback_location: root_path, notice: "Voce favoritou #{@profile.name}"
-          #redirect_to :back, notice: "Voce favoritou #{@profile.name}"
         elsif type == "unfavorite"
           current_user.favorites.delete(@profile)
           redirect_back fallback_location: root_path, notice: "Desfavoritado #{@profile.name}"
-          #redirect_to :back, notice: "Desfavoritado #{@profile.name}"
         else
           redirect_back fallback_location: root_path, notice: "Nada modificado"
-          #redirect_to :back, notice: "Nada modificado"
         end
     end
 

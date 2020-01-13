@@ -2,8 +2,7 @@ class JobsController < ApplicationController
 
   before_action :set_find, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  #before_action :authorize_headhunter#, only: [:create, :new, :update, :destroy, :edit]
-  #before_action :authorize_candidate
+
 
     def index
       @jobs = Job.all
@@ -74,21 +73,7 @@ class JobsController < ApplicationController
     end
 
     def search
-        
-      #busca parcial em unico atributo
-      #@jobs = Job.where('title like ?', "%#{params[:q]}%")
-
-      #busca parcial em dois atributos(teste)
-      @jobs = Job.where('title like ? OR description like ?', "%#{params[:q]}%", "%#{params[:q]}%")
-
-      #Busca exata do termo pesquisado
-      #@jobs = Job.where(title: params[:q])
-      
-      #busca um unico registro encontrado
-      #@job = Job.find_by(title: params[:q])
-      
-      # exibe as pesquisa na index
-      #render :index 
+        @jobs = Job.where('title like ? OR description like ?', "%#{params[:q]}%", "%#{params[:q]}%")
     end
 
 

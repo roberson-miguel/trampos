@@ -30,7 +30,7 @@ feature 'Deleting a Profile' do
     click_button 'Log in'
 
     click_link "Completar Perfil"
-    #click_link "Roberson Miguel"
+ 
     click_link "Deletar"
 
       

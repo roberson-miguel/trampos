@@ -38,11 +38,7 @@ feature 'Headhunter Favorite a Profile' do
     click_button 'Log in'
 
     click_link "Candidatos das Vagas"
-    #click_link "Dev Ruby Jr"
-    #click_link "Roberson Miguel"
-    #click_link "favorite"
-
-  
+      
     expect(page).to have_content('elaine@gmail.com')
     expect(page).to have_content('Dev Ruby Jr')
     expect(page).to have_link('Voltar') 

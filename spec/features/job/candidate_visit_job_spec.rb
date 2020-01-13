@@ -14,7 +14,7 @@ feature 'Candidate visit page Job' do
       salary_range: '1000_até_3000', skill: skill, status: "ativa", 
       joblevel: joblevel, company: company, benefit: benefit, user: user)
     
-    #login_as(user, scope: :headhunter)
+   
     visit root_path
     click_link "Entrar"
 

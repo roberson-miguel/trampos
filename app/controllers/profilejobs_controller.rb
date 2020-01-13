@@ -2,7 +2,7 @@ class ProfilejobsController < ApplicationController
 
     before_action :set_find, only: [:index, :new, :create]
     before_action :authenticate_user!
-    #before_action :authorize_candidate
+
     
     def index
         
@@ -22,9 +22,6 @@ class ProfilejobsController < ApplicationController
         @jobs = Job.all
         @profiles = Profile.all
         @users = User.all
-       
-        #@profilejobs = Profilejob.where('job_id like ?', "%#{params[:q]}%")
-        #@profilejobs = Profilejob.where("job_id like '#{current_user.id}'")
         Profilejob.joins(:profile_id).where(profile_id: { profile_id: current_user.id})
     end
 
@@ -34,7 +31,7 @@ class ProfilejobsController < ApplicationController
         @profilejob.profile_id = current_user.id
         @profilejob.job_id = @job.id
         @profiles = Profile.all
-        
+     
         if @profilejob.save!
             
             flash[:notice] = 'Aplicado para vaga com sucesso'
