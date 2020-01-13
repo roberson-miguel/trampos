@@ -37,6 +37,7 @@ gem 'devise'
 
 gem 'image_processing'
 
+
 #adicionando twitter bootstrap e javascript
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
@@ -48,6 +49,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # RSpec for Rails-3+
   gem 'rspec-rails', '~> 3.9'
+  # Code coverage for Ruby
+  gem 'simplecov', require: false
 end
 
 group :development do
