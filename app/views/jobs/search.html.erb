@@ -35,7 +35,7 @@
             <% end %>
             
             <% @jobs.each do |job| %>
-                <% if job.status == 'ativa' %>
+                <% if job.status == 'active' %>
                     <%= link_to job.title, job_path(job) %><br>
                 <%end %>
             <% end %></p>

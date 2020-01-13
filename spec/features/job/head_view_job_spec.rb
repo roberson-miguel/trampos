@@ -11,7 +11,7 @@ feature 'Headhunter View a job' do
     
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
       end_date: '2020-01-31', workplace:' Remoto', 
-      salary_range: '1000_até_3000', skill: skill, status: "ativa",
+      salary_range: '1000_to_3000', skill: skill, status: "active",
       joblevel: joblevel, company: company, benefit: benefit, user: user)
 
   
@@ -29,7 +29,7 @@ feature 'Headhunter View a job' do
     expect(page).to have_content('Saber iniciar um Crud')
     expect(page).to have_content('2020-01-31')
     expect(page).to have_content('Remoto')
-    expect(page).to have_content('1000_até_3000')
+    expect(page).to have_content('1000_to_3000')
     expect(page).to have_link('Voltar')
     expect(page).to have_link('Editar')
     expect(page).to have_link('Deletar')

@@ -10,7 +10,7 @@ feature 'Headhunter Editing a jobs' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
                end_date: '2020-01-31', workplace:' Remoto', 
-               salary_range: '1000_até_3000', skill: skill, status: "ativa",
+               salary_range: '1000_to_3000', skill: skill, status: "active",
                joblevel: joblevel, company: company, benefit: benefit, user: user)
     
     
@@ -30,13 +30,13 @@ feature 'Headhunter Editing a jobs' do
     fill_in 'Descrição', with: 'Saber inicar um CRUD e iniciar Testes'
     fill_in 'Encerra', with: '2020-01-15'
     fill_in 'Local de trabalho', with: 'Remoto'
-    select '1000 Até 3000', from: 'Faixa salarial'
+    select '1000 To 3000', from: 'Faixa salarial'
     click_button 'Enviar'
 
     expect(page).to have_content('Dev Ruby Jr')
     expect(page).to have_content('Saber inicar um CRUD e iniciar Testes')
     expect(page).to have_content('2020-01-15')
     expect(page).to have_content('Remoto')
-    expect(page).to have_content('1000_até_3000')
+    expect(page).to have_content('1000_to_3000')
   end
 end

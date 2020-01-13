@@ -10,7 +10,7 @@ feature 'Headhunter Search by candidate' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:"andamento")
     Job.create!(title: 'Dev Ruby Jr', description: 'Saber iniciar um Crud', 
                end_date: '2020-01-31', workplace:' Remoto', 
-               salary_range: '1000_até_3000', skill: skill, status: "ativa",
+               salary_range: '1000_to_3000', skill: skill, status: "active",
                joblevel: joblevel, company: company, benefit: benefit, user: user)
     Profile.create!(skill: skill, joblevel: joblevel, user: user, 
                 name:'Roberson Miguel', social_name: 'Miguel', 

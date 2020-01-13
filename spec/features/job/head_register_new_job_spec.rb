@@ -24,8 +24,8 @@ feature 'Headhunter Create a new Job' do
     fill_in 'Descrição', with: 'Saber inicar um CRUD e iniciar TDD'
     fill_in 'Encerra', with: '2020-01-15'
     fill_in 'Local de trabalho', with: 'Remoto'
-    select '1000 Até 3000', from: 'Faixa salarial'
-    select 'Ativa', from: 'Status Vaga'
+    select '1000 To 3000', from: 'Faixa salarial'
+    select 'Active', from: 'Status Vaga'
     select "#{skill.name}", from: 'Habilidades'
     select "#{company.name}", from: 'Empresa'
     select "#{joblevel.name}", from: 'Nivel Vaga'
@@ -37,12 +37,12 @@ feature 'Headhunter Create a new Job' do
     expect(page).to have_content('Saber inicar um CRUD e iniciar TDD')
     expect(page).to have_content('2020-01-15')
     expect(page).to have_content('Remoto')
-    expect(page).to have_content('1000_até_3000')
+    expect(page).to have_content('1000_to_3000')
     expect(page).to have_content('Ruby on Rails')
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('Junior')
     expect(page).to have_content('Vale transporte')
-    expect(page).to have_content('ativa')
+    expect(page).to have_content('active')
   end
 
   scenario "Headhunter I can not create a new job empty" do
