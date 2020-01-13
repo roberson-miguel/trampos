@@ -1,41 +1,32 @@
 
     <ul class="nav flex-column">
-       
-            <% if user_signed_in? %> 
-                             <% if current_user.headhunter? %>
-                                <li><%= link_to "Vagas", jobs_path %></li>
-                                <li><%= link_to "Empresas", companies_path %></li>
-                                <li><%= link_to "Habilidades", skills_path %></li>
-                                <li><%= link_to "Nivel Vaga", joblevels_path %></li>
-                                <li><%= link_to "Beneficios", benefits_path %></li>
-                                <li><%= link_to "Candidatos das Vagas",  search_job_profilejobs_path(:job_id) %></li>
-                                <br>
-                                <br>
-                                <li><%= link_to "Pesquisar Candidato", profiles_path %></li>
-                                <br>
-                                <br>
-                            <% else  current_user.candidate? %>
-                                <li><%= link_to "Vagas", search_jobs_path %></li>
-                                <% if current_user.andamento? %>
-                                    <li><%= link_to "Minhas Vagas",  search_job_profilejobs_path(:job_id) %></li>
-                                    <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
-                                    <li><%= link_to 'Completar Perfil', edit_profile_path(current_user) %></li>
-                                    <br>
-                                <% end %>
-                            <% end %>
-                 
-            
-            <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
-            <% if current_user.novoperfil?%>
-                <li><%= link_to "Novo Perfil", new_profile_path %></li> 
-                <br>
+        <% if user_signed_in? %> 
+            <% if current_user.headhunter? %>
+                <li><%= link_to "Vagas", jobs_path %></li>
+                <li><%= link_to "Empresas", companies_path %></li>
+                <li><%= link_to "Habilidades", skills_path %></li>
+                <li><%= link_to "Nivel Vaga", joblevels_path %></li>
+                <li><%= link_to "Beneficios", benefits_path %></li>
+                <li><%= link_to "Candidatos das Vagas",  search_job_profilejobs_path(:job_id) %></li><br><br>
+                <li><%= link_to "Pesquisar Candidato", profiles_path %></li><br><br>
+            <% else  current_user.candidate? %>
+                <li><%= link_to "Vagas", search_jobs_path %></li>
+                    <% if current_user.andamento? %>
+                        <li><%= link_to "Minhas Vagas",  search_job_profilejobs_path(:job_id) %></li>
+                        <li><%= link_to "Editar Conta", edit_user_registration_path %></li>
+                        <li><%= link_to 'Completar Perfil', edit_profile_path(current_user) %></li><br>
+                    <% end %>
             <% end %>
+
+            <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+                        
+            <% if current_user.novoperfil?%>
+                <li><%= link_to "Novo Perfil", new_profile_path %></li><br>
+            <% end %>
+
         <% else %>
-        
-           <li class="nav-item"><%= link_to 'Entrar', new_user_session_path %></li>
-            <br>
-            <li><%= link_to "Registrar conta", new_user_registration_path %><br></li>  
-      
+            <li class="nav-item"><%= link_to 'Entrar', new_user_session_path %></li><br>
+            <li><%= link_to "Registrar conta", new_user_registration_path %><br></li>   
         <% end %>
     </ul>
 
