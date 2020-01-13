@@ -24,7 +24,7 @@ feature 'Register new Profile' do
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
     select "#{user.role}", from: 'Tipo de Perfil'
 
-    select "Inglês(Basico)", from: 'Idiomas'
+    select "Basic English", from: 'Idiomas'
 
     fill_in 'Instituição', with: 'Senac'
     fill_in 'Curso', with: 'Ciências da computação'

@@ -11,7 +11,7 @@ feature 'Deleting a Profile' do
     Profile.create!(skill: skill, joblevel: joblevel, user: user,
                     name:'Roberson Miguel', social_name: 'Roberson Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
-                    date_birth: '1979-09-20',  languages: "inglês(basico)", 
+                    date_birth: '1979-09-20',  languages: "basic English", 
                     education_level: 'graduado', education_status: 'concluido', 
                     education_institution: 'Senac', education_course: 'Ciências da computação', 
                     education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 

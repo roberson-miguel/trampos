@@ -15,9 +15,9 @@ class Profile < ApplicationRecord
     validates :name, :address, :cellphone, :date_birth, presence: {message: '...deve ser informado'}
     validates :name, length: { minimum: 5, message: '....deve ter tamanho minimo de 5 caracter'}
 
-    enum languages: { "inglês(basico)": 0, "inglês(intermediario)": 15, "inglês(avançado)": 30}
+    enum languages: { "basic English": 0, "intermediary English": 15, "Advanced English": 30}
     def set_default_languages
-        self.languages ||= :"inglês(basico)"
+        self.languages ||= :"basic English"
     end
 
     enum education_level: { "fundamental": 0, "técnico": 15, "graduado": 30}
