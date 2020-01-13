@@ -20,9 +20,9 @@ class Profile < ApplicationRecord
         self.languages ||= :"basic English"
     end
 
-    enum education_level: { "fundamental": 0, "técnico": 15, "graduado": 30}
+    enum education_level: { "high school": 0, "technical": 15, "graduate": 30}
     def set_default_education_level
-        self.education_level ||= :"graduado"
+        self.education_level ||= :"graduate"
     end
 
     enum education_status: { "cursando": 0, "trancado": 15, "concluido": 30}

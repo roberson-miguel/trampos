@@ -28,7 +28,7 @@ feature 'Register new Profile' do
 
     fill_in 'Instituição', with: 'Senac'
     fill_in 'Curso', with: 'Ciências da computação'
-    select 'Graduado', from: 'Nivel Educacional'
+    select 'Graduate', from: 'Nivel Educacional'
     select 'Concluido', from: 'Status do Curso'
     fill_in 'Data conclusão', with: '2018-12-05'
 
