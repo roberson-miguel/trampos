@@ -20,51 +20,51 @@
       <%= f.collection_select(:user_id, @users, :id, :role) %>		   
    
       Email: <%= f.label :email, current_user.email %><br>
-      <%= f.label :name, "Nome" %>
+      <%= f.label :name %>
       <%= f.text_field :name %>
-      <%= f.label :social_name, "Nome Social" %>
+      <%= f.label :social_name %>
       <%= f.text_field :social_name %>
-      <%= f.label :date_birth, 'Data Nascimento' %>
+      <%= f.label :date_birth %>
       <%= f.text_field :date_birth %>
-      <%= f.label :cellphone, 'Celular' %>
+      <%= f.label :cellphone %>
       <%= f.text_field :cellphone %>
-      <%= f.label :address, 'Endereço' %>
+      <%= f.label :address %>
       <%= f.text_field :address %>
     <br>
     <br>
-      <%= f.label :languages, 'Idiomas ' %>
+      <%= f.label :languages %>
       <%= f.select(:languages, Profile.languages.keys.map {|language| [language.titleize,language]}) %>
     <br>
     <br>
-      <%= f.label :education_institution, "Instituição" %>
+      <%= f.label :education_institution %>
       <%= f.text_field :education_institution %>
-      <%= f.label :education_course, "Curso" %>
+      <%= f.label :education_course %>
       <%= f.text_field :education_course %>
-      <%= f.label :education_level, 'Nivel Educacional' %>
+      <%= f.label :education_level %>
       <%= f.select(:education_level, Profile.education_levels.keys.map {|education_level| [education_level.titleize,education_level]}) %>
-      <%= f.label :education_status, 'Status do Curso' %>
+      <%= f.label :education_status %>
       <%= f.select(:education_status, Profile.education_statuses.keys.map {|education_status| [education_status.titleize,education_status]}) %>
-      <%= f.label :education_end_date, "Data conclusão" %>
+      <%= f.label :education_end_date %>
       <%= f.text_field :education_end_date %>
     <br>
     <br>
-      <%= f.label :experience_company, "Empresa" %>
+      <%= f.label :experience_company %>
       <%= f.text_field :experience_company %>
-      <%= f.label :experience_reponsibility, "Responsabilidades" %>
+      <%= f.label :experience_reponsibility %>
       <%= f.text_field :experience_reponsibility %>
-      <%= f.label :experience_role, "Cargo" %>
+      <%= f.label :experience_role %>
       <%= f.text_field :experience_role %>
-      <%= f.label :joblevel_id, 'Nivel Cargo' %>
+      <%= f.label :joblevel_id %>
       <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %>
-      <%= f.label :skill_id, 'Habilidades' %>
+      <%= f.label :skill_id %>
       <%= f.collection_select(:skill_id, @skills, :id, :name) %>
     <br>
     <br>
-      <%= f.label :experience_start_date, "Data Entrada" %>
+      <%= f.label :experience_start_date %>
       <%= f.text_field :experience_start_date %>
-      <%= f.label :experience_end_date, "Data Saida" %>
+      <%= f.label :experience_end_date %>
       <%= f.text_field :experience_end_date %>
-      <%= f.label :experience_current_position, 'Atual?' %>
+      <%= f.label :experience_current_position %>
       <%= f.check_box :experience_current_position, checked: @profile.new_record? %>
     <br>
     <br>

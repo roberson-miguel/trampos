@@ -4,11 +4,11 @@
         Nome: <%= f.label current_user.email %><br>
         
     </p>
-        <%= f.label :rating, "Estrelas" %><br>
+        <%= f.label :rating %><br>
         <%= f.select :rating, Comment::RATING , prompt: "Quantas estrelas"%>
     </p>
     </p>
-        <%=f.label :comment, "Comentário" %><br>
+        <%=f.label :comment %><br>
         <%= f.text_area :comment, placeholder:"Escreva seu comentário" %>
     </p>
     <p>

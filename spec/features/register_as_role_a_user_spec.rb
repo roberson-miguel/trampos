@@ -14,7 +14,7 @@ feature 'Register as role a user' do
 
     click_button 'Sign up'
     
-    expect(page).to have_content('Welcome! You have signed up successfully.')
+    expect(page).to have_content('Bem-vindo! Você se registrou com êxito.')
 
   end
 end
