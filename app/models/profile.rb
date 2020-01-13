@@ -25,9 +25,9 @@ class Profile < ApplicationRecord
         self.education_level ||= :"graduate"
     end
 
-    enum education_status: { "cursando": 0, "trancado": 15, "concluido": 30}
+    enum education_status: { "studying": 0, "braided": 15, "concluded": 30}
     def set_default_education_status
-        self.education_status ||= :"concluido"
+        self.education_status ||= :"studying"
     end
 
 end

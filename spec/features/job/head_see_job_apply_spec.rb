@@ -19,7 +19,7 @@ feature 'Head must see a Job and who apply' do
         name:'Roberson Miguel', social_name: 'Miguel', 
         address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
         date_birth: '1979-09-20',  languages: "basic English", 
-        education_level: 'graduate', education_status: 'concluido', 
+        education_level: 'graduate', education_status: 'concluded', 
         education_institution: 'Senac', education_course: 'Ciências da computação', 
         education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 
         experience_reponsibility: 'Gerenciava informatica e financeiro' , 
