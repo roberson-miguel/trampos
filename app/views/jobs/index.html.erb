@@ -1,12 +1,11 @@
-<p>Vagas</h2>
+<p>Vagas</p>
 <br>
 <br>
 
 <% if user_signed_in? %> 
   
-    Olá <%= current_user.email %>
-    <br>
-    <br>
+    Olá <%= current_user.email %> <br><br>
+    
     <%= form_with url: search_jobs_path, local: true, method: :get do %>
         <%= label_tag(:q, 'Pesquisar Vaga') %>
         <%= text_field_tag(:q) %>

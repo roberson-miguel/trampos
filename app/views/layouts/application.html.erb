@@ -30,9 +30,12 @@
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              Olá...<% if user_signed_in? %> 
+              Olá,  
+              <% if user_signed_in? %> 
                 <%= current_user.email %> 
-              <% end %> 
+              <% else %> 
+                clique em Entrar ou Registra conta, caso ainda não tenha uma!
+              <% end %>
         
           </li>
           

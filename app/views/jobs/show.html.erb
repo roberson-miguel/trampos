@@ -13,17 +13,16 @@
         Criado por: <%= current_user.email %><br>
         Status Vaga: <%= @job.status %><br>
 
-
-
         <% if current_user.headhunter? %>
             <%= link_to 'Editar', edit_job_path(@job) %>
             <%= link_to 'Deletar', job_path(@job), method: :delete, data: { confirm: "Confirma exclusão da vaga: #{@job.title}?" } %>
             
+        <% else %>
+                <%= link_to 'Aplicar Vaga' , new_job_profilejob_path(@job) %>
         <% end %>
-
-    <% end %>
     
     <%= link_to 'Voltar', jobs_path %>
-    <%= link_to 'Aplicar Vaga' , new_job_profilejob_path(@job) %>
+
+    <% end %>
     
 </div>
