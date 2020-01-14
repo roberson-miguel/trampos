@@ -12,13 +12,13 @@ feature 'Editing a Profile' do
     Profile.create!(skill: skill, joblevel: joblevel, user: user, 
                     name:'Roberson Miguel', social_name: 'Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
-                    date_birth: '1979-09-20',  languages: "basic English", 
+                    date_birth: '20/09/1979',  languages: "basic English", 
                     education_level: 'graduate', education_status: 'concluded', 
                     education_institution: 'Senac', education_course: 'Ciências da computação', 
-                    education_end_date: '2018-12-05', experience_company: 'Cia Mineradora Geral', 
+                    education_end_date: '05/12/2018', experience_company: 'Cia Mineradora Geral', 
                     experience_reponsibility: 'Gerenciava informatica e financeiro' , 
                     experience_role: 'Supervisor de tesouraria', 
-                    experience_start_date: '1997-12-01', experience_end_date: '2003-03-29', 
+                    experience_start_date: '01/12/1997', experience_end_date: '29/03/2003', 
                     experience_current_position: false, 
                     avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     
@@ -38,7 +38,9 @@ feature 'Editing a Profile' do
     attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Bios'
-    fill_in 'Data Nascimento', with: '1979-09-20'
+    #fill_in 'Data Nascimento', with: '20/09/1979'
+    select '20/09/1979', from: 'Data Nascimento'
+  
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: 'Rua Rodolfo Mayer, 127 - São Paulo'
     select "candidate", from: 'Tipo de Perfil'
@@ -49,15 +51,15 @@ feature 'Editing a Profile' do
     fill_in 'Curso', with: 'Ciências da computação'
     select 'Graduate', from: 'Nivel Educacional'
     select 'Concluded', from: 'Status do Curso'
-    fill_in 'Data conclusão', with: '2018-12-05'
+    fill_in 'Data conclusão', with: '05/12/2018'
 
     fill_in 'Empresa', with: 'Cia Mineradora Geral'
     fill_in 'Responsabilidades', with: 'Gerenciava informatica e financeiro'
     fill_in 'Cargo', with: 'Supervisor de tesouraria'
     select "#{joblevel.name}", from: 'Nivel Cargo'
     select "#{skill.name}", from: 'Habilidades'
-    fill_in 'Data Entrada', with: '1997-12-01'
-    fill_in 'Data Saida', with: '2003-03-29'
+    fill_in 'Data Entrada', with: '01/12/1997'
+    fill_in 'Data Saida', with: '29/03/2003'
     uncheck 'Atual?' 
 
     click_button 'Enviar'

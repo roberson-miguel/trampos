@@ -5,24 +5,24 @@
 <p>Nome Social:<%= @profile.social_name %></p>
 <p>Endereço: <%= @profile.address %></p>
 <p>Celular:<%= @profile.cellphone %></p>
-<p>Data Nascimento <%= @profile.date_birth %></p>
+<p>Data Nascimento <%= l(@profile.date_birth) %></p>
 <p>Idiomas:<%= @profile.languages %></p>
 <p>Instituição de Ensino: <%= @profile.education_institution%></p>
 <p>Nivel Educacional:<%= @profile.education_level %></p>
 <p>Status do Curso: <%= @profile.education_status %></p>
 <p>Curso: <%= @profile.education_course %></p>
-<p>Data Conclusão: <%= @profile.education_end_date %></p>
+<p>Data Conclusão: <%= l(@profile.education_end_date) %></p>
 <p>Experiencia Profissional: <%= @profile.experience_company %></p>
 <p>Responsabilidades: <%= @profile.experience_reponsibility %></p>
 <p>Cargo: <%= @profile.experience_role%></p>
 <p>Nivel do Cargo: <%= @profile.joblevel.name %></p>
 <p>Habilidades: <%= @profile.skill.name %></p>
-<p>Data inicio: <%= @profile.experience_start_date %></p>
+<p>Data inicio: <%= l(@profile.experience_start_date) %></p>
 
 <% if @profile.experience_current_position? %>
     <p>Atual Emprego </p>
 <% else %>
-    <p>Data inicio: <%= @profile.experience_end_date %></p>
+    <p>Data inicio: <%= l(@profile.experience_end_date) %></p>
 <% end %>
 
 <% if current_user.headhunter? %>
