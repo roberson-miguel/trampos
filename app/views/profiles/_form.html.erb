@@ -24,8 +24,8 @@
       <%= f.text_field :name %>
       <%= f.label :social_name %>
       <%= f.text_field :social_name %>
-      <%= f.label :date_birth%>
-      <%= f.date_select :date_birth %>
+      <%= f.label :date_birth %>
+      <%= f.date_select :date_birth, start_year: Date.today.year - 100 %>
       <%= f.label :cellphone %>
       <%= f.text_field :cellphone %>
       <%= f.label :address %>
@@ -45,7 +45,7 @@
       <%= f.label :education_status %>
       <%= f.select(:education_status, Profile.education_statuses.keys.map {|education_status| [education_status.titleize,education_status]}) %>
       <%= f.label :education_end_date %>
-      <%= f.date_select :education_end_date %>
+      <%= f.date_select :education_end_date, start_year: Date.today.year - 100 %>
     <br>
     <br>
       <%= f.label :experience_company %>
@@ -63,7 +63,7 @@
       <%= f.label :experience_start_date %>
       <%= f.date_select :experience_start_date %>
       <%= f.label :experience_end_date %>
-      <%= f.date_select :experience_end_date %>
+      <%= f.date_select :experience_end_date, start_year: Date.today.year - 100 %>
       <%= f.label :experience_current_position %>
       <%= f.check_box :experience_current_position, checked: @profile.new_record? %>
     <br>

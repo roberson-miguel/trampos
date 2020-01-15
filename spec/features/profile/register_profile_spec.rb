@@ -18,11 +18,11 @@ feature 'Register new Profile' do
 
     attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
-    fill_in 'Nome Social', with: 'Roberson'
+    fill_in 'Nome Social', with: 'Roberson Miguel'
   
     select '20', :from => 'profile_date_birth_3i'
     select 'setembro', :from => 'profile_date_birth_2i'
-    select '2015', :from => 'profile_date_birth_1i'
+    select '1979', :from => 'profile_date_birth_1i'
 
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
