@@ -31,7 +31,7 @@ feature 'Headhunter Editing a jobs' do
     fill_in 'Encerra', with: '2020-01-15'
     fill_in 'Local de trabalho', with: 'Remoto'
     select '1000 To 3000', from: 'Faixa salarial'
-    click_button 'Enviar'
+    click_button 'Atualizar Vaga'
 
     expect(page).to have_content('Dev Ruby Jr')
     expect(page).to have_content('Saber inicar um CRUD e iniciar Testes')

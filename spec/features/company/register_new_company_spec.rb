@@ -20,7 +20,7 @@ feature 'Create new Company' do
     fill_in 'Endereço', with: 'Alameda Santos, 011'
     fill_in 'Descrição', with: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails'
     
-    click_button 'Enviar'
+    click_button 'Criar Empresa'
 
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('05.372.840/0001-07')
@@ -45,7 +45,7 @@ feature 'Create new Company' do
     click_link "Nova empresa"
 
     fill_in 'Nome', with: ' '
-    click_button 'Enviar'
+    click_button 'Criar Empresa'
 
     expect(page).to have_content('...deve ser informado')
     expect(page).to have_content('...deve ter tamanho minimo de 20 caracter')
@@ -72,7 +72,7 @@ feature 'Create new Company' do
     fill_in 'CNPJ', with: '05.372.840/0001-07'
     fill_in 'Endereço', with: 'Alameda Santos, 011'
     fill_in 'Descrição', with: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails'
-    click_button 'Enviar'
+    click_button 'Criar Empresa'
 
     expect(page).to have_content('...já está em uso')
    
@@ -98,7 +98,7 @@ feature 'Create new Company' do
     fill_in 'CNPJ', with: '05.372.840/0001-07'
     fill_in 'Endereço', with: 'Alameda Santos, 011'
     fill_in 'Descrição', with: 'Consultoria'
-    click_button 'Enviar'
+    click_button 'Criar Empresa'
 
     expect(page).to have_content('...deve ter tamanho minimo de 20 caracter')
    

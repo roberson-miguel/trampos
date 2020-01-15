@@ -20,7 +20,7 @@ feature 'Editing a Job Level' do
 
     fill_in 'Nome', with: 'Jr'
     
-    click_button 'Enviar'
+    click_button 'Atualizar Nível da vaga'
 
     
     expect(page).to have_content('Jr')

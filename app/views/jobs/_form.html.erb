@@ -16,48 +16,46 @@
   
   
   
-    <%= f.label :title, "Titulo" %>
+    <%= f.label :title %>
     <%= f.text_field :title %><br>
   
   
-    <%= f.label :description, "Descrição" %>
+    <%= f.label :description %>
     <%= f.text_field :description %><br>
   
   
-    <%= f.label :workplace, "Local de trabalho" %>
+    <%= f.label :workplace %>
     <%= f.text_field :workplace %><br>
   
   
-    <%= f.label :end_date, "Encerra" %> 
+    <%= f.label :end_date %> 
     <%= f.text_field :end_date %><br>
   
   
-    <%= f.label :salary_range, 'Faixa salarial' %>
+    <%= f.label :salary_range %>
     <%= f.select(:salary_range, Job.salary_ranges.keys.map {|salary| [salary.titleize,salary]}) %><br>
   
   
-    <%= f.label :skill_id, 'Habilidades' %>
+    <%= f.label :skill_id %>
     <%= f.collection_select(:skill_id, @skills, :id, :name) %><br>
   
    
-    <%= f.label :company_id, 'Empresa' %>
+    <%= f.label :company_id %>
     <%= f.collection_select(:company_id, @companies, :id, :name) %><br>
   
   
-    <%= f.label :joblevel_id, 'Nivel Vaga' %>
+    <%= f.label :joblevel_id %>
     <%= f.collection_select(:joblevel_id, @joblevels, :id, :name) %><br>
   
   
-    <%= f.label :benefit_id, 'Beneficio' %>
+    <%= f.label :benefit_id %>
     <%= f.collection_select(:benefit_id, @benefits, :id, :name) %><br>
   
   
-    <%= f.label :status, 'Status Vaga' %>
+    <%= f.label :status %>
     <%= f.select(:status, Job.statuses.keys.map {|status| [status.titleize,status]}) %><br>
   
 
-     <%= f.submit 'Enviar', class:'btn btn-primary' %>
+     <%= f.submit class:'btn btn-primary' %>
   
-
-
 <% end %>

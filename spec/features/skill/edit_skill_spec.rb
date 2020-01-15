@@ -20,7 +20,7 @@ feature 'Editing a Skill' do
 
     fill_in 'Nome', with: 'Python'
     
-    click_button 'Enviar'
+    click_button 'Atualizar Habilidade'
 
     
     expect(page).to have_content('Python')

@@ -22,7 +22,7 @@ feature 'Editing a company' do
     fill_in 'CNPJ', with: '05.372.840'
     fill_in 'Endereço', with: 'Alameda Santos, 011'
     fill_in 'Descrição', with: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails'
-    click_button 'Enviar'
+    click_button 'Atualizar Empresa'
    
     expect(page).to have_content('Campus Code')
     expect(page).to have_content('05.372.840')

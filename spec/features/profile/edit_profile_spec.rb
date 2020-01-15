@@ -22,10 +22,6 @@ feature 'Editing a Profile' do
                     experience_current_position: false, 
                     avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     
-    
-
-                    
-
     visit root_path
     click_link "Entrar"
 
@@ -37,7 +33,7 @@ feature 'Editing a Profile' do
       
     attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     fill_in 'Nome', with: 'Roberson'
-    fill_in 'Nome Social', with: 'Bios'
+    fill_in 'Nome Social', with: 'Bios' 
     
     select '20', :from => 'profile_date_birth_3i'
     select 'setembro', :from => 'profile_date_birth_2i'
@@ -73,7 +69,7 @@ feature 'Editing a Profile' do
     select '2003', :from => 'profile_experience_end_date_1i'
     uncheck 'Atual?' 
 
-    click_button 'Enviar'
+    click_button 'Atualizar Perfil'
 
     
     expect(page).to have_content('Roberson')

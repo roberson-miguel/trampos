@@ -18,7 +18,7 @@ feature 'Editing a Benefit' do
 
     fill_in 'Nome', with: 'VT'
     
-    click_button 'Enviar'
+    click_button 'Atualizar Beneficio'
     
     expect(page).to have_content('VT')
 

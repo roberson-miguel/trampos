@@ -1,5 +1,9 @@
 ---
 pt-BR:
+  helpers:
+    submit:
+      post:
+        create: 'Enviar {{model}}'
 
   activerecord:
     models: 
@@ -35,6 +39,26 @@ pt-BR:
         name: 'Nome'
         rating: 'Avaliação'
         comment: 'Comentário'
+      company:
+        name: 'Nome'
+        cnpj: 'CNPJ'
+        address: 'Endereço'
+        description: 'Descrição'
+      job:
+        title: 'Titulo'
+        description: 'Descrição'
+        workplace: 'Local de trabalho'
+        end_date: 'Encerra'
+        salary_range: 'Faixa salarial'
+        skill_id: 'Habilidades'
+        company_id: 'Empresa'
+        joblevel_id: 'Nivel Vaga'
+        benefit_id: 'Beneficio'
+        status: 'Status Vaga'
+      skill:
+        name: 'Nome'
+      joblevel:
+        name: 'Nome'
       profile:
         languages: 'Idiomas'
         name: 'Nome'
@@ -44,8 +68,8 @@ pt-BR:
         date_birth: 'Data Nascimento'
         languages: 'Idiomas'
         education_level: 'Nivel Educacional'
-        education_status: "Status do Curso"
-        education_institution: "Instituição"
+        education_status: 'Status do Curso'
+        education_institution: 'Instituição'
         education_course: 'Curso'
         education_end_date: 'Data conclusão'
         experience_company: 'Empresa'
@@ -54,8 +78,8 @@ pt-BR:
         experience_start_date: 'Data Entrada'
         experience_end_date: 'Data Saida'
         experience_current_position: 'Atual?'
-        joblevel_id: "Nivel Cargo"
-        skill_id: "Habilidades"
+        joblevel_id: 'Nivel Cargo'
+        skill_id: 'Habilidades'
 
         
           

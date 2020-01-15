@@ -16,7 +16,7 @@ feature 'Create new Skill' do
     click_link "Nova habilidade"
 
     fill_in 'Nome', with: 'Ruby on Rails'
-    click_button 'Enviar'
+    click_button 'Criar Habilidade'
 
     expect(page).to have_content('Ruby on Rails')
     expect(page).to have_content('Habilidade criada com sucesso')
@@ -38,7 +38,7 @@ feature 'Create new Skill' do
     click_link "Nova habilidade"
 
     fill_in 'Nome', with: ' '
-    click_button 'Enviar'
+    click_button 'Criar Habilidade'
 
     expect(page).to have_content('...deve ser informado')
     expect(page).to have_content('...deve ter tamanho minimo de 3 caracter')
@@ -62,7 +62,7 @@ feature 'Create new Skill' do
     click_link "Nova habilidade"
 
     fill_in 'Nome', with: 'Ruby on Rails'
-    click_button 'Enviar'
+    click_button 'Criar Habilidade'
 
     expect(page).to have_content('...já está em uso')
    
@@ -85,7 +85,7 @@ feature 'Create new Skill' do
     click_link "Nova habilidade"
 
     fill_in 'Nome', with: 'V'
-    click_button 'Enviar'
+    click_button 'Criar Habilidade'
 
     expect(page).to have_content('...deve ter tamanho minimo de 3 caracter')
    

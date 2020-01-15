@@ -15,7 +15,7 @@ feature 'Create new Benefit' do
     click_link "Novo beneficio"
 
     fill_in 'Nome', with: 'Vale transporte'
-    click_button 'Enviar'
+    click_button 'Criar Beneficio'
 
     expect(page).to have_content('Vale transporte')
     expect(page).to have_content('Beneficio criado com sucesso')
@@ -36,7 +36,7 @@ feature 'Create new Benefit' do
     click_link "Novo beneficio"
 
     fill_in 'Nome', with: ' '
-    click_button 'Enviar'
+    click_button 'Criar Beneficio'
 
     expect(page).to have_content('...deve ser informado')
     expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
@@ -59,7 +59,7 @@ feature 'Create new Benefit' do
     click_link "Novo beneficio"
 
     fill_in 'Nome', with: 'Vale transporte'
-    click_button 'Enviar'
+    click_button 'Criar Beneficio'
 
     expect(page).to have_content('...já está em uso')
    
@@ -81,7 +81,7 @@ feature 'Create new Benefit' do
     click_link "Novo beneficio"
 
     fill_in 'Nome', with: 'V'
-    click_button 'Enviar'
+    click_button 'Criar Beneficio'
 
     expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
    

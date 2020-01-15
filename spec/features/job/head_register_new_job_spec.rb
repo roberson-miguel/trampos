@@ -30,7 +30,7 @@ feature 'Headhunter Create a new Job' do
     select "#{company.name}", from: 'Empresa'
     select "#{joblevel.name}", from: 'Nivel Vaga'
     select "#{benefit.name}", from: 'Beneficio'
-    click_button 'Enviar'
+    click_button 'Criar Vaga'
 
     expect(page).to have_content('Vaga criada com sucesso.')
     expect(page).to have_content('Dev Ruby Jr')
@@ -70,7 +70,7 @@ feature 'Headhunter Create a new Job' do
     fill_in 'Encerra', with: ' '
     fill_in 'Local de trabalho', with: ' '
   
-    click_button 'Enviar'
+    click_button 'Criar Vaga'
 
     expect(page).to have_content('...deve ser informado')
     

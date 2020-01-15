@@ -16,7 +16,7 @@ feature 'Create new Jobleevel' do
     click_link "Novo nivel vaga"
 
     fill_in 'Nome', with: 'Junior'
-    click_button 'Enviar'
+    click_button 'Criar Nível da vaga'
 
     expect(page).to have_content('Junior')
     expect(page).to have_content('Nivel da vaga criado com sucesso')
@@ -38,7 +38,7 @@ feature 'Create new Jobleevel' do
     click_link "Novo nivel vaga"
 
     fill_in 'Nome', with: ' '
-    click_button 'Enviar'
+    click_button 'Criar Nível da vaga'
 
     expect(page).to have_content('...deve ser informado')
     expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
@@ -62,7 +62,7 @@ feature 'Create new Jobleevel' do
     click_link "Novo nivel vaga"
 
     fill_in 'Nome', with: 'Junior'
-    click_button 'Enviar'
+    click_button 'Criar Nível da vaga'
 
     expect(page).to have_content('...já está em uso')
    
@@ -85,7 +85,7 @@ feature 'Create new Jobleevel' do
     click_link "Novo nivel vaga"
 
     fill_in 'Nome', with: 'v'
-    click_button 'Enviar'
+    click_button 'Criar Nível da vaga'
 
     expect(page).to have_content('...deve ter tamanho minimo de 2 caracter')
    

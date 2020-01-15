@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature 'Register new Profile' do
-    
+  
   scenario "I can not register a new profile with email already in use" do
 
     skill = Skill.create!(name:'Ruby on Rails')
@@ -36,10 +36,9 @@ feature 'Register new Profile' do
     fill_in 'Nome', with: 'Roberson'
     fill_in 'Nome Social', with: 'Roberson'
     
-    #fill_in 'Data Nascimento', with: '1979-09-20'
     select '20', :from => 'profile_date_birth_3i'
     select 'setembro', :from => 'profile_date_birth_2i'
-    select '1979', :from => 'profile_date_birth_1i'
+    #select '1979', :from => 'profile_date_birth_1i'
 
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
@@ -52,10 +51,9 @@ feature 'Register new Profile' do
     select 'Graduate', from: 'Nivel Educacional'
     select 'Concluded', from: 'Status do Curso'
 
-    #fill_in 'Data conclusão', with: '2018-12-05'
     select '5', :from => 'profile_education_end_date_3i'
     select 'dezembro', :from => 'profile_education_end_date_2i'
-    select '2018', :from => 'profile_education_end_date_1i'
+    #select '2018', :from => 'profile_education_end_date_1i'
 
     fill_in 'Empresa', with: 'Cia Mineradora Geral'
     fill_in 'Responsabilidades', with: 'Gerenciava informatica e financeiro'
@@ -63,17 +61,17 @@ feature 'Register new Profile' do
     select "#{joblevel.name}", from: 'Nivel Cargo'
     select "#{skill.name}", from: 'Habilidades'
     
-    #fill_in 'Data Entrada', with: '1997-12-01'
+    
     select '1', :from => 'profile_experience_start_date_3i'
     select 'dezembro', :from => 'profile_experience_start_date_2i'
-    select '1997', :from => 'profile_experience_start_date_1i'
+    #select '1997', :from => 'profile_experience_start_date_1i'
     
-    #fill_in 'Data Saida', with: '2003-03-29'
+    
     select '29', :from => 'profile_experience_end_date_3i'
     select 'março', :from => 'profile_experience_end_date_2i'
-    select '2003', :from => 'profile_experience_end_date_1i'
+    #select '2003', :from => 'profile_experience_end_date_1i'
    
-    click_button 'Enviar'
+    click_button 'Criar Perfil'
 
     expect(page).to have_content('Roberson')
   end    
