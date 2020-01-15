@@ -19,7 +19,7 @@ class Profile < ApplicationRecord
     def set_default_languages
         self.languages ||= :"basic English"
     end
-
+   
     enum education_level: { "high school": 0, "technical": 15, "graduate": 30}
     def set_default_education_level
         self.education_level ||= :"graduate"

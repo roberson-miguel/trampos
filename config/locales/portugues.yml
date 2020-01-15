@@ -1,5 +1,6 @@
+---
 pt-BR:
-  
+
   activerecord:
     models: 
       benefit: 
@@ -35,6 +36,7 @@ pt-BR:
         rating: 'Avaliação'
         comment: 'Comentário'
       profile:
+        languages: 'Idiomas'
         name: 'Nome'
         social_name: 'Nome Social'
         address: 'Endereço'
