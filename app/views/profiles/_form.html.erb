@@ -61,7 +61,7 @@
     <br>
     <br>
       <%= f.label :experience_start_date %>
-      <%= f.date_select :experience_start_date %>
+      <%= f.date_select :experience_start_date, start_year: Date.today.year - 100 %>
       <%= f.label :experience_end_date %>
       <%= f.date_select :experience_end_date, start_year: Date.today.year - 100 %>
       <%= f.label :experience_current_position %>
