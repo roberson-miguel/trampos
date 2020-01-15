@@ -22,7 +22,7 @@ feature 'Register new Profile' do
   
     select '20', :from => 'profile_date_birth_3i'
     select 'setembro', :from => 'profile_date_birth_2i'
-    #select '1974', :from => 'profile_date_birth_1i'
+    select '2015', :from => 'profile_date_birth_1i'
 
     fill_in 'Celular', with: '11995705875'
     fill_in 'Endereço', with: '1Rua Rodolfo Mayer, 127 - São Paulo'
@@ -47,11 +47,11 @@ feature 'Register new Profile' do
     
     select '1', :from => 'profile_experience_start_date_3i'
     select 'dezembro', :from => 'profile_experience_start_date_2i'
-    #select '1997', :from => 'profile_experience_start_date_1i'
+    select '2015', :from => 'profile_experience_start_date_1i'
 
     select '29', :from => 'profile_experience_end_date_3i'
     select 'março', :from => 'profile_experience_end_date_2i'
-    #select '2003', :from => 'profile_experience_end_date_1i'
+    select '2020', :from => 'profile_experience_end_date_1i'
     
 
     click_button 'Criar Perfil'
