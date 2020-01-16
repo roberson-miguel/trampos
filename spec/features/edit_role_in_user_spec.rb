@@ -5,13 +5,11 @@ feature 'Edit Role in user/edit' do
     
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'andamento')
     
-  
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
     
     click_link 'Editar Conta'
     

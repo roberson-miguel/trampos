@@ -3,16 +3,15 @@ require "rails_helper"
 feature 'Editing a Skill' do
   scenario "I can edit a skill" do
 
-    Skill.create(name:'Ruby on Rails')
+    skill = Skill.create(name:'Ruby on Rails')
 
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    head = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(head)
+
+    click_link "Entrar"
     
     click_link "Habilidades"
     click_link "Ruby on Rails"

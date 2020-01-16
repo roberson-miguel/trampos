@@ -7,8 +7,6 @@ feature 'Register new Profile' do
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate')
-    login_as(user, scope: :candidate)
-
     profile = Profile.create!(skill: skill, joblevel: joblevel, user: user, 
                               name:'Roberson', social_name: 'Roberson Miguel', 
                               address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
@@ -22,13 +20,13 @@ feature 'Register new Profile' do
                               experience_current_position: false, email: user.email, 
                               avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     
+
     visit root_path
+
+    login_as(user)
+
     click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
-  
     click_link "Novo Perfil"
     
     attach_file('Foto', Rails.root.join('spec', 'support', 'perfil_red.jpg'))

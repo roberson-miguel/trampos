@@ -45,7 +45,7 @@ feature 'Create new Benefit' do
 
   scenario "I can not create a new benefit already in use" do
 
-    Benefit.create(name:'Vale transporte')
+    benefit = Benefit.create(name:'Vale transporte')
 
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     

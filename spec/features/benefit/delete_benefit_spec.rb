@@ -3,7 +3,7 @@ require "rails_helper"
 feature 'Deleting a Benefit' do
   scenario "I can delete a benefit" do
 
-    Benefit.create(name:'Vale transporte')
+    benefit = Benefit.create(name:'Vale transporte')
     
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     

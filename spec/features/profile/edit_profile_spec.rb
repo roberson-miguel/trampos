@@ -7,9 +7,7 @@ feature 'Editing a Profile' do
     joblevel = Joblevel.create!(name:'Junior')
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'candidate', status:'andamento')
 
-    login_as(user, scope: :candidate)
-
-    Profile.create!(skill: skill, joblevel: joblevel, user: user, 
+    profile = Profile.create!(skill: skill, joblevel: joblevel, user: user, 
                     name:'Roberson Miguel', social_name: 'Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
                     date_birth: '10/09/1979',  languages: "basic English", 
@@ -23,11 +21,10 @@ feature 'Editing a Profile' do
                     avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
 
     click_link "Completar Perfil"
       

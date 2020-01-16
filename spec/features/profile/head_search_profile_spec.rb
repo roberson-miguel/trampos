@@ -5,11 +5,8 @@ feature 'Headhunter Search a profile' do
 
     skill = Skill.create!(name:'Ruby on Rails')
     joblevel = Joblevel.create!(name:'Junior')
-    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
-
-    login_as(user, scope: :headhunter)
-
-    Profile.create!(skill: skill, joblevel: joblevel, user: user, 
+    head = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter', status:'andamento')
+    profile = Profile.create!(skill: skill, joblevel: joblevel, user: head, 
                     name:'Roberson', social_name: 'Roberson Miguel', 
                     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',
                     date_birth: '1979-09-20',  languages: "basic English", 
@@ -22,20 +19,19 @@ feature 'Headhunter Search a profile' do
                     experience_current_position: false, 
                     avatar:Rails.root.join('spec', 'support', 'perfil_red.jpg'))
     
-    
-
+           
     visit root_path
+
+    login_as(head)
+
     click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
-  
+
     click_link "Pesquisar Candidato"
     fill_in "q", with:'Ciências'
     click_button "Buscar"
 
-  
+
     expect(page).to have_content('Roberson')
     
   end

@@ -6,11 +6,10 @@ feature 'Create new Jobleevel' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
     
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
@@ -28,11 +27,10 @@ feature 'Create new Jobleevel' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
 
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
@@ -47,16 +45,15 @@ feature 'Create new Jobleevel' do
 
   scenario "I can not create a new joblevel already in use" do
 
-    Joblevel.create(name:'Junior')
+    joblevel = Joblevel.create(name:'Junior')
 
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
 
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
@@ -70,16 +67,15 @@ feature 'Create new Jobleevel' do
 
   scenario "I can not create a new joblevel without mininum caracter" do
 
-    Joblevel.create(name:'Junior')
+    joblevel = Joblevel.create(name:'Junior')
 
-     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
+    user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
-    click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
+    login_as(user)
+
+    click_link "Entrar"
     
     click_link "Nivel Vaga"
     click_link "Novo nivel vaga"
