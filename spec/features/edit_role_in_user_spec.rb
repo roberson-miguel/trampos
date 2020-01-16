@@ -16,7 +16,7 @@ feature 'Edit Role in user/edit' do
     select 'Headhunter', from: 'Função'
     fill_in 'Current password', with:123123
     select 'Novoperfil', from: 'Status'
-    click_button 'Update'
+    click_button 'Atualizar Usuário'
 
     expect(page).to have_content('Sua conta foi atualizada com sucesso.')
 

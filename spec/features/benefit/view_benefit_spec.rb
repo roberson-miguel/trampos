@@ -8,11 +8,11 @@ feature 'View a Benefit' do
     user = User.create!(email:'elaine@gmail.com', password:123123, role:'headhunter')
     
     visit root_path
+
+    login_as(user)
+
     click_link "Entrar"
 
-    fill_in 'Email', with: 'elaine@gmail.com'
-    fill_in 'Password', with:123123
-    click_button 'Log in'
     click_link "Beneficios"
     click_link "Vale transporte"
       

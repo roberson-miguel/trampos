@@ -1,9 +1,11 @@
 ---
 pt-BR:
+  
   helpers:
     submit:
       post:
         create: 'Enviar {{model}}'
+        
 
   activerecord:
     models: 
@@ -59,6 +61,12 @@ pt-BR:
         name: 'Nome'
       joblevel:
         name: 'Nome'
+      user: 
+        role: 'Função'
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirme a senha'
+        
       profile:
         languages: 'Idiomas'
         name: 'Nome'

@@ -9,10 +9,10 @@ feature 'Register as role a user' do
 
     fill_in 'Email', with: 'elaine@gmail'
     select 'Headhunter', from: 'Função'
-    fill_in 'Password', with:123123
-    fill_in 'Password confirmation', with:123123
+    fill_in 'Senha', with:123123
+    fill_in 'Confirme a senha', with:123123
 
-    click_button 'Sign up'
+    click_button 'Criar Usuário'
     
     expect(page).to have_content('Bem-vindo! Você se registrou com êxito.')
 

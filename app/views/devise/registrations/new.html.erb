@@ -11,7 +11,7 @@
 <br>
   <div class="field">
     
-    <%= f.label :role, 'Função' %><br />
+    <%= f.label :role %><br />
     <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
  
   </div>
@@ -30,7 +30,7 @@
   </div>
 <br>
   <div class="actions">
-    <%= f.submit "Sign up", class:'btn btn-primary' %>
+    <%= f.submit class:'btn btn-primary' %>
   </div>
 <% end %>
 <br>
