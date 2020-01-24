@@ -76,6 +76,15 @@ describe 'Comapany Management' do
           expect(company.cnpj).to eq('00.456.878/0001-56')
     
         end
+
+        it 'Create a Company without all validations' do
+                       
+            post api_v1_companies_path, params: {}
+            
+            expect(response).to have_http_status(412)
+      
+        end
+        
     end
 
 end
