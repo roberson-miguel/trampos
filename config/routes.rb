@@ -22,7 +22,7 @@ Rails.application.routes.draw do
  
   namespace :api do
     namespace :v1 do
-      resources :companies, only: %i[show index create]
+      resources :companies, only: %i[show index create update]
     end
   end
   

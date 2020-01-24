@@ -18,4 +18,13 @@ class Api::V1::CompaniesController < Api::V1::ApiController
            render json: 'error', status: 412 
         end
     end
+
+    def update
+        @company = Company.find(params[:id])
+        if @company.update(params.permit(%i[name address cnpj description]))
+          render json: @company, status: 200
+        else 
+          render json: 'error', status: 412 
+        end
+    end
 end

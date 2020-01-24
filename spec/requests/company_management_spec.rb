@@ -84,7 +84,31 @@ describe 'Comapany Management' do
             expect(response).to have_http_status(412)
       
         end
-        
+
+    end
+    
+    context 'Update' do
+        it 'Company update' do
+            company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
+                                      address: 'Alameda Santos, 011', 
+                                      description: 'Consultoria e Treinamentos')
+
+
+            put api_v1_company_path(company), params: {name: 'Campus Code', 
+                                                       cnpj: '05.372.840/0001-07', 
+                                                       address: 'Alameda Santos, 011', 
+                                                       description: 'Consultoria e Treinamentos'}
+    
+            json = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(response).to have_http_status(200)
+
+            expect(json[:name]).to eq('Campus Code')
+            expect(json[:cnpj]).to eq('05.372.840/0001-07')
+            expect(json[:address]).to eq('Alameda Santos, 011')
+            expect(json[:description]).to eq('Consultoria e Treinamentos')
+    
+        end
     end
 
 end
