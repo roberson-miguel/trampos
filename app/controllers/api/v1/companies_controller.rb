@@ -27,4 +27,11 @@ class Api::V1::CompaniesController < Api::V1::ApiController
           render json: 'error', status: 412 
         end
     end
+
+    def destroy
+        @company = Company.find(params[:id])
+        if @company.destroy
+          render json: {message: "Company delete with Successfully."}, status: 200
+        end
+    end
 end

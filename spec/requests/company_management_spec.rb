@@ -111,4 +111,39 @@ describe 'Comapany Management' do
         end
     end
 
+    context 'Delete' do
+        it 'Should delete a company correctly' do
+        company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
+                                  address: 'Alameda Santos, 011', 
+                                  description: 'Consultoria e Treinamentos')
+    
+          delete api_v1_company_path(company)
+    
+          json = JSON.parse(response.body, symbolize_names: true)
+    
+          expect(response).to have_http_status(200)
+          expect(json[:message]).to eq("Company delete with Successfully.")
+         
+        end
+
+        it 'Should delete one company correctly' do
+            company = Company.create!(name: 'Campus Code', 
+                                      cnpj: '05.372.840/0001-07', 
+                                      address: 'Alameda Santos, 011', 
+                                      description: 'Consultoria e Treinamentos')
+                                      
+            company1 = Company.create!(name: 'Bios Bug', 
+                                      cnpj: '04.456.878/0001-56', 
+                                      address: 'Rua Tito, 011', 
+                                      description: 'SoftHouse e Consultoria Ltda')
+      
+            delete api_v1_company_path(company)
+      
+            companies = Company.all
+      
+            expect(companies).not_to include(company)
+            expect(companies).to include(company1)
+          end
+    end
+
 end

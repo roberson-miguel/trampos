@@ -82,6 +82,13 @@
         0,
         null,
         null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
         null
       ],
       "/home/roberson/trampos/app/controllers/api/v1/api_controller.rb": [
@@ -826,6 +833,6 @@
         null
       ]
     },
-    "timestamp": 1579872324
+    "timestamp": 1579872733
   }
 }
