@@ -3,4 +3,9 @@ class Api::V1::CompaniesController < Api::V1::ApiController
         @company = Company.find(params[:id])
         render json: @company
     end
+
+    def index
+        @companies = Company.all
+        render json: @companies
+    end
 end
