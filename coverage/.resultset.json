@@ -55,13 +55,21 @@
       "/home/roberson/trampos/app/controllers/api/v1/companies_controller.rb": [
         1,
         1,
-        1,
+        2,
         1,
         null,
         null
       ],
       "/home/roberson/trampos/app/controllers/api/v1/api_controller.rb": [
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -794,6 +802,6 @@
         null
       ]
     },
-    "timestamp": 1579866119
+    "timestamp": 1579867278
   }
 }
