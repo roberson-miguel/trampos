@@ -9,6 +9,7 @@ describe 'Comapany Management' do
                                      description: 'Consultoria e Treinamentos')
 
             get api_v1_company_path(company)
+
             json = JSON.parse(response.body, symbolize_names: true)
     
             expect(response).to have_http_status(:ok)
@@ -38,6 +39,7 @@ describe 'Comapany Management' do
                                     description: 'SoftHouse e Consultoria Ltda')
 
           get api_v1_companies_path
+
           json = JSON.parse(response.body, symbolize_names: true)
     
           expect(response).to have_http_status(:ok)
@@ -53,5 +55,27 @@ describe 'Comapany Management' do
           expect(json[1][:description]).to eq(company1.description)
         end
     end 
+
+    context 'Create' do
+        it 'Create a company correctly' do
+                   
+          post api_v1_companies_path, params: {name: 'Bios Bug', cnpj: '00.456.878/0001-56', 
+                                               address: 'Rua Tito, 011', 
+                                               description: 'SoftHouse e Consultoria Ltda'}
+          
+          json = JSON.parse(response.body, symbolize_names: true)
+            
+          expect(response).to have_http_status(201)
+
+          expect(json[:name]).to eq('Bios Bug')
+          expect(json[:cnpj]).to eq('00.456.878/0001-56')
+          expect(json[:address]).to eq('Rua Tito, 011')
+          expect(json[:description]).to eq('SoftHouse e Consultoria Ltda')
+
+          company = Company.last
+          expect(company.cnpj).to eq('00.456.878/0001-56')
+    
+        end
+    end
 
 end

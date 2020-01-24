@@ -22,7 +22,9 @@ joblevel = Joblevel.create!(name:'Junior')
 company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
                 address: 'Alameda Santos, 011', 
                 description: 'Consultoria e Treinamentos em tecnologia, especializada em Ruby on Rails')
-
+company1 = Company.create!(name: 'Bios Bug', cnpj: '04.456.878/0001-56', 
+                address: 'Rua Tito, 011', 
+                description: 'SoftHouse e Consultoria Ltda')
 profile = Profile.create!(skill: skill, joblevel: joblevel, user: user, 
     name:'Roberson Miguel', social_name: 'Miguel', 
     address: 'Rua Rodolfo Mayer, 127 - São Paulo', cellphone: '11995705875',

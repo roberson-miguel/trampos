@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-24T09:35:55-03:00">2020-01-24T09:35:55-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-24T10:08:23-03:00">2020-01-24T10:08:23-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">5.72%</span></span>
+    (<span class="covered_percent"><span class="red">6.55%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.06
+         0.07
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>30</b> files in total.
-    <b>559</b> relevant lines. 
-    <span class="green"><b>32</b> lines covered</span> and
-    <span class="red"><b>527</b> lines missed </span>
+    <b>565</b> relevant lines. 
+    <span class="green"><b>37</b> lines covered</span> and
+    <span class="red"><b>528</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#ffa8b5863eac3fefbfef2d8197fe3945b32dc55d" class="src_link" title="app/controllers/api/v1/companies_controller.rb">app/controllers/api/v1/companies_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.1</td>
+        <td class="green strong">92.31 %</td>
+        <td>21</td>
+        <td>13</td>
+        <td>12</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -359,20 +359,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">2.7%</span></span>
+    (<span class="covered_percent"><span class="red">3.78%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.03
+         0.04
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>12</b> files in total.
-    <b>444</b> relevant lines. 
-    <span class="green"><b>12</b> lines covered</span> and
-    <span class="red"><b>432</b> lines missed </span>
+    <b>450</b> relevant lines. 
+    <span class="green"><b>17</b> lines covered</span> and
+    <span class="red"><b>433</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -400,12 +400,12 @@
       
       <tr>
         <td class="strong"><a href="#ffa8b5863eac3fefbfef2d8197fe3945b32dc55d" class="src_link" title="app/controllers/api/v1/companies_controller.rb">app/controllers/api/v1/companies_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>7</td>
-        <td>7</td>
-        <td>0</td>
-        <td>1.1</td>
+        <td class="green strong">92.31 %</td>
+        <td>21</td>
+        <td>13</td>
+        <td>12</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -1099,11 +1099,11 @@
         <div class="source_table" id="ffa8b5863eac3fefbfef2d8197fe3945b32dc55d">
   <div class="header">
     <h3>app/controllers/api/v1/companies_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">92.31 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1171,6 +1171,66 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def create</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @company = Company.new(params.permit(%i[name address cnpj description]))</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        if @company.valid?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">           @company.save!</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">           render json: @company, status: 201</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">        else </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">           render json: &#39;error&#39;, status: 412 </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

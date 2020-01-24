@@ -8,4 +8,14 @@ class Api::V1::CompaniesController < Api::V1::ApiController
         @companies = Company.all
         render json: @companies
     end
+
+    def create
+        @company = Company.new(params.permit(%i[name address cnpj description]))
+        if @company.valid?
+           @company.save!
+           render json: @company, status: 201
+        else 
+           render json: 'error', status: 412 
+        end
+    end
 end
