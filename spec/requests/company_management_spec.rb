@@ -4,9 +4,8 @@ describe 'Comapany Management' do
     context 'Show' do
 
         it 'Render Company Correctly' do
-            company = Company.create(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
-                                     address: 'Alameda Santos, 011', 
-                                     description: 'Consultoria e Treinamentos')
+            
+            company = create(:company)
 
             get api_v1_company_path(company)
 
@@ -89,10 +88,7 @@ describe 'Comapany Management' do
     
     context 'Update' do
         it 'Company update' do
-            company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
-                                      address: 'Alameda Santos, 011', 
-                                      description: 'Consultoria e Treinamentos')
-
+            company = create(:company)
 
             put api_v1_company_path(company), params: {name: 'Campus Code', 
                                                        cnpj: '05.372.840/0001-07', 
@@ -113,9 +109,8 @@ describe 'Comapany Management' do
 
     context 'Delete' do
         it 'Should delete a company correctly' do
-        company = Company.create!(name: 'Campus Code', cnpj: '05.372.840/0001-07', 
-                                  address: 'Alameda Santos, 011', 
-                                  description: 'Consultoria e Treinamentos')
+            
+          company = create(:company)
     
           delete api_v1_company_path(company)
     

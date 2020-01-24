@@ -33,7 +33,14 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+FactoryBot::SyntaxRunner.class_eval do
+  include ActionDispatch::TestProcess
+end
+
 RSpec.configure do |config|
+
+  config.include FactoryBot::Syntax::Methods
 
   config.include Warden::Test::Helpers
       config.before :suite do
