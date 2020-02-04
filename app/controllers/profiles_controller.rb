@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
         current_user.andamento!
         flash[:notice] = 'Perfil concluido com sucesso'
         redirect_to @profile
-        
+        ProfilesMailer.welcome(@profile.id)        
       else
         @skills = Skill.all
         @joblevels = Joblevel.all
