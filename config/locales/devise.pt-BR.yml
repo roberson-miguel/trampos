@@ -5,7 +5,7 @@
 # config.i18n.default_locale = :'pt-BR'
 # Para a nova configuração fazer efeito, reinicie o servidor
 
-pt-BR:
+pt:
   devise:
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso."
