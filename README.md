@@ -4,7 +4,7 @@ Essa é uma aplicação feita com a finalidade de aprendizado de Rails no Treina
 
 # Excutando o projeto
 
-1. Oriento que use o RVM para instalar o Ruby 2.6.3, se voce usa ubuntu pode seguir esse manual https://www.edivaldobrito.com.br/como-instalar-o-ruby-version-manager-no-ubuntu/    
+1. Oriento que use o RVM para instalar o Ruby 2.6.3.  
 2. Clone o projeto na sua maquina 
 3. Dentro da pasta do projeto rode o bin/setup 
 4. Talvez precisa rodad 0 bundle install 
